@@ -4,17 +4,15 @@ export type ButtonVariant =
   | 'primary'
   | 'secondary'
   | 'outline'
-  | 'danger'
   | 'success'
+  | 'danger'
 
-export interface ButtonProps extends PrimeButtonProps {
-  /**
-   * Variante du bouton selon le design system
-   */
+export type ButtonSize = 'sm' | 'md' | 'lg'
+
+export interface ButtonProps extends Omit<PrimeButtonProps, 'size'> {
   variant?: ButtonVariant
 
-  /**
-   * Active un effet "loading"
-   */
+  dsSize?: ButtonSize
+
   loading?: boolean
 }
