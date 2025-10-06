@@ -21,10 +21,11 @@
     "test:ui": "vitest --ui",
     "lint": "eslint src --max-warnings=0",
     "typecheck": "tsc --project tsconfig.json --noEmit",
-    "build:tokens": "tsc --project tsconfig.tokens.json --outDir theme/tokens-build"
+    "build:tokens": "node scripts/build-tokens.mjs"
   },
   "dependencies": {
     "chart.js": "^4.5.0",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.23.22",
     "primeicons": "^7.0.0",
     "primereact": "^10.9.7",
@@ -51,6 +52,7 @@
     "happy-dom": "^15.11.7",
     "postcss": "^8.5.6",
     "prettier": "3.1.1",
+    "style-dictionary": "^5.1.0",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.9.2",
     "vite": "^5.4.20",

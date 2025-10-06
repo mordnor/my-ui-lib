@@ -1,0 +1,13 @@
+{
+  "opacity": {
+    "disabled": {
+      "value": 0.5
+    },
+    "overlay": {
+      "value": 0.7
+    },
+    "hidden": {
+      "value": 0
+    }
+  }
+}

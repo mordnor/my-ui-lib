@@ -12,35 +12,30 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const base = `
-    inline-flex items-center justify-center gap-[var(--space-2)]
+    inline-flex items-center justify-center gap-2
     font-medium transition-colors duration-150
     focus:outline-none focus:ring-2 focus:ring-offset-1
-    disabled:opacity-[var(--opacity-disabled)] disabled:cursor-not-allowed
-    rounded-[var(--radius-md)]
+    disabled:opacity-disabled disabled:cursor-not-allowed
+    rounded text-center whitespace-normal leading-snug min-h-[2.5rem]
   `
 
   const sizes: Record<string, string> = {
-    sm: 'text-sm px-[var(--space-3)] py-[var(--space-1_5)] h-[var(--size-buttonHeight)]',
-    md: 'text-base px-[var(--space-4)] py-[var(--space-2)] h-[var(--size-buttonHeight)]',
-    lg: 'text-lg px-[var(--space-5)] py-[var(--space-3)] h-[var(--size-buttonHeight)]'
+    sm: 'text-sm px-3 py-1.5',
+    md: 'text-base px-4 py-2',
+    lg: 'text-lg px-5 py-3'
   }
 
   const variants: Record<string, string> = {
-    primary: `
-      !bg-primary text-white hover:!bg-primary-hover focus:!ring-primary
-    `,
-    secondary: `
-      !bg-secondary text-white hover:opacity-90 focus:!ring-secondary
-    `,
-    outline: `
-      border border-primary text-primary hover:!bg-primary hover:text-white focus:!ring-primary
-    `,
-    success: `
-      !bg-success text-white hover:opacity-90 focus:!ring-success
-    `,
-    danger: `
-      !bg-danger text-white hover:opacity-90 focus:!ring-danger
-    `
+    primary:
+      'bg-accent-primary text-white hover:bg-accent-hover focus:ring-accent-primary',
+    secondary:
+      'bg-background-surface text-text-primary border border-border hover:opacity-90',
+    outline:
+      'border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-white focus:ring-accent-primary',
+    success:
+      'bg-state-success text-white hover:opacity-90 focus:ring-state-success',
+    danger:
+      'bg-state-danger text-white hover:opacity-90 focus:ring-state-danger'
   }
 
   return (

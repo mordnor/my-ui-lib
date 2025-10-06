@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card as PrimeCard, CardProps } from 'primereact/card'
 import type { DSCardProps } from './Card.types'
+import { Heading, Text } from '@/components/ui/typography'
 
 export const Card: React.FC<DSCardProps> = ({
   variant = 'default',
@@ -14,20 +15,19 @@ export const Card: React.FC<DSCardProps> = ({
   footer,
   ...props
 }) => {
+  // 🎨 Styles selon le variant
   const variantClasses: Record<string, string> = {
-    default:
-      'border border-[var(--color-border)] shadow-[var(--shadow-sm)] bg-[var(--color-surface)]',
-    outlined:
-      'border-2 border-[var(--color-border)] shadow-none bg-[var(--color-background)]',
-    elevated:
-      'border border-[var(--color-border)] shadow-[var(--shadow-lg)] bg-[var(--color-surface)]'
+    default: 'border border-border shadow-sm bg-background-surface',
+    outlined: 'border-2 border-border shadow-none bg-background-app',
+    elevated: 'border border-border shadow-lg bg-background-surface'
   }
 
+  // ✨ Hover effect optionnel
   const hoverClasses = hoverable
-    ? 'transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lg)] cursor-pointer'
+    ? 'transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer'
     : ''
 
-  // 🧠 Force le rendu de title/subTitle en ReactNode
+  // 🧱 Résolution dynamique (si titre/texte = fonction)
   const resolvedTitle =
     typeof title === 'function' ? title(props as CardProps) : title
   const resolvedSubTitle =
@@ -37,7 +37,7 @@ export const Card: React.FC<DSCardProps> = ({
     <PrimeCard
       unstyled
       {...props}
-      className={`overflow-hidden rounded-[var(--radius-lg)] ${variantClasses[variant]} ${hoverClasses} ${className}`}
+      className={`overflow-hidden rounded p-0 ${variantClasses[variant]} ${hoverClasses} ${className}`}
       onClick={onClick}
     >
       {/* HEADER */}
@@ -46,7 +46,7 @@ export const Card: React.FC<DSCardProps> = ({
           {typeof header === 'string' ? (
             <img
               src={header}
-              alt="Card image"
+              alt="Card header"
               className="size-full object-cover"
             />
           ) : (
@@ -56,23 +56,19 @@ export const Card: React.FC<DSCardProps> = ({
       )}
 
       {/* BODY */}
-      <div className="flex flex-col gap-[var(--space-3)] p-[var(--space-5)] text-left">
-        {resolvedTitle && (
-          <h3 className="text-lg font-semibold leading-tight">
-            {resolvedTitle}
-          </h3>
-        )}
+      <div className="flex flex-col gap-3 p-5 text-left">
+        {resolvedTitle && <Heading level={3}>{resolvedTitle}</Heading>}
         {resolvedSubTitle && (
-          <h4 className="text-muted-text text-sm">{resolvedSubTitle}</h4>
+          <Text variant="muted" size="sm">
+            {resolvedSubTitle}
+          </Text>
         )}
-        {children && (
-          <div className="text-text text-base leading-normal">{children}</div>
-        )}
+        {children && <Text size="md">{children}</Text>}
       </div>
 
       {/* FOOTER */}
       {footer && (
-        <div className="border-border bg-surface border-t p-[var(--space-4)]">
+        <div className="border-t border-border bg-background-surface p-4">
           {footer}
         </div>
       )}

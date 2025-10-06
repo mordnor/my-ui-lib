@@ -1,0 +1,68 @@
+{
+  "color": {
+    "text": {
+      "primary": {
+        "value": "{color.slate.900}"
+      },
+      "secondary": {
+        "value": "{color.slate.600}"
+      },
+      "inverse": {
+        "value": "{color.white}"
+      },
+      "muted": {
+        "value": "{color.slate.500}"
+      }
+    },
+    "background": {
+      "app": {
+        "value": "{color.slate.50}"
+      },
+      "surface": {
+        "value": "{color.white}"
+      },
+      "card": {
+        "value": "{color.slate.100}"
+      },
+      "inverse": {
+        "value": "{color.slate.900}"
+      }
+    },
+    "border": {
+      "default": {
+        "value": "{color.slate.200}"
+      },
+      "strong": {
+        "value": "{color.slate.400}"
+      },
+      "focus": {
+        "value": "{color.blue.500}"
+      }
+    },
+    "accent": {
+      "primary": {
+        "value": "{color.blue.600}"
+      },
+      "hover": {
+        "value": "{color.blue.700}"
+      },
+      "active": {
+        "value": "{color.blue.800}"
+      }
+    },
+    "state": {
+      "success": {
+        "value": "{color.green.600}"
+      },
+      "danger": {
+        "value": "{color.red.600}"
+      },
+      "warning": {
+        "value": "{color.yellow.600}"
+      },
+      "info": {
+        "value": "{color.cyan.600}"
+      }
+    }
+  }
+}
