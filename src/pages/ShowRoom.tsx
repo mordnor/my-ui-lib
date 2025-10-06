@@ -251,7 +251,7 @@ export default function LandingAtelierNomade() {
                 transition={{ duration: 0.35, delay: i * 0.05 }}
               >
                 <Card
-                  variant="flat"
+                  variant="outlined"
                   className="p-space-xl text-left shadow-sm hover:shadow-md transition-shadow bg-background-app rounded-xl"
                 >
                   <div className="flex items-center gap-space-md mb-space-md">
