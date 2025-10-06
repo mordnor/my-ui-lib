@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "theme/tokens-build",
+    "rootDir": "theme/tokens",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "declaration": false,
+    "emitDeclarationOnly": false
+  },
+  "include": ["theme/tokens/**/*"],
+  "exclude": ["node_modules", "src"]
+}
