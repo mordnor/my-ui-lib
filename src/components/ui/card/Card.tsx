@@ -19,7 +19,8 @@ export const Card: React.FC<DSCardProps> = ({
   const variantClasses: Record<string, string> = {
     default: 'border border-border shadow-sm bg-background-surface',
     outlined: 'border-2 border-border shadow-none bg-background-app',
-    elevated: 'border border-border shadow-lg bg-background-surface'
+    elevated: 'border border-border shadow-lg bg-background-surface',
+    flat: 'border border-transparent shadow-none bg-transparent'
   }
 
   // ✨ Hover effect optionnel

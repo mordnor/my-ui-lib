@@ -1,2 +1,3 @@
-export * from 'components/button/Button'
-export * from 'components/button/Button.types'
+// src/components/index.ts
+export * from '@/components/ui/button/Button'
+export * from '@/components/ui/button/Button.types'

@@ -1,18 +1,10 @@
 {
-  "name": "reactjs-vite-tailwindcss-boilerplate",
-  "description": "This is a boilerplate build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.",
+  "name": "my-ui-lib",
   "version": "0.1.0",
+  "description": "Design System + Vite + React + Tailwind + Style Dictionary",
   "private": true,
+  "homepage": "https://<ton-user-github>.github.io/my-ui-lib",
   "type": "module",
-  "author": {
-    "name": "João Paulo Moraes",
-    "email": "joaopaulomoraes@outlook.com",
-    "url": "https://github.com/joaopaulomoraes"
-  },
-  "bugs": {
-    "url": "https://github.com/joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate/issues",
-    "email": "joaopaulomoraes@outlook.com"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -21,7 +13,9 @@
     "test:ui": "vitest --ui",
     "lint": "eslint src --max-warnings=0",
     "typecheck": "tsc --project tsconfig.json --noEmit",
-    "build:tokens": "node scripts/build-tokens.mjs"
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "chart.js": "^4.5.0",
@@ -49,6 +43,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-tailwindcss": "^3.18.2",
+    "gh-pages": "^6.1.1",
     "happy-dom": "^15.11.7",
     "postcss": "^8.5.6",
     "prettier": "3.1.1",
