@@ -1,14 +1,14 @@
 import React from 'react'
 import clsx from 'clsx'
 
-interface HeadingProps {
-  /** Niveau HTML du titre (h1–h6) */
+export interface HeadingProps {
+  /** Niveau HTML (h1–h6) */
   level?: 1 | 2 | 3 | 4 | 5 | 6
 
-  /** Poids typographique (light → bold) */
+  /** Poids typographique */
   weight?: 'light' | 'regular' | 'medium' | 'semibold' | 'bold'
 
-  /** Mise en majuscules */
+  /** Passage en majuscules */
   uppercase?: boolean
 
   /** Espacement des lettres */
@@ -17,21 +17,19 @@ interface HeadingProps {
   /** Alignement du texte */
   align?: 'left' | 'center' | 'right'
 
-  /** Classes personnalisées */
+  /** Classes supplémentaires */
   className?: string
 
-  /** Contenu du heading */
+  /** Contenu */
   children: React.ReactNode
 }
 
 /**
- * 🔠 Heading — composant typographique basé sur les tokens Tailwind
- * - utilise `fontSize`, `fontWeight`, `lineHeight`, `tracking`, `textAlign`
- * - cohérent avec ton design system global
+ * 🔠 Heading — composant typographique DS avec rythme vertical intégré
  */
 export const Heading: React.FC<HeadingProps> = ({
   level = 2,
-  weight,
+  weight = 'semibold',
   uppercase = false,
   tracking = 'normal',
   align = 'left',
@@ -40,48 +38,55 @@ export const Heading: React.FC<HeadingProps> = ({
 }) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements
 
-  // 🔤 Échelle typographique — basée sur les tokens Tailwind
   const sizeMap: Record<number, string> = {
-    1: 'text-3xl leading-tight',
-    2: 'text-2xl leading-snug',
-    3: 'text-xl leading-normal',
-    4: 'text-lg leading-normal',
-    5: 'text-base leading-relaxed',
-    6: 'text-sm leading-relaxed'
+    1: 'text-ds-font-size-3xl leading-ds-line-height-tight',
+    2: 'text-ds-font-size-2xl leading-ds-line-height-snug',
+    3: 'text-ds-font-size-xl leading-ds-line-height-normal',
+    4: 'text-ds-font-size-lg leading-ds-line-height-normal',
+    5: 'text-ds-font-size-base leading-ds-line-height-relaxed',
+    6: 'text-ds-font-size-sm leading-ds-line-height-relaxed'
   }
 
-  // 🏋️ Poids
   const weightMap: Record<string, string> = {
-    light: 'font-light',
-    regular: 'font-regular',
-    medium: 'font-medium',
-    semibold: 'font-semibold',
-    bold: 'font-bold'
+    light: 'font-ds-font-weight-light',
+    regular: 'font-ds-font-weight-regular',
+    medium: 'font-ds-font-weight-medium',
+    semibold: 'font-ds-font-weight-semibold',
+    bold: 'font-ds-font-weight-bold'
   }
 
-  // 🔠 Espacement des lettres
   const trackingMap: Record<string, string> = {
     tight: 'tracking-tight',
     normal: '',
     wide: 'tracking-wide'
   }
 
-  // 📐 Alignement
   const alignMap: Record<string, string> = {
     left: 'text-left',
     center: 'text-center',
     right: 'text-right'
   }
 
+  /** 🧩 Espacement vertical automatique selon le niveau */
+  const marginBottomByLevel: Record<number, string> = {
+    1: 'mb-ds-space-4xl',
+    2: 'mb-ds-space-3xl',
+    3: 'mb-ds-space-2xl',
+    4: 'mb-ds-space-xl',
+    5: 'mb-ds-space-lg',
+    6: 'mb-ds-space-md'
+  }
+
   return (
     <Tag
       className={clsx(
-        'text-text-primary', // 🔧 Couleur par défaut tokenisée
+        'text-ds-text-primary',
         sizeMap[level],
-        weight && weightMap[weight],
-        uppercase && 'uppercase',
+        weightMap[weight],
         trackingMap[tracking],
         alignMap[align],
+        uppercase && 'uppercase',
+        marginBottomByLevel[level],
         className
       )}
     >
@@ -89,3 +94,5 @@ export const Heading: React.FC<HeadingProps> = ({
     </Tag>
   )
 }
+
+Heading.displayName = 'Heading'

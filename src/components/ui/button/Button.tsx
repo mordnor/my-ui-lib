@@ -1,51 +1,79 @@
 import React from 'react'
 import { Button as PrimeButton } from 'primereact/button'
-import { ButtonProps } from './Button.types'
+import clsx from 'clsx'
+import type { ButtonProps } from '@/components'
 
+/**
+ * 🧱 Button — composant du design system
+ * Basé sur PrimeReact, totalement tokenisé via classes Tailwind `ds-*`
+ */
 export const Button: React.FC<ButtonProps> = ({
   label,
+  children,
   variant = 'primary',
   dsSize = 'md',
   loading = false,
   className = '',
   icon,
+  iconPosition = 'left',
   ...props
 }) => {
+  /* 🧩 Styles de base */
   const base = `
-    inline-flex items-center justify-center gap-2
-    font-medium transition-colors duration-150
+    inline-flex items-center justify-center gap-ds-space-xs
+    font-ds-font-weight-medium transition-colors duration-150
     focus:outline-none focus:ring-2 focus:ring-offset-1
-    disabled:opacity-disabled disabled:cursor-not-allowed
-    rounded text-center whitespace-normal leading-snug min-h-[2.5rem]
+    disabled:opacity-ds-disabled disabled:cursor-not-allowed
+    rounded text-center whitespace-normal leading-ds-line-height-snug
+    min-h-[var(--sizes-button-height)]
   `
 
+  /* 📏 Tailles (padding + typo + spacing tokenisés) */
   const sizes: Record<string, string> = {
-    sm: 'text-sm px-3 py-1.5',
-    md: 'text-base px-4 py-2',
-    lg: 'text-lg px-5 py-3'
+    sm: 'text-ds-font-size-sm px-ds-space-sm py-ds-space-xs',
+    md: 'text-ds-font-size-base px-ds-space-md py-ds-space-sm',
+    lg: 'text-ds-font-size-lg px-ds-space-lg py-ds-space-md'
   }
 
+  /* 🎨 Variantes visuelles, full tokens */
   const variants: Record<string, string> = {
-    primary:
-      'bg-accent-primary text-white hover:bg-accent-hover focus:ring-accent-primary',
-    secondary:
-      'bg-background-surface text-text-primary border border-border hover:opacity-90',
-    outline:
-      'border border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-white focus:ring-accent-primary',
-    success:
-      'bg-state-success text-white hover:opacity-90 focus:ring-state-success',
-    danger:
-      'bg-state-danger text-white hover:opacity-90 focus:ring-state-danger'
+    primary: `
+      bg-ds-accent-primary text-ds-text-inverse
+      hover:bg-ds-accent-hover
+      focus:ring-ds-accent-primary
+    `,
+    secondary: `
+      bg-ds-bg-surface text-ds-text-primary border border-ds-border-default
+      hover:opacity-90
+    `,
+    outline: `
+      border border-ds-accent-primary text-ds-accent-primary
+      hover:bg-ds-accent-primary hover:text-ds-text-inverse
+      focus:ring-ds-accent-primary
+    `,
+    success: `
+      bg-ds-state-success text-ds-text-inverse
+      hover:opacity-90 focus:ring-ds-state-success
+    `,
+    danger: `
+      bg-ds-state-danger text-ds-text-inverse
+      hover:opacity-90 focus:ring-ds-state-danger
+    `
   }
+
+  const resolvedIcon = loading ? 'pi pi-spin pi-spinner' : icon
+  const content = label ?? children
 
   return (
     <PrimeButton
       unstyled
       {...props}
-      label={label}
-      icon={loading ? 'pi pi-spin pi-spinner' : icon}
-      className={`${base} ${sizes[dsSize]} ${variants[variant]} ${className}`}
+      icon={resolvedIcon}
+      iconPos={iconPosition}
       disabled={loading || props.disabled}
-    />
+      className={clsx(base, sizes[dsSize], variants[variant], className)}
+    >
+      {content}
+    </PrimeButton>
   )
 }

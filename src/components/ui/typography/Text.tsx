@@ -2,19 +2,19 @@ import React from 'react'
 import clsx from 'clsx'
 
 export interface TextOwnProps {
-  /** Variante de couleur : cohérente avec les tokens Tailwind */
+  /** Variante de couleur DS */
   variant?: 'default' | 'muted' | 'success' | 'danger' | 'warning' | 'info'
 
-  /** Taille du texte */
+  /** Taille de texte (DS token) */
   size?: 'sm' | 'md' | 'lg'
 
-  /** Alignement du texte */
+  /** Alignement */
   align?: 'left' | 'center' | 'right'
 
-  /** Poids optionnel */
+  /** Poids typographique DS */
   weight?: 'light' | 'regular' | 'medium' | 'semibold' | 'bold'
 
-  /** Classes personnalisées */
+  /** Classes additionnelles */
   className?: string
 
   /** Contenu du texte */
@@ -25,45 +25,53 @@ export type TextProps<T extends React.ElementType = 'p'> = TextOwnProps & {
   as?: T
 } & Omit<React.ComponentPropsWithoutRef<T>, keyof TextOwnProps | 'as'>
 
+/**
+ * 🧾 Text — composant de texte du Design System
+ * Full tokenisé via classes `ds-*` (typographie, couleurs, line-height)
+ */
 export const Text = <T extends React.ElementType = 'p'>({
   as,
   variant = 'default',
   size = 'md',
   align = 'left',
-  weight,
+  weight = 'regular',
   className,
   children,
   ...rest
 }: TextProps<T>) => {
   const Tag = as || 'p'
 
+  /** 🎨 Couleurs DS */
   const colorClasses: Record<string, string> = {
-    default: 'text-text-primary',
-    muted: 'text-text-secondary',
-    success: 'text-state-success',
-    danger: 'text-state-danger',
-    warning: 'text-state-warning',
-    info: 'text-state-info'
+    default: 'text-ds-text-primary',
+    muted: 'text-ds-text-secondary',
+    success: 'text-ds-state-success',
+    danger: 'text-ds-state-danger',
+    warning: 'text-ds-state-warning',
+    info: 'text-ds-state-info'
   }
 
+  /** 📏 Taille et interlignage DS */
   const sizeClasses: Record<string, string> = {
-    sm: 'text-sm leading-snug',
-    md: 'text-base leading-normal',
-    lg: 'text-lg leading-relaxed'
+    sm: 'text-ds-font-size-sm leading-ds-line-height-snug',
+    md: 'text-ds-font-size-base leading-ds-line-height-normal',
+    lg: 'text-ds-font-size-lg leading-ds-line-height-relaxed'
   }
 
+  /** 🏋️ Poids DS */
+  const weightClasses: Record<string, string> = {
+    light: 'font-ds-font-weight-light',
+    regular: 'font-ds-font-weight-regular',
+    medium: 'font-ds-font-weight-medium',
+    semibold: 'font-ds-font-weight-semibold',
+    bold: 'font-ds-font-weight-bold'
+  }
+
+  /** 📐 Alignement */
   const alignClasses: Record<string, string> = {
     left: 'text-left',
     center: 'text-center',
     right: 'text-right'
-  }
-
-  const weightMap: Record<string, string> = {
-    light: 'font-light',
-    regular: 'font-regular',
-    medium: 'font-medium',
-    semibold: 'font-semibold',
-    bold: 'font-bold'
   }
 
   return (
@@ -72,8 +80,8 @@ export const Text = <T extends React.ElementType = 'p'>({
       className={clsx(
         colorClasses[variant],
         sizeClasses[size],
+        weightClasses[weight],
         alignClasses[align],
-        weight && weightMap[weight],
         className
       )}
     >
@@ -81,3 +89,5 @@ export const Text = <T extends React.ElementType = 'p'>({
     </Tag>
   )
 }
+
+Text.displayName = 'Text'

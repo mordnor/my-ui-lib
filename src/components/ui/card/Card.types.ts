@@ -2,31 +2,40 @@ import type { CardProps as PrimeCardProps } from 'primereact/card'
 import type React from 'react'
 
 export type CardVariant = 'default' | 'outlined' | 'elevated' | 'flat'
+export type CardPadding = 'none' | 'sm' | 'md' | 'lg'
 
 /**
  * 🎨 Design System Card Props
- * Étend directement PrimeReact.CardProps pour compatibilité complète,
- * en ajoutant les variantes visuelles et les comportements du DS.
+ * Wrapper du composant PrimeReact.Card avec tokens Tailwind.
  */
-export interface DSCardProps extends PrimeCardProps {
-  /** Variante visuelle (ombrage + fond) */
+export interface DSCardProps extends Omit<PrimeCardProps, 'children'> {
+  /** Variante visuelle */
   variant?: CardVariant
 
   /** Active un effet hover */
   hoverable?: boolean
 
-  /** Gestion du clic (si la card est interactive) */
-  onClick?: () => void
+  /** Taille du padding interne (basée sur les tokens `space-*`) */
+  padding?: CardPadding
 
   /** Classes utilitaires supplémentaires */
   className?: string
 
-  /** En-tête facultatif (image, node ou composant JSX) */
+  /** Gestion du clic (si la carte est interactive) */
+  onClick?: () => void
+
+  /** En-tête facultatif (image, JSX, composant) */
   header?: React.ReactNode | string
 
-  /** Pied facultatif (actions, CTA, etc.) */
+  /** Titre ou fonction dynamique */
+  title?: React.ReactNode | ((props: PrimeCardProps) => React.ReactNode)
+
+  /** Sous-titre ou fonction dynamique */
+  subTitle?: React.ReactNode | ((props: PrimeCardProps) => React.ReactNode)
+
+  /** Pied facultatif (CTA, actions) */
   footer?: React.ReactNode
 
-  /** Contenu libre à l'intérieur de la carte */
+  /** Contenu principal */
   children?: React.ReactNode
 }

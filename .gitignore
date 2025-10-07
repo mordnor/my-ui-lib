@@ -1,37 +1,63 @@
-dist
-dist-ssr
-*.local
+# =======================================
+# Build & output directories
+# =======================================
+dist/
+dist-ssr/
+build/
+out/
 
-# dependencies
-/node_modules
-/.pnp
+# =======================================
+# Node dependencies
+# =======================================
+node_modules/
+.pnp/
 .pnp.js
 
-# testing
-/coverage
+# =======================================
+# Tokens & generated theme files
+# =======================================
+theme/tokens-build/
+theme/tailwind.tokens.mjs
+theme/tailwind.tokens.js
+theme/tokens-build/tmp/
+theme/tokens-build/css/
+theme/tokens-build/index.js
 
-# next.js
-/.next/
-/out/
+# =======================================
+# Local development files
+# =======================================
+*.local
+.env
+.env.*
+!.env.example
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# =======================================
+# Logs & coverage
+# =======================================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+coverage/
 
-# local env files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# =======================================
+# System files
+# =======================================
+.DS_Store
+Thumbs.db
+*.pem
 
-# vercel
-.vercel
+# =======================================
+# Editors / IDE
+# =======================================
+.idea/
+.vscode/
+*.sw?
+*.swo
+*.bak
+
+# =======================================
+# Vercel / Netlify / Deployment
+# =======================================
+.vercel/
+.netlify/

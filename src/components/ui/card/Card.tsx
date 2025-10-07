@@ -1,11 +1,28 @@
 import React from 'react'
-import { Card as PrimeCard, CardProps } from 'primereact/card'
-import type { DSCardProps } from './Card.types'
+import { Card as PrimeCard } from 'primereact/card'
+import clsx from 'clsx'
 import { Heading, Text } from '@/components/ui/typography'
+import type { DSCardProps } from './Card.types'
 
-export const Card: React.FC<DSCardProps> = ({
+type CardSectionProps = {
+  children: React.ReactNode
+  className?: string
+}
+
+type CardSubComponents = {
+  Header: React.FC<{ children: React.ReactNode }>
+  Body: React.FC<CardSectionProps>
+  Footer: React.FC<{ children: React.ReactNode }>
+}
+
+/**
+ * 🧱 Card — composant conteneur du Design System
+ * Full tokenisé via classes `ds-*`, avec sous-composants explicites.
+ */
+export const Card: React.FC<DSCardProps> & CardSubComponents = ({
   variant = 'default',
   hoverable = false,
+  padding = 'md',
   className = '',
   children,
   onClick,
@@ -15,64 +32,99 @@ export const Card: React.FC<DSCardProps> = ({
   footer,
   ...props
 }) => {
-  // 🎨 Styles selon le variant
+  /** 🎨 Variantes visuelles DS */
   const variantClasses: Record<string, string> = {
-    default: 'border border-border shadow-sm bg-background-surface',
-    outlined: 'border-2 border-border shadow-none bg-background-app',
-    elevated: 'border border-border shadow-lg bg-background-surface',
+    default: 'border border-ds-border-default shadow-ds-sm bg-ds-bg-surface',
+    outlined: 'border-2 border-ds-border-default shadow-none bg-ds-bg-app',
+    elevated: 'border border-ds-border-default shadow-ds-lg bg-ds-bg-surface',
     flat: 'border border-transparent shadow-none bg-transparent'
   }
 
-  // ✨ Hover effect optionnel
+  /** 📏 Padding basé sur tokens DS */
+  const paddingClasses: Record<string, string> = {
+    none: 'p-0',
+    sm: 'p-ds-space-sm',
+    md: 'p-ds-space-md',
+    lg: 'p-ds-space-lg'
+  }
+
+  /** ✨ Effet hover optionnel */
   const hoverClasses = hoverable
-    ? 'transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer'
+    ? 'transition-transform duration-300 hover:-translate-y-[2px] hover:shadow-ds-lg cursor-pointer'
     : ''
 
-  // 🧱 Résolution dynamique (si titre/texte = fonction)
-  const resolvedTitle =
-    typeof title === 'function' ? title(props as CardProps) : title
+  /** 🧱 Résolution dynamique du titre/sous-titre */
+  const resolvedTitle = typeof title === 'function' ? title(props) : title
   const resolvedSubTitle =
-    typeof subTitle === 'function' ? subTitle(props as CardProps) : subTitle
+    typeof subTitle === 'function' ? subTitle(props) : subTitle
 
   return (
     <PrimeCard
       unstyled
       {...props}
-      className={`overflow-hidden rounded p-0 ${variantClasses[variant]} ${hoverClasses} ${className}`}
       onClick={onClick}
+      className={clsx(
+        'overflow-hidden rounded',
+        variantClasses[variant],
+        hoverClasses,
+        className
+      )}
     >
       {/* HEADER */}
       {header && (
-        <div className="h-[220px] w-full overflow-hidden">
+        <Card.Header>
           {typeof header === 'string' ? (
             <img
               src={header}
               alt="Card header"
-              className="size-full object-cover"
+              className="h-[220px] w-full object-cover"
             />
           ) : (
             header
           )}
-        </div>
+        </Card.Header>
       )}
 
       {/* BODY */}
-      <div className="flex flex-col gap-3 p-5 text-left">
-        {resolvedTitle && <Heading level={3}>{resolvedTitle}</Heading>}
+      <Card.Body className={paddingClasses[padding]}>
+        {resolvedTitle && (
+          <Heading level={3} className="text-ds-text-primary">
+            {resolvedTitle}
+          </Heading>
+        )}
         {resolvedSubTitle && (
           <Text variant="muted" size="sm">
             {resolvedSubTitle}
           </Text>
         )}
         {children && <Text size="md">{children}</Text>}
-      </div>
+      </Card.Body>
 
       {/* FOOTER */}
-      {footer && (
-        <div className="border-t border-border bg-background-surface p-4">
-          {footer}
-        </div>
-      )}
+      {footer && <Card.Footer>{footer}</Card.Footer>}
     </PrimeCard>
   )
 }
+
+/* 🔹 Sous-composants */
+Card.Header = ({ children }: { children: React.ReactNode }) => (
+  <div className="overflow-hidden">{children}</div>
+)
+
+Card.Body = ({ children, className }: CardSectionProps) => (
+  <div className={clsx('gap-ds-space-md flex flex-col text-left', className)}>
+    {children}
+  </div>
+)
+
+Card.Footer = ({ children }: { children: React.ReactNode }) => (
+  <div className="border-ds-border-default bg-ds-bg-surface p-ds-space-sm border-t">
+    {children}
+  </div>
+)
+
+/* 🔸 Display names pour React DevTools */
+Card.displayName = 'Card'
+Card.Header.displayName = 'Card.Header'
+Card.Body.displayName = 'Card.Body'
+Card.Footer.displayName = 'Card.Footer'
