@@ -1,28 +1,51 @@
 {
   "name": "my-ui-lib",
   "version": "0.1.0",
-  "description": "Design System + Vite + React + Tailwind + Style Dictionary",
-  "private": true,
-  "homepage": "https://<ton-user-github>.github.io/my-ui-lib",
+  "description": "Design System + React + Vite + Tailwind + Style Dictionary",
+  "author": "Dorian",
+  "license": "MIT",
   "type": "module",
+  "private": false,
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "default": "./dist/index.es.js"
+    },
+    "./style.css": {
+      "default": "./dist/style.css"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build:types": "tsc --project tsconfig.build.json",
+    "build": "pnpm run build:types && vite build",
     "serve": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "lint": "eslint src --max-warnings=0",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "build:tokens": "node scripts/build-tokens.mjs",
-    "predeploy": "npm run build",
+    "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "pack:local": "pnpm run build:types && vite build && cp -r dist-types/* dist/ && pnpm pack && mv my-ui-lib-*.tgz ../my-landing/ && cd ../my-landing && pnpm add ./my-ui-lib-*.tgz"
   },
   "dependencies": {
     "chart.js": "^4.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.22",
+    "my-ui-lib": "file:my-ui-lib-0.1.0.tgz",
     "primeicons": "^7.0.0",
     "primereact": "^10.9.7",
     "react": "^18.3.1",

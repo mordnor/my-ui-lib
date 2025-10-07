@@ -1,2 +1,2 @@
-export * from 'src/components/layout/container/Container'
-export * from 'src/components/layout/container/Container.type'
+export * from './Container'
+export * from './Container.type'

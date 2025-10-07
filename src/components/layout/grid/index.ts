@@ -1,2 +1,2 @@
-export * from 'src/components/layout/grid/Grid'
-export * from 'src/components/layout/grid/Grid.types'
+export * from './Grid'
+export * from './Grid.types'

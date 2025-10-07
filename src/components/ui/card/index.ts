@@ -1,2 +1,2 @@
-export * from 'src/components/ui/card/Card'
-export * from 'src/components/ui/card/Card.types'
+export * from './Card'
+export * from './Card.types'

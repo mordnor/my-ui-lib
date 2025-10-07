@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button as PrimeButton } from 'primereact/button'
 import clsx from 'clsx'
-import type { ButtonProps } from '@/components'
+import type { ButtonProps } from './Button.types'
 
 /**
  * 🧱 Button — composant du design system

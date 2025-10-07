@@ -1,2 +1,2 @@
-export * from 'src/components/layout/section/Section'
-export * from 'src/components/layout/section/Section.types'
+export * from './Section'
+export * from './Section.types'
