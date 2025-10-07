@@ -8,7 +8,7 @@ import { Text } from '@/components/ui/typography/Text'
 import { Label } from '@/components/ui/typography/Label'
 import { Button } from '@/components/ui/button/Button'
 import { Card } from '@/components/ui/card/Card'
-import { Badge } from '@/components/ui/typography/Badge'
+import { Badge } from '@/components/ui/badge/Badge'
 
 export default function DSPlayground() {
   return (

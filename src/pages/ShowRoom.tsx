@@ -149,7 +149,7 @@ export default function LandingAtelierNomade() {
           L’essence de notre savoir-faire
         </Heading>
 
-        <Grid cols={{ base: 1, sm: 3 }} gap="3xl">
+        <Grid cols={{ base: 1, sm: 2, lg: 3 }} gap="3xl">
           {[
             {
               icon: 'pi pi-hammer',
@@ -245,7 +245,7 @@ export default function LandingAtelierNomade() {
           Témoignages de nos clients
         </Heading>
 
-        <Grid cols={{ base: 1, sm: 3 }} gap="3xl">
+        <Grid cols={{ base: 1, sm: 2, lg: 3 }} gap="3xl">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}

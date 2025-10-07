@@ -39,7 +39,7 @@ export default {
 
   /** 🧩 Safelist — Empêche Tailwind de purger les classes tokenisées DS */
   safelist: [
-    // Espacements génériques
+    // 🔹 Espacements DS
     { pattern: /gap-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
     { pattern: /p-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
     { pattern: /px-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
@@ -48,7 +48,7 @@ export default {
     { pattern: /mb-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
     { pattern: /mt-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
     { pattern: /ml-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
-    { pattern: /mr-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ }
+    { pattern: /mr-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
   ],
 
   theme: {

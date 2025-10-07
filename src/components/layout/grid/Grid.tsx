@@ -2,8 +2,19 @@ import React from 'react'
 import clsx from 'clsx'
 import type { GridProps } from './Grid.types'
 
+const gridColsMap: Record<number, string> = {
+  1: 'grid-cols-1',
+  2: 'grid-cols-2',
+  3: 'grid-cols-3',
+  4: 'grid-cols-4',
+  5: 'grid-cols-5',
+  6: 'grid-cols-6',
+  8: 'grid-cols-8',
+  12: 'grid-cols-12'
+}
+
 export const Grid: React.FC<GridProps> = ({
-  cols = { base: 1 },
+  cols,
   gap = 'md',
   justify,
   align,
@@ -13,18 +24,23 @@ export const Grid: React.FC<GridProps> = ({
   children,
   ...rest
 }) => {
-  // 🧱 Génère les classes Tailwind pour les colonnes responsives
-  const colClasses = Object.entries(cols)
-    .map(([bp, val]) => {
-      const prefix = bp === 'base' ? '' : `${bp}:`
-      return `${prefix}grid-cols-${val}`
-    })
-    .join(' ')
+  // 🧠 Si aucune colonne définie → active automatiquement autoFit
+  const isAutoMode = !cols || Object.keys(cols).length === 0
 
-  // 🎨 Gap basé sur les tokens DS
+  // Génère les classes Tailwind pour les colonnes responsives
+  const colClasses = cols
+    ? Object.entries(cols)
+        .map(([bp, val]) => {
+          const prefix = bp === 'base' ? '' : `${bp}:`
+          const colClass = gridColsMap[val as number]
+          return colClass ? `${prefix}${colClass}` : ''
+        })
+        .join(' ')
+    : ''
+
+  // Gap basé sur tokens DS
   const gapClass = gap !== 'none' ? `gap-ds-space-${gap}` : ''
 
-  // 🧭 Alignements
   const alignMap: Record<string, string> = {
     start: 'items-start',
     center: 'items-center',
@@ -42,12 +58,12 @@ export const Grid: React.FC<GridProps> = ({
     evenly: 'justify-evenly'
   }
 
-  // 🧮 Auto-fit / auto-fill → inline style CSS grid-template
+  // Auto-fit / auto-fill intelligent
   const gridTemplate =
-    autoFit || autoFill
+    autoFit || autoFill || isAutoMode
       ? {
           gridTemplateColumns: `repeat(${
-            autoFit ? 'auto-fit' : 'auto-fill'
+            autoFit || isAutoMode ? 'auto-fit' : 'auto-fill'
           }, minmax(250px, 1fr))`
         }
       : undefined

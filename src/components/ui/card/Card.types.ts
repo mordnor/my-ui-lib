@@ -1,7 +1,7 @@
 import type { CardProps as PrimeCardProps } from 'primereact/card'
 import type React from 'react'
 
-export type CardVariant = 'default' | 'outlined' | 'elevated' | 'flat'
+export type CardVariant = 'default' | 'outlined' | 'elevated' | 'subtle'
 export type CardPadding = 'none' | 'sm' | 'md' | 'lg'
 
 /**
