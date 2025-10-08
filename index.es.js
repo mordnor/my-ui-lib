@@ -3892,7 +3892,7 @@ var dn = /* @__PURE__ */ v.memo(/* @__PURE__ */ v.forwardRef(function(r, t) {
   }, a.tooltipOptions)));
 }));
 dn.displayName = "Button";
-const ka = ({
+const Aa = ({
   label: r,
   children: t,
   variant: e = "primary",
@@ -4573,20 +4573,16 @@ const Pa = ({
   );
 };
 Pa.displayName = "Icon";
-function Ca(r) {
-  document.documentElement.setAttribute("data-theme", r), localStorage.setItem("theme", r);
+function ka(r) {
+  typeof document < "u" && document.documentElement.setAttribute("data-theme", r);
 }
-function ja() {
-  const r = localStorage.getItem("theme"), t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches, e = r || (t ? "dark" : "light");
-  return Ca(e), e;
-}
-const _a = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const ja = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null
 }, Symbol.toStringTag, { value: "Module" }));
 export {
   Sa as Avatar,
   ba as Badge,
-  ka as Button,
+  Aa as Button,
   ee as Card,
   vn as Container,
   Oa as Divider,
@@ -4597,8 +4593,7 @@ export {
   wa as Section,
   Ea as Stack,
   gn as Text,
-  _a as Tokens,
-  Ca as applyTheme,
-  ja as initTheme
+  ja as Tokens,
+  ka as applyTheme
 };
 //# sourceMappingURL=index.es.js.map
