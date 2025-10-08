@@ -1,58 +1,58 @@
-/* eslint-disable */
+// scripts/build-tokens.mjs
+import { buildTokens } from '../tools/token-engine.mjs'
 import fs from 'fs'
-import StyleDictionary from 'style-dictionary'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-// 🧩 Déclaration globale du format custom
-StyleDictionary.registerFormat({
-  name: 'css/theme',
-  format: ({ dictionary, options }) => {
-    const selector = options.theme === 'dark' ? '[data-theme="dark"]' : ':root'
-    const vars = dictionary.allTokens
-      .filter((t) => typeof t.value === 'string' || typeof t.value === 'number')
-      .map((t) => `  --${t.name}: ${t.value};`)
-      .join('\n')
-    return `${selector} {\n${vars}\n}`
-  }
-})
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const rootDir = path.resolve(__dirname, '..')
 
-// 🏗️ Fonction de build pour un thème donné
-async function buildTheme(themeName) {
-  const sd = new StyleDictionary({
-    source: [
-      'tokens/global/**/*.json',
-      'tokens/semantic/**/*.json',
-      `tokens/themes/${themeName}.json`
-    ],
-    platforms: {
-      css: {
-        transformGroup: 'css',
-        buildPath: 'theme/tokens-build/css/',
-        files: [
-          {
-            destination: `${themeName}.css`,
-            format: 'css/theme',
-            options: { theme: themeName }
-          }
-        ]
-      }
+// Permet de forcer la régénération du fichier Tailwind
+const force = process.argv.includes('--force')
+
+async function run() {
+  try {
+    // 1️⃣ Génère les tokens (via token-engine)
+    await buildTokens({
+      tokensDir: path.join(rootDir, 'tokens'),
+      outputDir: path.join(rootDir, 'theme/tokens-build'),
+      themes: ['light', 'dark']
+    })
+
+    // 2️⃣ Copie le template vers /theme/
+    const templatePath = path.join(
+      rootDir,
+      'tools/templates/tailwind.config.template.mjs'
+    )
+    const themeConfigPath = path.join(rootDir, 'theme/tailwind.config.mjs')
+
+    if (!fs.existsSync(themeConfigPath) || force) {
+      fs.copyFileSync(templatePath, themeConfigPath)
+      console.log(`🧩 Tailwind config created → ${themeConfigPath}`)
+    } else {
+      console.log(
+        '✅ theme/tailwind.config.mjs already exists (use --force to replace)'
+      )
     }
-  })
 
-  await sd.buildAllPlatforms()
-  console.log(`✔︎ Thème "${themeName}" généré ✅`)
+    // 3️⃣ Crée la config root si manquante
+    const rootConfigPath = path.join(rootDir, 'tailwind.config.mjs')
+    if (!fs.existsSync(rootConfigPath)) {
+      fs.writeFileSync(
+        rootConfigPath,
+        `import config from './theme/tailwind.config.mjs'\nexport default config\n`
+      )
+      console.log(`🧩 Created root Tailwind config → ${rootConfigPath}`)
+    } else {
+      console.log('✅ Root tailwind.config.mjs already exists')
+    }
+
+    console.log('\n✅ Tokens + Tailwind config generated successfully!\n')
+  } catch (err) {
+    console.error('❌ Error building tokens:', err)
+    process.exit(1)
+  }
 }
 
-// 🚀 Build light + dark
-await buildTheme('light')
-await buildTheme('dark')
-
-// 🧹 Fusion finale
-const lightCSS = fs.readFileSync('theme/tokens-build/css/light.css', 'utf8')
-const darkCSS = fs.readFileSync('theme/tokens-build/css/dark.css', 'utf8')
-
-fs.writeFileSync(
-  'theme/tokens-build/css/themes.css',
-  `${lightCSS}\n\n${darkCSS}`
-)
-
-console.log('🎨 Fichier combiné généré : theme/tokens-build/css/themes.css ✅')
+run()

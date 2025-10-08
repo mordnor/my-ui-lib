@@ -5,7 +5,6 @@ import path from 'path'
 
 // ⚙️ Configuration Vite pour GitHub Pages + build lib
 export default defineConfig({
-  // 👇 base = chemin du repo GitHub (important pour les assets sur GitHub Pages)
   base: '/my-ui-lib/',
 
   plugins: [react(), tsconfigPaths()],
@@ -18,12 +17,11 @@ export default defineConfig({
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'MyUiLib',
       formats: ['es', 'cjs'],
-      fileName: (format) => `index.${format}.js`,
-      preserveModules: false
+      fileName: (format) => `index.${format}.js`
     },
 
-    // ⚙️ Exclure les dépendances externes du bundle final
     rollupOptions: {
+      // ⚙️ Exclure les dépendances externes
       external: [
         'react',
         'react-dom',
@@ -37,11 +35,12 @@ export default defineConfig({
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM'
-        }
+        },
+        // ✅ preserveModules est maintenant ici
+        preserveModules: false
       }
     },
 
-    // 🎨 Options supplémentaires
     cssCodeSplit: false,
     sourcemap: true,
     emptyOutDir: true

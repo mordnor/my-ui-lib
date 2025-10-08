@@ -9,10 +9,6 @@ import 'primeicons/primeicons.css'
 import '../theme/tokens-build/css/themes.css'
 
 import App from './App'
-import { initTheme } from '../theme/applyTheme'
-
-// ✅ Initialise le thème stocké ou système
-initTheme()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

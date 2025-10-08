@@ -1,6 +1,6 @@
 import '../src/index.css'
 import type { Preview } from '@storybook/react'
-import { applyTheme, initTheme } from '../theme/applyTheme'
+import { applyTheme } from '../theme/applyTheme'
 
 const preview: Preview = {
   parameters: {
@@ -28,7 +28,7 @@ const preview: Preview = {
   globalTypes: {
     theme: {
       description: 'Thème global du Design System',
-      defaultValue: initTheme(),
+      defaultValue: 'light',
       toolbar: {
         title: 'Mode',
         icon: 'circlehollow',
