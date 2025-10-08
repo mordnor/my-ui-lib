@@ -1,26 +1,32 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "noEmit": false,
-    "emitDeclarationOnly": true,
+  
     "declaration": true,
-    "declarationDir": "./dist-types",
-    "outDir": "./dist-types",
+    "emitDeclarationOnly": true,
+    "declarationDir": "./dist/types",
+
+  
     "module": "ESNext",
     "target": "ESNext",
     "jsx": "react-jsx",
     "moduleResolution": "bundler",
-    "isolatedModules": false
+
+  
+    "isolatedModules": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+
+  
+    "noEmit": false
   },
-  "include": [
-    "src",
-    "theme"
-  ],
+  "include": ["src", "theme"],
   "exclude": [
     "node_modules",
     "dist",
+    "dist-types",
     "storybook-static",
-    "src/**/*.stories.tsx",
-    "src/**/*.test.tsx"
+    "**/*.stories.tsx",
+    "**/*.test.tsx"
   ]
 }

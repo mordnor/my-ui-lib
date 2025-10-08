@@ -1,4 +1,15 @@
+import path from 'path'
+import { fileURLToPath } from 'url'
 import * as tokens from './theme/tokens-build/tailwind.tokens.js'
+
+/* --------------------------------------------------
+   🧩 Helpers
+-------------------------------------------------- */
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+// ✅ Définir ici la variable avant tout
+const isDev = process.env.NODE_ENV !== 'production'
 
 /** Convertit CamelCase en kebab-case (Spacing3xl → 3xl) */
 const toKebab = (str) =>
@@ -18,44 +29,35 @@ const extract = (prefix, opts = {}) => {
     .map(([k, v]) => {
       let name = k.replace(prefix, '')
       name = toKebab(name)
-
-      // ✅ Si la clé commence par un chiffre (ex: 3xl)
       if (/^\d/.test(name)) name = name.trim()
-
-      // ✅ Ajoute le prefix custom (ex: ds-space)
       if (customKey) name = `${customKey}-${name}`
-
       return [name, v]
     })
 
   return Object.fromEntries(entries)
 }
 
+/* --------------------------------------------------
+   ⚙️ Config Tailwind
+-------------------------------------------------- */
 export default {
   darkMode: ['class', '[data-theme="dark"]'],
 
-  /** 🔍 Scan des fichiers React/TypeScript */
-  content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
+  content: [
+    './index.html',
+    './src/**/*.{ts,tsx,js,jsx}',
+    ...(isDev
+      ? [path.resolve(__dirname, '../my-landing/src/**/*.{ts,tsx,js,jsx}')]
+      : [])
+  ],
 
-  /** 🧩 Safelist — Empêche Tailwind de purger les classes tokenisées DS */
   safelist: [
-    // 🔹 Espacements DS
     { pattern: /gap-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
-    { pattern: /p-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
-    { pattern: /px-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
-    { pattern: /py-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
-    { pattern: /m-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
-    { pattern: /mb-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
-    { pattern: /mt-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
-    { pattern: /ml-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
-    { pattern: /mr-ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ },
+    { pattern: /p?-?x?-?y?-?m?-?b?-?t?-?l?-?r?-?ds-space-(xs|sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/ }
   ],
 
   theme: {
     extend: {
-      /* ------------------------------
-       🎨 Couleurs sémantiques DS
-      ------------------------------ */
       colors: {
         'ds-text-primary': withVar('color-text-primary'),
         'ds-text-secondary': withVar('color-text-secondary'),
@@ -81,33 +83,18 @@ export default {
         'ds-state-info': withVar('color-state-info')
       },
 
-      /* ------------------------------
-       📏 Espacements — basés sur spacing.json
-      ------------------------------ */
       spacing: extract('Spacing', { customKey: 'ds-space' }),
-
-      /** ✅ Alias pour Tailwind utilities (gap, padding, margin) */
       gap: extract('Spacing', { customKey: 'ds-space' }),
       padding: extract('Spacing', { customKey: 'ds-space' }),
       margin: extract('Spacing', { customKey: 'ds-space' }),
 
-      /* ------------------------------
-       🔠 Typographie — full kebab-case
-      ------------------------------ */
       fontFamily: {
         sans: tokens['TypographyFontFamily']
       },
       fontSize: extract('TypographyFontSize', { customKey: 'ds-font-size' }),
-      fontWeight: extract('TypographyFontWeight', {
-        customKey: 'ds-font-weight'
-      }),
-      lineHeight: extract('TypographyLineHeight', {
-        customKey: 'ds-line-height'
-      }),
+      fontWeight: extract('TypographyFontWeight', { customKey: 'ds-font-weight' }),
+      lineHeight: extract('TypographyLineHeight', { customKey: 'ds-line-height' }),
 
-      /* ------------------------------
-       🧱 Rayon, ombres, opacités
-      ------------------------------ */
       borderRadius: {
         DEFAULT: tokens['SizesBorderRadius'],
         sm: `calc(${tokens['SizesBorderRadius']} / 2)`,
@@ -123,9 +110,6 @@ export default {
 
       opacity: extract('Opacity', { customKey: 'ds-opacity' }),
 
-      /* ------------------------------
-       📐 Dimensions utiles
-      ------------------------------ */
       height: {
         button: tokens['SizesButtonHeight'],
         input: tokens['SizesInputHeight']
