@@ -25,7 +25,8 @@ export interface HeadingProps {
 }
 
 /**
- * 🔠 Heading — composant typographique DS avec rythme vertical intégré
+ * 🔠 Heading — composant typographique DS sans marge intégrée.
+ * Utilise uniquement la taille, le poids et l’alignement.
  */
 export const Heading: React.FC<HeadingProps> = ({
   level = 2,
@@ -67,16 +68,6 @@ export const Heading: React.FC<HeadingProps> = ({
     right: 'text-right'
   }
 
-  /** 🧩 Espacement vertical automatique selon le niveau */
-  const marginBottomByLevel: Record<number, string> = {
-    1: 'mb-ds-space-4xl',
-    2: 'mb-ds-space-3xl',
-    3: 'mb-ds-space-2xl',
-    4: 'mb-ds-space-xl',
-    5: 'mb-ds-space-lg',
-    6: 'mb-ds-space-md'
-  }
-
   return (
     <Tag
       className={clsx(
@@ -86,7 +77,6 @@ export const Heading: React.FC<HeadingProps> = ({
         trackingMap[tracking],
         alignMap[align],
         uppercase && 'uppercase',
-        marginBottomByLevel[level],
         className
       )}
     >

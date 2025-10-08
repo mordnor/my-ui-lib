@@ -32,5 +32,7 @@ export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Classes additionnelles */
   className?: string
 
-  children: React.ReactNode
+  children?: React.ReactNode | React.ReactNode[]
+
+
 }
