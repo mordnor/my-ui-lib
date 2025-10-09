@@ -1,27 +1,27 @@
-import { defineConfig } from 'vite'
+import { defineConfig, UserConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import path from 'path'
 
-// ⚙️ Configuration Vite pour GitHub Pages + build lib
 export default defineConfig({
   base: '/my-ui-lib/',
 
-  plugins: [react(), tsconfigPaths()],
+  plugins: [
+    react(),
+    tsconfigPaths(),
+  ],
 
   build: {
     outDir: 'dist',
 
-    // ⚙️ Build de la lib
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'MyUiLib',
       formats: ['es', 'cjs'],
-      fileName: (format) => `index.${format}.js`
+      fileName: (format) => `index.${format}.js`,
     },
 
     rollupOptions: {
-      // ⚙️ Exclure les dépendances externes
       external: [
         'react',
         'react-dom',
@@ -29,31 +29,30 @@ export default defineConfig({
         'primeicons',
         'clsx',
         'chart.js',
-        'framer-motion'
+        'framer-motion',
       ],
       output: {
         globals: {
           react: 'React',
-          'react-dom': 'ReactDOM'
+          'react-dom': 'ReactDOM',
         },
-        // ✅ preserveModules est maintenant ici
-        preserveModules: false
-      }
+        preserveModules: false,
+      },
     },
 
     cssCodeSplit: false,
     sourcemap: true,
-    emptyOutDir: true
+    emptyOutDir: true,
   },
 
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      '@theme': path.resolve(__dirname, 'theme')
-    }
+      '@theme': path.resolve(__dirname, 'src/theme'), // ✅ bon chemin
+    },
   },
 
   define: {
-    'process.env.NODE_ENV': '"production"'
-  }
-})
+    'process.env.NODE_ENV': JSON.stringify('production'),
+  },
+}as UserConfig)

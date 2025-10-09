@@ -5,8 +5,11 @@ import './index.css'
 import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'
 
-// 🧩 Import des variables CSS générées
 import '../theme/tokens-build/css/themes.css'
+
+import { initTheme } from "@theme/applyTheme"
+
+initTheme()
 
 import App from './App'
 

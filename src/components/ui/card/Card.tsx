@@ -1,74 +1,107 @@
-import React from 'react'
-import { Card as PrimeCard } from 'primereact/card'
-import clsx from 'clsx'
-import { Heading, Text } from '@/components/ui/typography'
-import type { DSCardProps } from './Card.types'
+import React from "react"
+import clsx from "clsx"
+import { Heading, Text } from "@/components/ui/typography"
+import type { DSCardProps } from "./Card.types"
 
 type CardSectionProps = {
   children: React.ReactNode
   className?: string
 }
 
-type CardSubComponents = {
+type CardType = React.FC<DSCardProps> & {
   Header: React.FC<CardSectionProps>
   Body: React.FC<CardSectionProps>
   Footer: React.FC<CardSectionProps>
 }
 
 /**
- * 🧱 Card — composant conteneur du Design System
- * Tokenisé via classes `ds-*`, avec sous-composants explicites.
+ * 🧱 DS Card — composant 100% tokenisé
+ * Gère tous les variants et spacing via classes `ds-*`
  */
-export const Card: React.FC<DSCardProps> & CardSubComponents = ({
-  variant = 'default',
-  hoverable = false,
-  padding = 'md',
-  className = '',
-  children,
-  onClick,
-  header,
-  title,
-  subTitle,
-  footer,
-  ...props
-}) => {
-  // 🎨 Palette DS
+const CardBase: React.FC<DSCardProps> = ({
+                                           variant = "default",
+                                           hoverable = false,
+                                           padding = "md",
+                                           className = "",
+                                           children,
+                                           onClick,
+                                           header,
+                                           dsTitle,
+                                           subTitle,
+                                           footer,
+                                           ...props
+                                         }) => {
+  /* 🎨 Variants DS */
   const variantClasses: Record<string, string> = {
-    default: 'border border-ds-border-default bg-ds-bg-surface shadow-ds-sm',
-    elevated: 'border border-transparent bg-ds-bg-surface shadow-ds-lg',
-    outlined:
-      'border border-ds-border-default dark:border-ds-border-default bg-transparent shadow-none',
-    subtle:
-      // 🪶 Subtle → fond contextuel via token DS
-      'border border-transparent bg-ds-bg-card shadow-none'
+    default: `
+      bg-ds-background-surface
+      border border-ds-border-default
+      text-ds-text-primary
+      shadow-ds-sm
+    `,
+    outlined: `
+      bg-transparent
+      border border-ds-border-strong
+      text-ds-text-primary
+      shadow-none
+    `,
+    elevated: `
+      border border-ds-border-default
+      bg-ds-background-surface
+      text-ds-text-primary
+      shadow-ds-lg
+      transition-shadow
+    `,
+    subtle: `
+      bg-ds-background-card
+      border border-transparent
+      text-ds-text-secondary
+      shadow-none
+    `,
+    brand: `
+     bg-ds-brand-primary
+      border border-transparent
+      text-ds-accent-primary
+      shadow-ds-md
+    `,
+    gradient: `
+      bg-ds-brand-gradient
+      border border-transparent
+      text-ds-text-inverse
+      shadow-ds-lg
+    `
   }
 
+  /* 📏 Padding / spacing */
   const paddingClasses: Record<string, string> = {
-    none: 'p-0',
-    sm: 'p-ds-space-sm',
-    md: 'p-ds-space-md',
-    lg: 'p-ds-space-lg'
+    none: "p-0",
+    sm: "p-ds-sm",
+    md: "p-ds-md",
+    lg: "p-ds-lg"
   }
 
+  /* 🌀 Hover animation */
   const hoverClasses = hoverable
-    ? 'transition-transform duration-300 hover:-translate-y-[2px] hover:shadow-ds-lg cursor-pointer'
-    : ''
+    ? "transition-transform duration-ds-normal hover:-translate-y-[2px] hover:shadow-ds-lg cursor-pointer"
+    : ""
 
-  const resolvedTitle = typeof title === 'function' ? title(props) : title
+  const isImageHeader =
+    typeof header === "string" &&
+    (/\.(jpg|jpeg|png|webp|avif)$/i.test(header) ||
+      header.startsWith("http://") ||
+      header.startsWith("https://"))
+
+  const resolvedTitle =
+    typeof dsTitle === "function" ? dsTitle(props) : dsTitle
   const resolvedSubTitle =
-    typeof subTitle === 'function' ? subTitle(props) : subTitle
-
-  const isOutlined = variant === 'outlined'
-  const isSubtle = variant === 'subtle'
-  const hasHeaderImage = typeof header === 'string'
+    typeof subTitle === "function" ? subTitle(props) : subTitle
 
   return (
-    <PrimeCard
-      unstyled
+    <div
       {...props}
       onClick={onClick}
       className={clsx(
-        'overflow-hidden rounded-xl transition-all duration-300',
+        "overflow-hidden rounded-ds-md transition-all duration-ds-normal",
         variantClasses[variant],
         hoverClasses,
         className
@@ -78,24 +111,16 @@ export const Card: React.FC<DSCardProps> & CardSubComponents = ({
       {header && (
         <Card.Header
           className={clsx(
-            hasHeaderImage
-              ? 'p-0'
-              : clsx(
-                  paddingClasses[padding],
-                  isOutlined && 'border-ds-border-default/40 border-b',
-                  isSubtle && 'bg-ds-bg-card'
-                )
+            isImageHeader
+              ? "p-0"
+              : clsx(paddingClasses[padding], "border-b border-ds-border-default/20")
           )}
         >
-          {hasHeaderImage ? (
+          {isImageHeader ? (
             <img
-              src={header}
+              src={header as string}
               alt="Card header"
-              className={clsx(
-                'h-[220px] w-full object-cover',
-                isOutlined && 'border-ds-border-default/40 border-b',
-                isSubtle && 'opacity-95'
-              )}
+              className="h-[220px] w-full object-cover"
             />
           ) : (
             header
@@ -104,60 +129,81 @@ export const Card: React.FC<DSCardProps> & CardSubComponents = ({
       )}
 
       {/* BODY */}
-      <Card.Body className={paddingClasses[padding]}>
+      <Card.Body className={clsx("flex flex-col gap-ds-md", paddingClasses[padding])}>
         {resolvedTitle && (
           <Heading
             level={3}
-            className="mb-ds-space-xs text-ds-text-primary leading-snug"
+            className={clsx(
+              "text-ds-text-primary leading-ds-snug mb-ds-xs",
+              variant === "gradient" && "text-ds-text-inverse"
+            )}
           >
             {resolvedTitle}
           </Heading>
         )}
         {resolvedSubTitle && (
-          <Text variant="muted" size="sm" className="mb-ds-space-sm">
+          <Text
+            variant="muted"
+            size="sm"
+            className={clsx(
+              "mb-ds-sm leading-ds-normal",
+              variant === "gradient" && "text-ds-text-inverse/80"
+            )}
+          >
             {resolvedSubTitle}
           </Text>
         )}
-        {children && <div className="text-ds-text-secondary">{children}</div>}
+        {children && (
+          <div
+            className={clsx(
+              "leading-ds-relaxed",
+              variant === "gradient"
+                ? "text-ds-text-inverse/90"
+                : "text-ds-text-secondary"
+            )}
+          >
+            {children}
+          </div>
+        )}
       </Card.Body>
 
       {/* FOOTER */}
       {footer && (
         <Card.Footer
           className={clsx(
-            'px-ds-space-md pb-ds-space-md pt-ds-space-sm transition-colors',
-            isOutlined &&
-              'border-ds-border-default/40 dark:border-ds-border-default/25 border-t bg-transparent',
-            isSubtle && 'bg-ds-bg-card',
-            !isOutlined &&
-              !isSubtle &&
-              'border-ds-border-default bg-ds-bg-surface border-t'
+            "px-ds-md pb-ds-md pt-ds-sm border-t border-ds-border-default/20",
+            variant === "subtle" && "bg-ds-background-card",
+            variant === "elevated" && "bg-ds-background-surface",
+            variant === "gradient" && "bg-transparent text-ds-text-inverse"
           )}
         >
           {footer}
         </Card.Footer>
       )}
-    </PrimeCard>
+    </div>
   )
 }
 
 /* 🔹 Sous-composants */
-Card.Header = ({ children, className }: CardSectionProps) => (
-  <div className={clsx('overflow-hidden', className)}>{children}</div>
+const Header: React.FC<CardSectionProps> = ({ children, className }) => (
+  <div className={clsx("overflow-hidden", className)}>{children}</div>
 )
 
-Card.Body = ({ children, className }: CardSectionProps) => (
-  <div className={clsx('gap-ds-space-md flex flex-col text-left', className)}>
-    {children}
-  </div>
+const Body: React.FC<CardSectionProps> = ({ children, className }) => (
+  <div className={clsx("flex flex-col gap-ds-md text-left", className)}>{children}</div>
 )
 
-Card.Footer = ({ children, className }: CardSectionProps) => (
+const Footer: React.FC<CardSectionProps> = ({ children, className }) => (
   <div className={clsx(className)}>{children}</div>
 )
 
-/* 🔸 Display names pour React DevTools */
-Card.displayName = 'Card'
-Card.Header.displayName = 'Card.Header'
-Card.Body.displayName = 'Card.Body'
-Card.Footer.displayName = 'Card.Footer'
+/* 🔸 Fusion du type principal + sous-composants */
+export const Card = CardBase as CardType
+Card.Header = Header
+Card.Body = Body
+Card.Footer = Footer
+
+Card.displayName = "Card"
+Card.Header.displayName = "Card.Header"
+Card.Body.displayName = "Card.Body"
+Card.Footer.displayName = "Card.Footer"

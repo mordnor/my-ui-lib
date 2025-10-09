@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react"
 
-export type StackDirection = 'vertical' | 'horizontal'
-export type StackGap = 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
+export type StackDirection = "vertical" | "horizontal"
+export type StackGap =
+  | "none"
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "3xl"
 export type StackPadding = StackGap
 
 export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -18,14 +26,22 @@ export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
   fullCenter?: boolean
 
   /** Alignement vertical (items) */
-  align?: 'start' | 'center' | 'end' | 'stretch' | 'baseline'
+  align?: "start" | "center" | "end" | "stretch" | "baseline"
 
   /** Alignement horizontal (justify-content) */
-  justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'
+  justify?:
+    | "start"
+    | "center"
+    | "end"
+    | "between"
+    | "around"
+    | "evenly"
 
   /** Active le wrapping */
   wrap?: boolean
 
+  /** Classes additionnelles */
   className?: string
+
   children: React.ReactNode
 }

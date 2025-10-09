@@ -1,41 +1,38 @@
-import type { CardProps as PrimeCardProps } from 'primereact/card'
-import type React from 'react'
-
-export type CardVariant = 'default' | 'outlined' | 'elevated' | 'subtle'
-export type CardPadding = 'none' | 'sm' | 'md' | 'lg'
+import type { HTMLAttributes, ReactNode } from "react"
 
 /**
- * 🎨 Design System Card Props
- * Wrapper du composant PrimeReact.Card avec tokens Tailwind.
+ * 🔹 Props du composant DSCard
+ * Corrigé pour éviter le conflit entre `title` HTML et `dsTitle` DS
  */
-export interface DSCardProps extends Omit<PrimeCardProps, 'children'> {
-  /** Variante visuelle */
-  variant?: CardVariant
+export interface DSCardProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
+  /** Titre principal de la carte (à la place de `title` HTML) */
+  dsTitle?: ReactNode | ((props: DSCardProps) => ReactNode)
 
-  /** Active un effet hover */
+  /** Sous-titre optionnel */
+  subTitle?: ReactNode | ((props: DSCardProps) => ReactNode)
+
+  /** Variante visuelle du composant */
+  variant?:
+    | "default"
+    | "elevated"
+    | "outlined"
+    | "subtle"
+    | "brand"
+    | "gradient"
+
+  /** Active l’effet hover avec ombre et légère élévation */
   hoverable?: boolean
 
-  /** Taille du padding interne (basée sur les tokens `space-*`) */
-  padding?: CardPadding
+  /** Padding intérieur (DS spacing) */
+  padding?: "none" | "sm" | "md" | "lg"
 
-  /** Classes utilitaires supplémentaires */
-  className?: string
+  /** En-tête de la carte : texte, image ou JSX */
+  header?: ReactNode | string
 
-  /** Gestion du clic (si la carte est interactive) */
-  onClick?: () => void
+  /** Pied de carte */
+  footer?: ReactNode
 
-  /** En-tête facultatif (image, JSX, composant) */
-  header?: React.ReactNode | string
-
-  /** Titre ou fonction dynamique */
-  title?: React.ReactNode | ((props: PrimeCardProps) => React.ReactNode)
-
-  /** Sous-titre ou fonction dynamique */
-  subTitle?: React.ReactNode | ((props: PrimeCardProps) => React.ReactNode)
-
-  /** Pied facultatif (CTA, actions) */
-  footer?: React.ReactNode
-
-  /** Contenu principal */
-  children?: React.ReactNode
+  /** Contenu interne */
+  children?: ReactNode
 }

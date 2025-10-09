@@ -1,0 +1,13 @@
+{
+  "highlight": {
+    "primary": {
+      "value": "linear-gradient(90deg, {brand.primary}, {brand.secondary})"
+    },
+    "accent": {
+      "value": "linear-gradient(45deg, {color.accent.primary}, {color.accent.hover})"
+    },
+    "overlay": {
+      "value": "rgba(0,0,0,0.4)"
+    }
+  }
+}

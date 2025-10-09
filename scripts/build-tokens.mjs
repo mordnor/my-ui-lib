@@ -11,14 +11,30 @@ const rootDir = path.resolve(__dirname, '..')
 // Permet de forcer la régénération du fichier Tailwind
 const force = process.argv.includes('--force')
 
+// 🧠 Détection automatique des thèmes présents dans /tokens/themes/
+function detectThemes(tokensDir) {
+  const themesPath = path.join(tokensDir, 'themes')
+  return fs
+    .readdirSync(themesPath)
+    .filter((entry) => {
+      const full = path.join(themesPath, entry)
+      return (
+        fs.statSync(full).isDirectory() || entry.endsWith('.json')
+      )
+    })
+    .map((entry) => entry.replace('.json', ''))
+}
+
 async function run() {
   try {
+    const tokensDir = path.join(rootDir, 'tokens')
+    const outputDir = path.join(rootDir, 'theme/tokens-build')
+    const themes = detectThemes(tokensDir)
+
+    console.log(`🎨 Detected themes: ${themes.join(', ')}`)
+
     // 1️⃣ Génère les tokens (via token-engine)
-    await buildTokens({
-      tokensDir: path.join(rootDir, 'tokens'),
-      outputDir: path.join(rootDir, 'theme/tokens-build'),
-      themes: ['light', 'dark']
-    })
+    await buildTokens({ tokensDir, outputDir, themes })
 
     // 2️⃣ Copie le template vers /theme/
     const templatePath = path.join(
@@ -31,9 +47,7 @@ async function run() {
       fs.copyFileSync(templatePath, themeConfigPath)
       console.log(`🧩 Tailwind config created → ${themeConfigPath}`)
     } else {
-      console.log(
-        '✅ theme/tailwind.config.mjs already exists (use --force to replace)'
-      )
+      console.log('✅ theme/tailwind.config.mjs already exists (use --force to replace)')
     }
 
     // 3️⃣ Crée la config root si manquante

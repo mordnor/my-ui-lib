@@ -1,0 +1,101 @@
+{
+  "color": {
+    "text": {
+      "primary": {
+        "value": "{color.slate.100}"
+      },
+      "secondary": {
+        "value": "{color.slate.400}"
+      },
+      "muted": {
+        "value": "{color.slate.500}"
+      },
+      "inverse": {
+        "value": "{color.slate.950}"
+      }
+    },
+    "background": {
+      "app": {
+        "value": "{color.slate.950}"
+      },
+      "surface": {
+        "value": "{color.slate.900}"
+      },
+      "card": {
+        "value": "{color.slate.800}"
+      },
+      "subtle": {
+        "value": "{color.slate.850}"
+      },
+      "inverse": {
+        "value": "{color.slate.50}"
+      }
+    },
+    "border": {
+      "default": {
+        "value": "rgba(255,255,255,0.1)"
+      },
+      "strong": {
+        "value": "rgba(255,255,255,0.2)"
+      },
+      "focus": {
+        "value": "{color.blue.400}"
+      }
+    },
+    "brand": {
+      "primary": {
+        "value": "{color.blue.400}"
+      },
+      "secondary": {
+        "value": "{color.cyan.400}"
+      },
+      "gradient": {
+        "value": "linear-gradient(135deg, {color.blue.500}, {color.cyan.400})"
+      }
+    },
+    "accent": {
+      "primary": {
+        "value": "{color.indigo.400}"
+      },
+      "hover": {
+        "value": "{color.indigo.300}"
+      },
+      "active": {
+        "value": "{color.indigo.200}"
+      }
+    },
+    "state": {
+      "success": {
+        "value": "{color.emerald.400}"
+      },
+      "danger": {
+        "value": "{color.rose.400}"
+      },
+      "warning": {
+        "value": "{color.amber.400}"
+      },
+      "info": {
+        "value": "{color.cyan.400}"
+      }
+    },
+    "highlight": {
+      "glow": {
+        "value": "rgba(56,189,248,0.08)"
+      },
+      "selection": {
+        "value": "rgba(56,189,248,0.15)"
+      }
+    }
+  },
+  "shadows": {
+    "sm": {
+      "value": "0 1px 2px rgba(255,255,255,0.05)"
+    },
+    "md": {
+      "value": "0 4px 8px rgba(255,255,255,0.06)"
+    },
+    "lg": {
+      "value": "0 10px 20px rgba(255,255,255,0.08)"
+    }
+  }
+}

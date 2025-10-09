@@ -40,20 +40,20 @@ export const Heading: React.FC<HeadingProps> = ({
   const Tag = `h${level}` as keyof JSX.IntrinsicElements
 
   const sizeMap: Record<number, string> = {
-    1: 'text-ds-font-size-3xl leading-ds-line-height-tight',
-    2: 'text-ds-font-size-2xl leading-ds-line-height-snug',
-    3: 'text-ds-font-size-xl leading-ds-line-height-normal',
-    4: 'text-ds-font-size-lg leading-ds-line-height-normal',
-    5: 'text-ds-font-size-base leading-ds-line-height-relaxed',
-    6: 'text-ds-font-size-sm leading-ds-line-height-relaxed'
+    1: 'text-ds-3xl leading-ds-tight',
+    2: 'text-ds-2xl leading-ds-snug',
+    3: 'text-ds-xl leading-ds-normal',
+    4: 'text-ds-lg leading-ds-normal',
+    5: 'text-ds-base leading-ds-relaxed',
+    6: 'text-ds--sm leading-ds-relaxed'
   }
 
   const weightMap: Record<string, string> = {
-    light: 'font-ds-font-weight-light',
-    regular: 'font-ds-font-weight-regular',
-    medium: 'font-ds-font-weight-medium',
-    semibold: 'font-ds-font-weight-semibold',
-    bold: 'font-ds-font-weight-bold'
+    light: 'font-ds-light',
+    regular: 'font-ds-regular',
+    medium: 'font-ds-medium',
+    semibold: 'font-ds-semibold',
+    bold: 'font-ds-bold'
   }
 
   const trackingMap: Record<string, string> = {

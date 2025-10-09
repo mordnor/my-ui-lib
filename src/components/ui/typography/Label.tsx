@@ -1,5 +1,5 @@
-import React from 'react'
-import clsx from 'clsx'
+import React from "react"
+import clsx from "clsx"
 
 export interface LabelProps {
   /** Contenu du label (texte ou éléments JSX) */
@@ -13,33 +13,53 @@ export interface LabelProps {
 
   /** Désactive visuellement le label */
   disabled?: boolean
+
+  /** Affiche une étoile rouge pour les champs requis */
+  required?: boolean
+
+  /** Variante de taille du label */
+  size?: "sm" | "md" | "lg"
 }
 
 /**
- * 🏷️ Label — élément de formulaire basé sur le Design System
- * Full tokenisé (`ds-*`), gère l’état désactivé et la typographie DS.
+ * 🏷️ DS Label — élément de formulaire typographique
+ * Basé sur les tokens DS : `text-ds-*`, `font-ds-*`, `mb-ds-*`, `duration-ds-*`
  */
 export const Label: React.FC<LabelProps> = ({
-  children,
-  htmlFor,
-  className = '',
-  disabled = false
-}) => {
+                                              children,
+                                              htmlFor,
+                                              className = "",
+                                              disabled = false,
+                                              required = false,
+                                              size = "sm",
+                                            }) => {
+  const sizeClasses: Record<string, string> = {
+    sm: "text-ds-sm",
+    md: "text-ds-base",
+    lg: "text-ds-lg",
+  }
+
   return (
     <label
       htmlFor={htmlFor}
       className={clsx(
-        'block select-none text-ds-font-size-sm font-ds-font-weight-medium',
+        "block select-none font-ds-medium leading-ds-snug transition-colors duration-ds-normal ease-ds-standard",
+        sizeClasses[size],
         disabled
-          ? 'text-ds-text-muted cursor-not-allowed'
-          : 'text-ds-text-secondary',
-        'mb-ds-space-xs',
+          ? "text-ds-text-muted cursor-not-allowed"
+          : "text-ds-text-secondary hover:text-ds-text-primary",
+        "mb-ds-xs",
         className
       )}
     >
       {children}
+      {required && (
+        <span className="text-ds-state-danger ml-ds-xs" aria-hidden="true">
+          *
+        </span>
+      )}
     </label>
   )
 }
 
-Label.displayName = 'Label'
+Label.displayName = "Label"

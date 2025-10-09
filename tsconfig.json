@@ -6,7 +6,7 @@
         "src/*"
       ],
       "@theme/*": [
-        "theme/*"
+        "src/theme/*"
       ]
     },
     "target": "esnext",

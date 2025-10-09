@@ -1,0 +1,10 @@
+{
+  "brand": {
+    "primary": { "value": "{color.blue.600}" },
+    "secondary": { "value": "{color.blue.400}" },
+    "tertiary": { "value": "{color.green.500}" },
+    "gradient": {
+      "value": "linear-gradient(135deg, {color.blue.500}, {color.cyan.400})"
+    }
+  }
+}

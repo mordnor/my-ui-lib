@@ -35,7 +35,7 @@ export * from './components/utilities/Icon'
  * 🎨 Thème / Tokens / Utils
  * -------------------------------------------------------------------------- */
 // 🔧 Fonction d’application de thème dynamique
-export { applyTheme } from '../theme/applyTheme'
+export { applyTheme } from './theme/applyTheme'
 
 // 🪄 Exporte éventuellement les tokens bruts si besoin
 export * as Tokens from '../theme/tokens-build/css/themes.css'
