@@ -27,15 +27,28 @@ export * from './components/layout/stack'
  * 🧰 Utilities
  * -------------------------------------------------------------------------- */
 export * from './components/utilities/avatar'
-export * from './components/utilities/avatarGroup'
+export * from './components/utilities/avatar-group'
 export * from './components/utilities/divider'
-export * from './components/utilities/Icon'
+export * from './components/utilities/icon'
 
 /* --------------------------------------------------------------------------
- * 🎨 Thème / Tokens / Utils
+ * 🎨 Theme
  * -------------------------------------------------------------------------- */
-// 🔧 Fonction d’application de thème dynamique
-export { applyTheme } from './theme/applyTheme'
+export { applyTheme, getCurrentTheme, initTheme } from './theme/apply-theme'
+export { ThemeProvider, useThemeContext } from './theme/theme-provider'
+export type { ThemeName, ThemeProviderProps } from './theme'
 
-// 🪄 Exporte éventuellement les tokens bruts si besoin
-export * as Tokens from '../theme/tokens-build/css/themes.css'
+/* --------------------------------------------------------------------------
+ * 🪝 Hooks
+ * -------------------------------------------------------------------------- */
+export { useTheme } from './hooks/use-theme'
+
+/* --------------------------------------------------------------------------
+ * 🧰 Utils
+ * -------------------------------------------------------------------------- */
+export { cn } from './utils/cn'
+
+/* --------------------------------------------------------------------------
+ * 📦 Types
+ * -------------------------------------------------------------------------- */
+export type * from './types'

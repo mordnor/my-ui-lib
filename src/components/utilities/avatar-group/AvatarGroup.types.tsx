@@ -1,4 +1,3 @@
-
 import type { AvatarProps } from '../avatar/Avatar.types'
 
 export interface AvatarGroupProps {

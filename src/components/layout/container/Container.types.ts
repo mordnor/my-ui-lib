@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-export type ContainerSize = "sm" | "md" | "lg" | "xl" | "full"
+export type ContainerSize = 'sm' | 'md' | 'lg' | 'xl' | 'full'
 
 /**
  * 📦 Props du composant DS Container
@@ -16,5 +16,5 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLElement> {
   fluid?: boolean
 
   /** Élément HTML à utiliser comme wrapper (ex: section, main, article, etc.) */
-  as?: keyof JSX.IntrinsicElements
+  as?: keyof React.JSX.IntrinsicElements
 }

@@ -1,8 +1,95 @@
-node_modules
-src
-theme
-tokens
-scripts
-storybook-static
-.storybook
-.vscode
+# =======================================
+# .npmignore - Files to EXCLUDE from npm package
+# =======================================
+# Strategy: Only include what's needed for production usage
+# Include: dist/, theme/tokens-build/, package.json, README
+# Exclude: Source files, dev tools, configs, demos
+
+# =======================================
+# Source files (not needed in package)
+# =======================================
+src/
+demo/
+tokens-old/
+
+# =======================================
+# Development & Build tools
+# =======================================
+.storybook/
+storybook-static/
+scripts/
+tools/
+*.config.js
+*.config.ts
+*.config.mjs
+!vite.config.ts
+tsconfig.json
+tsconfig.*.json
+vite-env.d.ts
+
+# =======================================
+# Tests & Coverage
+# =======================================
+tests/
+coverage/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# =======================================
+# Documentation (keep README)
+# =======================================
+docs/
+CLAUDE.md
+CONTRIBUTING.md
+
+# =======================================
+# Git & CI/CD
+# =======================================
+.git/
+.github/
+.gitignore
+.gitattributes
+.husky/
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# =======================================
+# IDE & Editors
+# =======================================
+.vscode/
+.idea/
+*.sw?
+*.swo
+
+# =======================================
+# Environment & Logs
+# =======================================
+.env
+.env.*
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# =======================================
+# System files
+# =======================================
+.DS_Store
+Thumbs.db
+*.pem
+
+# =======================================
+# Temp & Cache
+# =======================================
+.tmp/
+.cache/
+*.bak
+node_modules/
+
+# =======================================
+# Deployment
+# =======================================
+.vercel/
+.netlify/

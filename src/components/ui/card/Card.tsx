@@ -1,7 +1,7 @@
-import React from "react"
-import clsx from "clsx"
-import { Heading, Text } from "@/components/ui/typography"
-import type { DSCardProps } from "./Card.types"
+import React from 'react'
+import clsx from 'clsx'
+import { Heading, Text } from '@/components/ui/typography'
+import type { DSCardProps } from './Card.types'
 
 type CardSectionProps = {
   children: React.ReactNode
@@ -19,18 +19,18 @@ type CardType = React.FC<DSCardProps> & {
  * Gère tous les variants et spacing via classes `ds-*`
  */
 const CardBase: React.FC<DSCardProps> = ({
-                                           variant = "default",
-                                           hoverable = false,
-                                           padding = "md",
-                                           className = "",
-                                           children,
-                                           onClick,
-                                           header,
-                                           dsTitle,
-                                           subTitle,
-                                           footer,
-                                           ...props
-                                         }) => {
+  variant = 'default',
+  hoverable = false,
+  padding = 'md',
+  className = '',
+  children,
+  onClick,
+  header,
+  dsTitle,
+  subTitle,
+  footer,
+  ...props
+}) => {
   /* 🎨 Variants DS */
   const variantClasses: Record<string, string> = {
     default: `
@@ -74,34 +74,33 @@ const CardBase: React.FC<DSCardProps> = ({
 
   /* 📏 Padding / spacing */
   const paddingClasses: Record<string, string> = {
-    none: "p-0",
-    sm: "p-ds-sm",
-    md: "p-ds-md",
-    lg: "p-ds-lg"
+    none: 'p-0',
+    sm: 'p-ds-sm',
+    md: 'p-ds-md',
+    lg: 'p-ds-lg'
   }
 
   /* 🌀 Hover animation */
   const hoverClasses = hoverable
-    ? "transition-transform duration-ds-normal hover:-translate-y-[2px] hover:shadow-ds-lg cursor-pointer"
-    : ""
+    ? 'transition-transform duration-ds-normal hover:-translate-y-[2px] hover:shadow-ds-lg cursor-pointer'
+    : ''
 
   const isImageHeader =
-    typeof header === "string" &&
+    typeof header === 'string' &&
     (/\.(jpg|jpeg|png|webp|avif)$/i.test(header) ||
-      header.startsWith("http://") ||
-      header.startsWith("https://"))
+      header.startsWith('http://') ||
+      header.startsWith('https://'))
 
-  const resolvedTitle =
-    typeof dsTitle === "function" ? dsTitle(props) : dsTitle
+  const resolvedTitle = typeof dsTitle === 'function' ? dsTitle(props) : dsTitle
   const resolvedSubTitle =
-    typeof subTitle === "function" ? subTitle(props) : subTitle
+    typeof subTitle === 'function' ? subTitle(props) : subTitle
 
   return (
     <div
       {...props}
       onClick={onClick}
       className={clsx(
-        "overflow-hidden rounded-ds-md transition-all duration-ds-normal",
+        'rounded-ds-md duration-ds-normal overflow-hidden transition-all',
         variantClasses[variant],
         hoverClasses,
         className
@@ -112,8 +111,11 @@ const CardBase: React.FC<DSCardProps> = ({
         <Card.Header
           className={clsx(
             isImageHeader
-              ? "p-0"
-              : clsx(paddingClasses[padding], "border-b border-ds-border-default/20")
+              ? 'p-0'
+              : clsx(
+                  paddingClasses[padding],
+                  'border-ds-border-default/20 border-b'
+                )
           )}
         >
           {isImageHeader ? (
@@ -129,13 +131,15 @@ const CardBase: React.FC<DSCardProps> = ({
       )}
 
       {/* BODY */}
-      <Card.Body className={clsx("flex flex-col gap-ds-md", paddingClasses[padding])}>
+      <Card.Body
+        className={clsx('gap-ds-md flex flex-col', paddingClasses[padding])}
+      >
         {resolvedTitle && (
           <Heading
             level={3}
             className={clsx(
-              "text-ds-text-primary leading-ds-snug mb-ds-xs",
-              variant === "gradient" && "text-ds-text-inverse"
+              'text-ds-text-primary leading-ds-snug mb-ds-xs',
+              variant === 'gradient' && 'text-ds-text-inverse'
             )}
           >
             {resolvedTitle}
@@ -146,8 +150,8 @@ const CardBase: React.FC<DSCardProps> = ({
             variant="muted"
             size="sm"
             className={clsx(
-              "mb-ds-sm leading-ds-normal",
-              variant === "gradient" && "text-ds-text-inverse/80"
+              'mb-ds-sm leading-ds-normal',
+              variant === 'gradient' && 'text-ds-text-inverse/80'
             )}
           >
             {resolvedSubTitle}
@@ -156,10 +160,10 @@ const CardBase: React.FC<DSCardProps> = ({
         {children && (
           <div
             className={clsx(
-              "leading-ds-relaxed",
-              variant === "gradient"
-                ? "text-ds-text-inverse/90"
-                : "text-ds-text-secondary"
+              'leading-ds-relaxed',
+              variant === 'gradient'
+                ? 'text-ds-text-inverse/90'
+                : 'text-ds-text-secondary'
             )}
           >
             {children}
@@ -171,10 +175,10 @@ const CardBase: React.FC<DSCardProps> = ({
       {footer && (
         <Card.Footer
           className={clsx(
-            "px-ds-md pb-ds-md pt-ds-sm border-t border-ds-border-default/20",
-            variant === "subtle" && "bg-ds-background-card",
-            variant === "elevated" && "bg-ds-background-surface",
-            variant === "gradient" && "bg-transparent text-ds-text-inverse"
+            'px-ds-md pb-ds-md pt-ds-sm border-ds-border-default/20 border-t',
+            variant === 'subtle' && 'bg-ds-background-card',
+            variant === 'elevated' && 'bg-ds-background-surface',
+            variant === 'gradient' && 'text-ds-text-inverse bg-transparent'
           )}
         >
           {footer}
@@ -186,11 +190,13 @@ const CardBase: React.FC<DSCardProps> = ({
 
 /* 🔹 Sous-composants */
 const Header: React.FC<CardSectionProps> = ({ children, className }) => (
-  <div className={clsx("overflow-hidden", className)}>{children}</div>
+  <div className={clsx('overflow-hidden', className)}>{children}</div>
 )
 
 const Body: React.FC<CardSectionProps> = ({ children, className }) => (
-  <div className={clsx("flex flex-col gap-ds-md text-left", className)}>{children}</div>
+  <div className={clsx('gap-ds-md flex flex-col text-left', className)}>
+    {children}
+  </div>
 )
 
 const Footer: React.FC<CardSectionProps> = ({ children, className }) => (
@@ -203,7 +209,7 @@ Card.Header = Header
 Card.Body = Body
 Card.Footer = Footer
 
-Card.displayName = "Card"
-Card.Header.displayName = "Card.Header"
-Card.Body.displayName = "Card.Body"
-Card.Footer.displayName = "Card.Footer"
+Card.displayName = 'Card'
+Card.Header.displayName = 'Card.Header'
+Card.Body.displayName = 'Card.Body'
+Card.Footer.displayName = 'Card.Footer'

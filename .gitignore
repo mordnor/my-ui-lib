@@ -16,12 +16,8 @@ node_modules/
 # =======================================
 # Tokens & generated theme files
 # =======================================
+# Keep generated tokens OUT of git (regenerated on build)
 theme/tokens-build/
-theme/tailwind.tokens.mjs
-theme/tailwind.tokens.js
-theme/tokens-build/tmp/
-theme/tokens-build/css/
-theme/tokens-build/index.js
 
 # =======================================
 # Local development files

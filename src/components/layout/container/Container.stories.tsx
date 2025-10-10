@@ -56,14 +56,16 @@ export const Default: Story = {
 export const AllSizes: Story = {
   name: '📏 Showcase — Toutes tailles',
   render: () => (
-    <div className="flex flex-col gap-ds-space-lg">
+    <div className="gap-ds-space-lg flex flex-col">
       {(['sm', 'md', 'lg', 'xl', 'full'] as const).map((size) => (
         <Container
           key={size}
           size={size}
-          className="bg-ds-bg-card py-ds-space-md text-center border border-ds-border-default"
+          className="bg-ds-bg-card py-ds-space-md border-ds-border-default border text-center"
         >
-          <span className="text-ds-text-secondary">Container size="{size}"</span>
+          <span className="text-ds-text-secondary">
+            Container size=&quot;{size}&quot;
+          </span>
         </Container>
       ))}
     </div>

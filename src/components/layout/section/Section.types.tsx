@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-export type SectionBg = "app" | "surface" | "inverse" | "brand" | "gradient"
-export type SectionSize = "sm" | "md" | "lg" | "xl" | "full"
-export type SectionVertical = "sm" | "md" | "lg" | "xl"
+export type SectionBg = 'app' | 'surface' | 'inverse' | 'brand' | 'gradient'
+export type SectionSize = 'sm' | 'md' | 'lg' | 'xl' | 'full'
+export type SectionVertical = 'sm' | 'md' | 'lg' | 'xl'
 
 /**
  * 🧱 Props du composant DS Section
@@ -18,7 +18,7 @@ export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   /** Désactive le Container interne */
   noContainer?: boolean
   /** Élément HTML à utiliser (section, div, main, etc.) */
-  as?: keyof JSX.IntrinsicElements
+  as?: keyof React.JSX.IntrinsicElements
   /** Classes personnalisées */
   className?: string
 }

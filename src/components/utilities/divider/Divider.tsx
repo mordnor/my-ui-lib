@@ -52,7 +52,7 @@ export const Divider: React.FC<DividerProps> = ({
     return (
       <div
         className={clsx(
-          'flex items-center w-full',
+          'flex w-full items-center',
           spacingMap[spacing],
           className
         )}

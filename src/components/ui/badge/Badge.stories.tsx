@@ -71,7 +71,7 @@ export const Basic: Story = {
 export const VariantsShowcase: Story = {
   name: '🎨 Showcase — Variantes',
   render: () => (
-    <div className="flex flex-wrap items-center justify-center gap-ds-space-md">
+    <div className="gap-ds-space-md flex flex-wrap items-center justify-center">
       {(['default', 'success', 'danger', 'warning', 'info'] as const).map(
         (v) => (
           <Badge key={v} variant={v}>
@@ -86,7 +86,7 @@ export const VariantsShowcase: Story = {
 export const SizesShowcase: Story = {
   name: '📏 Showcase — Tailles',
   render: () => (
-    <div className="flex flex-wrap items-center justify-center gap-ds-space-md">
+    <div className="gap-ds-space-md flex flex-wrap items-center justify-center">
       {(['sm', 'md', 'lg'] as const).map((s) => (
         <Badge key={s} size={s}>
           Taille {s}
@@ -99,7 +99,7 @@ export const SizesShowcase: Story = {
 export const WithIcon: Story = {
   name: '⚙️ Icône + Texte',
   render: () => (
-    <div className="flex flex-wrap items-center justify-center gap-ds-space-md">
+    <div className="gap-ds-space-md flex flex-wrap items-center justify-center">
       <Badge variant="info" icon={<i className="pi pi-info" />}>
         Info
       </Badge>

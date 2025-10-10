@@ -1,5 +1,5 @@
-import React from "react"
-import clsx from "clsx"
+import React from 'react'
+import clsx from 'clsx'
 
 export interface LabelProps {
   /** Contenu du label (texte ou éléments JSX) */
@@ -18,7 +18,7 @@ export interface LabelProps {
   required?: boolean
 
   /** Variante de taille du label */
-  size?: "sm" | "md" | "lg"
+  size?: 'sm' | 'md' | 'lg'
 }
 
 /**
@@ -26,29 +26,29 @@ export interface LabelProps {
  * Basé sur les tokens DS : `text-ds-*`, `font-ds-*`, `mb-ds-*`, `duration-ds-*`
  */
 export const Label: React.FC<LabelProps> = ({
-                                              children,
-                                              htmlFor,
-                                              className = "",
-                                              disabled = false,
-                                              required = false,
-                                              size = "sm",
-                                            }) => {
+  children,
+  htmlFor,
+  className = '',
+  disabled = false,
+  required = false,
+  size = 'sm'
+}) => {
   const sizeClasses: Record<string, string> = {
-    sm: "text-ds-sm",
-    md: "text-ds-base",
-    lg: "text-ds-lg",
+    sm: 'text-ds-sm',
+    md: 'text-ds-base',
+    lg: 'text-ds-lg'
   }
 
   return (
     <label
       htmlFor={htmlFor}
       className={clsx(
-        "block select-none font-ds-medium leading-ds-snug transition-colors duration-ds-normal ease-ds-standard",
+        'font-ds-medium leading-ds-snug duration-ds-normal ease-ds-standard block select-none transition-colors',
         sizeClasses[size],
         disabled
-          ? "text-ds-text-muted cursor-not-allowed"
-          : "text-ds-text-secondary hover:text-ds-text-primary",
-        "mb-ds-xs",
+          ? 'text-ds-text-muted cursor-not-allowed'
+          : 'text-ds-text-secondary hover:text-ds-text-primary',
+        'mb-ds-xs',
         className
       )}
     >
@@ -62,4 +62,4 @@ export const Label: React.FC<LabelProps> = ({
   )
 }
 
-Label.displayName = "Label"
+Label.displayName = 'Label'

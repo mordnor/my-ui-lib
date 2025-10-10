@@ -1,0 +1,84 @@
+{
+  "ds": {
+    "typography": {
+      "heading": {
+        "h1": {
+          "font-size": { "value": "{ds.typography.font-size.5xl}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.bold}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.tight}", "type": "number" },
+          "letter-spacing": { "value": "{ds.typography.letter-spacing.tight}", "type": "dimension" }
+        },
+        "h2": {
+          "font-size": { "value": "{ds.typography.font-size.4xl}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.bold}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.tight}", "type": "number" },
+          "letter-spacing": { "value": "{ds.typography.letter-spacing.tight}", "type": "dimension" }
+        },
+        "h3": {
+          "font-size": { "value": "{ds.typography.font-size.3xl}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.semibold}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.snug}", "type": "number" },
+          "letter-spacing": { "value": "{ds.typography.letter-spacing.normal}", "type": "dimension" }
+        },
+        "h4": {
+          "font-size": { "value": "{ds.typography.font-size.2xl}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.semibold}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.snug}", "type": "number" },
+          "letter-spacing": { "value": "{ds.typography.letter-spacing.normal}", "type": "dimension" }
+        },
+        "h5": {
+          "font-size": { "value": "{ds.typography.font-size.xl}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.semibold}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.normal}", "type": "number" },
+          "letter-spacing": { "value": "{ds.typography.letter-spacing.normal}", "type": "dimension" }
+        },
+        "h6": {
+          "font-size": { "value": "{ds.typography.font-size.lg}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.semibold}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.normal}", "type": "number" },
+          "letter-spacing": { "value": "{ds.typography.letter-spacing.normal}", "type": "dimension" }
+        }
+      },
+      "body": {
+        "xs": {
+          "font-size": { "value": "{ds.typography.font-size.xs}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.regular}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.normal}", "type": "number" }
+        },
+        "sm": {
+          "font-size": { "value": "{ds.typography.font-size.sm}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.regular}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.normal}", "type": "number" }
+        },
+        "base": {
+          "font-size": { "value": "{ds.typography.font-size.base}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.regular}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.normal}", "type": "number" }
+        },
+        "lg": {
+          "font-size": { "value": "{ds.typography.font-size.lg}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.regular}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.relaxed}", "type": "number" }
+        }
+      },
+      "label": {
+        "sm": {
+          "font-size": { "value": "{ds.typography.font-size.xs}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.medium}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.tight}", "type": "number" },
+          "letter-spacing": { "value": "{ds.typography.letter-spacing.wide}", "type": "dimension" }
+        },
+        "base": {
+          "font-size": { "value": "{ds.typography.font-size.sm}", "type": "dimension" },
+          "font-weight": { "value": "{ds.typography.font-weight.medium}", "type": "number" },
+          "line-height": { "value": "{ds.typography.line-height.tight}", "type": "number" },
+          "letter-spacing": { "value": "{ds.typography.letter-spacing.wide}", "type": "dimension" }
+        }
+      },
+      "code": {
+        "font-family": { "value": "{ds.typography.font-family.mono}", "type": "fontFamily" },
+        "font-size": { "value": "0.875em", "type": "dimension" }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "ds": {
+    "effect": {
+      "elevation": {
+        "0": { "value": "{ds.shadow.none}", "type": "shadow" },
+        "1": { "value": "{ds.shadow.xs}", "type": "shadow" },
+        "2": { "value": "{ds.shadow.sm}", "type": "shadow" },
+        "3": { "value": "{ds.shadow.md}", "type": "shadow" },
+        "4": { "value": "{ds.shadow.lg}", "type": "shadow" },
+        "5": { "value": "{ds.shadow.xl}", "type": "shadow" },
+        "6": { "value": "{ds.shadow.2xl}", "type": "shadow" }
+      },
+      "focus": {
+        "ring-color": { "value": "{ds.color.border.focus}", "type": "color" },
+        "ring-width": { "value": "2px", "type": "dimension" },
+        "ring-offset": { "value": "2px", "type": "dimension" }
+      },
+      "interaction": {
+        "transition": { "value": "all {ds.motion.duration.normal} {ds.motion.easing.standard}", "type": "transition" },
+        "transition-fast": { "value": "all {ds.motion.duration.fast} {ds.motion.easing.standard}", "type": "transition" },
+        "transition-slow": { "value": "all {ds.motion.duration.slow} {ds.motion.easing.standard}", "type": "transition" }
+      }
+    }
+  }
+}

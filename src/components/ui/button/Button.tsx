@@ -1,19 +1,19 @@
-import React from "react"
-import clsx from "clsx"
-import type { ButtonProps } from "./Button.types"
+import React from 'react'
+import clsx from 'clsx'
+import type { ButtonProps } from './Button.types'
 
 export const Button: React.FC<ButtonProps> = ({
-                                                label,
-                                                children,
-                                                variant = "primary",
-                                                dsSize = "md",
-                                                loading = false,
-                                                className = "",
-                                                icon,
-                                                iconPosition = "left",
-                                                disabled,
-                                                ...props
-                                              }) => {
+  label,
+  children,
+  variant = 'primary',
+  dsSize = 'md',
+  loading = false,
+  className = '',
+  icon,
+  iconPosition = 'left',
+  disabled,
+  ...props
+}) => {
   const base = `
     inline-flex items-center justify-center gap-ds-xs
     font-ds-medium transition-colors duration-ds-normal
@@ -24,9 +24,9 @@ export const Button: React.FC<ButtonProps> = ({
   `
 
   const sizes: Record<string, string> = {
-    sm: "text-ds-sm px-ds-sm py-ds-xs",
-    md: "text-ds-base px-ds-md py-ds-sm",
-    lg: "text-ds-lg px-ds-lg py-ds-md",
+    sm: 'text-ds-sm px-ds-sm py-ds-xs',
+    md: 'text-ds-base px-ds-md py-ds-sm',
+    lg: 'text-ds-lg px-ds-lg py-ds-md'
   }
 
   const variants: Record<string, string> = {
@@ -60,7 +60,7 @@ export const Button: React.FC<ButtonProps> = ({
     gradient: `
       bg-ds-brand-gradient text-ds-text-inverse
       hover:opacity-90 focus:ring-ds-brand-primary
-    `,
+    `
   }
 
   const iconOnly = !label && !children
@@ -68,9 +68,9 @@ export const Button: React.FC<ButtonProps> = ({
     <i
       className={clsx(
         icon,
-        loading && "pi pi-spin pi-spinner",
-        iconPosition === "right" && "order-last",
-        "text-[1.1em]"
+        loading && 'pi pi-spin pi-spinner',
+        iconPosition === 'right' && 'order-last',
+        'text-[1.1em]'
       )}
     />
   )
@@ -84,7 +84,7 @@ export const Button: React.FC<ButtonProps> = ({
         base,
         sizes[dsSize],
         variants[variant],
-        iconOnly && "p-ds-sm aspect-square",
+        iconOnly && 'p-ds-sm aspect-square',
         className
       )}
     >

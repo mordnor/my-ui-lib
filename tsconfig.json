@@ -2,19 +2,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@theme/*": [
-        "src/theme/*"
-      ]
+      "@/*": ["src/*"],
+      "@theme/*": ["src/theme/*"],
+      "@dorian-ui/my-ui-lib": ["src/index.ts"]
     },
     "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -27,17 +20,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": [
-      "vite/client",
-      "vitest/globals",
-      "@testing-library/jest-dom"
-    ]
+    "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": [
-    "src",
-    "theme"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "theme", "demo", "tests"],
+  "exclude": ["node_modules", "dist"]
 }

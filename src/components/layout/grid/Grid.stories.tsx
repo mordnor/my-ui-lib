@@ -75,7 +75,7 @@ type Story = StoryObj<typeof Grid>
 // ----------------------------------------------------
 
 const DemoItem = ({ i }: { i: number }) => (
-  <div className="bg-ds-bg-card text-ds-text-primary border border-ds-border-default rounded p-ds-space-lg text-center shadow-ds-sm">
+  <div className="bg-ds-bg-card text-ds-text-primary border-ds-border-default p-ds-space-lg shadow-ds-sm rounded border text-center">
     Élément {i + 1}
   </div>
 )
@@ -116,7 +116,7 @@ export const AutoFit: Story = {
 export const Alignment: Story = {
   name: '🎯 Alignement & Justify',
   render: () => (
-    <div className="h-[300px] bg-ds-bg-surface flex flex-col gap-ds-space-2xl justify-center">
+    <div className="bg-ds-bg-surface gap-ds-space-2xl flex h-[300px] flex-col justify-center">
       <Grid cols={{ base: 3 }} align="center" justify="center" gap="md">
         {Array.from({ length: 3 }).map((_, i) => (
           <DemoItem key={i} i={i} />

@@ -40,13 +40,13 @@ export const Avatar: React.FC<AvatarProps> = ({
     <img
       src={src}
       alt={alt}
-      className="object-cover w-full h-full rounded-full select-none"
+      className="size-full select-none rounded-full object-cover"
       draggable={false}
     />
   ) : (
     <span
       className={clsx(
-        'flex items-center justify-center w-full h-full select-none font-ds-font-weight-medium'
+        'font-ds-font-weight-medium flex size-full select-none items-center justify-center'
       )}
     >
       {typeof fallback === 'string'

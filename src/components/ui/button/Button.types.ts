@@ -1,16 +1,16 @@
-import React from "react"
+import React from 'react'
 
 export type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "outline"
-  | "success"
-  | "danger"
-  | "brand"
-  | "gradient"
+  | 'primary'
+  | 'secondary'
+  | 'outline'
+  | 'success'
+  | 'danger'
+  | 'brand'
+  | 'gradient'
 
-export type ButtonSize = "sm" | "md" | "lg"
-export type ButtonIconPosition = "left" | "right"
+export type ButtonSize = 'sm' | 'md' | 'lg'
+export type ButtonIconPosition = 'left' | 'right'
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

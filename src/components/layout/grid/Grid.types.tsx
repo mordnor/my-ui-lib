@@ -1,14 +1,6 @@
-import React from "react"
+import React from 'react'
 
-export type GridGap =
-  | "none"
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "2xl"
-  | "3xl"
+export type GridGap = 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
 
 export interface GridColumns {
   base?: number
@@ -26,10 +18,10 @@ export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
   gap?: GridGap
 
   /** Aligne le contenu horizontalement */
-  justify?: "start" | "center" | "end" | "between" | "around" | "evenly"
+  justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'
 
   /** Aligne le contenu verticalement */
-  align?: "start" | "center" | "end" | "stretch" | "baseline"
+  align?: 'start' | 'center' | 'end' | 'stretch' | 'baseline'
 
   /** Active auto-fit pour une grille fluide */
   autoFit?: boolean

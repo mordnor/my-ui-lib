@@ -46,14 +46,18 @@
     "dev": "vite",
     "build:tokens": "node scripts/build-tokens.mjs",
     "build:types": "tsc --project tsconfig.build.json",
-    "build": "pnpm run build:tokens && vite build && pnpm run build:types",
+    "build:lib": "LIB_BUILD=true vite build",
+    "build": "pnpm run build:tokens && pnpm run build:lib && pnpm run build:types",
+    "build:demo": "vite build",
+    "prepare": "pnpm run build",
     "serve": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
     "lint": "eslint src --max-warnings=0",
     "typecheck": "tsc --project tsconfig.json --noEmit",
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d dist",
+    "predeploy": "pnpm run build:demo",
+    "deploy": "gh-pages -d demo/dist",
     "pack:local": "pnpm run build && pnpm pack && mv @dorian-ui-my-ui-lib-*.tgz ../my-landing/ && cd ../my-landing && pnpm add ./@dorian-ui-my-ui-lib-*.tgz"
   },
   "dependencies": {
@@ -76,6 +80,7 @@
     }
   },
   "devDependencies": {
+    "@anthropic-ai/claude-code": "^2.0.13",
     "@chromatic-com/storybook": "^4.1.1",
     "@storybook/addon-a11y": "8.6.14",
     "@storybook/addon-docs": "8.6.14",

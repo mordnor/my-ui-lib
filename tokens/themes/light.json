@@ -1,0 +1,27 @@
+{
+  "ds": {
+    "color": {
+      "text": {
+        "primary": { "value": "{ds.color.slate.900}", "type": "color" },
+        "secondary": { "value": "{ds.color.slate.600}", "type": "color" },
+        "tertiary": { "value": "{ds.color.slate.500}", "type": "color" },
+        "muted": { "value": "{ds.color.slate.400}", "type": "color" },
+        "inverse": { "value": "{ds.color.base.white}", "type": "color" }
+      },
+      "background": {
+        "app": { "value": "{ds.color.slate.50}", "type": "color" },
+        "surface": { "value": "{ds.color.base.white}", "type": "color" },
+        "surface-secondary": { "value": "{ds.color.slate.100}", "type": "color" },
+        "surface-tertiary": { "value": "{ds.color.slate.200}", "type": "color" },
+        "subtle": { "value": "{ds.color.slate.50}", "type": "color" },
+        "inverse": { "value": "{ds.color.slate.900}", "type": "color" }
+      },
+      "border": {
+        "default": { "value": "{ds.color.slate.200}", "type": "color" },
+        "subtle": { "value": "{ds.color.slate.100}", "type": "color" },
+        "strong": { "value": "{ds.color.slate.300}", "type": "color" },
+        "stronger": { "value": "{ds.color.slate.400}", "type": "color" }
+      }
+    }
+  }
+}
