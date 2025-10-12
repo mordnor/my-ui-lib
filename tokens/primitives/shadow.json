@@ -1,0 +1,16 @@
+{
+  "ds": {
+    "shadow": {
+      "none": { "value": "none", "type": "shadow", "description": "Pas d'ombre" },
+      "xs": { "value": "0 1px 2px 0 rgba(0, 0, 0, 0.03)", "type": "shadow", "description": "Ombre très subtile" },
+      "sm": { "value": "0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08)", "type": "shadow", "description": "Ombre petite et douce" },
+      "base": { "value": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)", "type": "shadow", "description": "Ombre standard" },
+      "md": { "value": "0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04)", "type": "shadow", "description": "Ombre moyenne moderne" },
+      "lg": { "value": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04)", "type": "shadow", "description": "Grande ombre douce" },
+      "xl": { "value": "0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)", "type": "shadow", "description": "Très grande ombre" },
+      "2xl": { "value": "0 25px 50px -12px rgba(0, 0, 0, 0.15)", "type": "shadow", "description": "Ombre énorme pour modals" },
+      "inner": { "value": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.04)", "type": "shadow", "description": "Ombre intérieure subtile" },
+      "glow": { "value": "0 0 0 3px rgba(168, 85, 247, 0.1)", "type": "shadow", "description": "Effet de lueur (focus)" }
+    }
+  }
+}

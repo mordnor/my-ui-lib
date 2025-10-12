@@ -1,2 +1,2 @@
-export * from './Grid'
-export * from './Grid.types'
+export { Grid } from './Grid'
+export type { GridProps, GridCols, GridGap } from './Grid.types'

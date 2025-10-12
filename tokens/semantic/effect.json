@@ -11,7 +11,7 @@
         "6": { "value": "{ds.shadow.2xl}", "type": "shadow" }
       },
       "focus": {
-        "ring-color": { "value": "{ds.color.border.focus}", "type": "color" },
+        "ring-color": { "value": "{ds.color.ring}", "type": "color" },
         "ring-width": { "value": "2px", "type": "dimension" },
         "ring-offset": { "value": "2px", "type": "dimension" }
       },

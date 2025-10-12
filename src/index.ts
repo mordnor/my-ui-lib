@@ -1,5 +1,5 @@
 /* --------------------------------------------------------------------------
- * 🧱 Design System - Point d’entrée principal
+ * 🧱 Design System - Point d'entrée principal
  * Exporte tous les composants, styles et fonctions du DS.
  * -------------------------------------------------------------------------- */
 
@@ -8,47 +8,36 @@
 import './style.css'
 
 /* --------------------------------------------------------------------------
- * 🧩 UI Components
+ * 🧩 Components
  * -------------------------------------------------------------------------- */
-export * from './components/ui/button'
-export * from './components/ui/card'
-export * from './components/ui/badge'
-export * from './components/ui/typography'
-
-/* --------------------------------------------------------------------------
- * 🧱 Layout Components
- * -------------------------------------------------------------------------- */
-export * from './components/layout/container'
-export * from './components/layout/grid'
-export * from './components/layout/section'
-export * from './components/layout/stack'
-
-/* --------------------------------------------------------------------------
- * 🧰 Utilities
- * -------------------------------------------------------------------------- */
-export * from './components/utilities/avatar'
-export * from './components/utilities/avatar-group'
-export * from './components/utilities/divider'
-export * from './components/utilities/icon'
+export * from './components'
 
 /* --------------------------------------------------------------------------
  * 🎨 Theme
  * -------------------------------------------------------------------------- */
-export { applyTheme, getCurrentTheme, initTheme } from './theme/apply-theme'
-export { ThemeProvider, useThemeContext } from './theme/theme-provider'
-export type { ThemeName, ThemeProviderProps } from './theme'
+export * from './theme'
 
 /* --------------------------------------------------------------------------
  * 🪝 Hooks
  * -------------------------------------------------------------------------- */
-export { useTheme } from './hooks/use-theme'
+export * from './hooks'
 
 /* --------------------------------------------------------------------------
  * 🧰 Utils
  * -------------------------------------------------------------------------- */
-export { cn } from './utils/cn'
+export * from './utils'
 
 /* --------------------------------------------------------------------------
  * 📦 Types
  * -------------------------------------------------------------------------- */
-export type * from './types'
+export * from './types'
+
+/* --------------------------------------------------------------------------
+ * 🔧 Constants
+ * -------------------------------------------------------------------------- */
+export * from './constants'
+
+/* --------------------------------------------------------------------------
+ * ⚙️ Config
+ * -------------------------------------------------------------------------- */
+export * from './config'

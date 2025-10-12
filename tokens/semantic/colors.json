@@ -1,0 +1,131 @@
+{
+  "ds": {
+    "color": {
+      "foreground": {
+        "value": "{ds.color.slate.900}",
+        "type": "color",
+        "description": "Main text color - adapts to theme"
+      },
+      "muted-foreground": {
+        "value": "{ds.color.slate.500}",
+        "type": "color",
+        "description": "Muted/secondary text color"
+      },
+      "background": {
+        "value": "{ds.color.base.white}",
+        "type": "color",
+        "description": "Main background color"
+      },
+      "card": {
+        "value": "{ds.color.base.white}",
+        "type": "color",
+        "description": "Card background color"
+      },
+      "card-foreground": {
+        "value": "{ds.color.slate.900}",
+        "type": "color",
+        "description": "Text color on cards"
+      },
+      "popover": {
+        "value": "{ds.color.base.white}",
+        "type": "color",
+        "description": "Popover/modal background"
+      },
+      "popover-foreground": {
+        "value": "{ds.color.slate.900}",
+        "type": "color",
+        "description": "Text color in popovers"
+      },
+      "muted": {
+        "value": "{ds.color.slate.100}",
+        "type": "color",
+        "description": "Muted background (hover states, subtle backgrounds)"
+      },
+      "accent": {
+        "value": "{ds.color.slate.100}",
+        "type": "color",
+        "description": "Accent background"
+      },
+      "accent-foreground": {
+        "value": "{ds.color.slate.900}",
+        "type": "color",
+        "description": "Text on accent background"
+      },
+      "border": {
+        "value": "{ds.color.slate.200}",
+        "type": "color",
+        "description": "Default border color"
+      },
+      "input": {
+        "value": "{ds.color.slate.200}",
+        "type": "color",
+        "description": "Input border color"
+      },
+      "ring": {
+        "value": "{ds.color.slate.950}",
+        "type": "color",
+        "description": "Focus ring color"
+      },
+      "primary": {
+        "value": "{ds.color.purple.500}",
+        "type": "color",
+        "description": "Primary brand color"
+      },
+      "primary-foreground": {
+        "value": "{ds.color.base.white}",
+        "type": "color",
+        "description": "Text on primary background"
+      },
+      "secondary": {
+        "value": "{ds.color.teal.400}",
+        "type": "color",
+        "description": "Secondary brand color"
+      },
+      "secondary-foreground": {
+        "value": "{ds.color.base.white}",
+        "type": "color",
+        "description": "Text on secondary background"
+      },
+      "destructive": {
+        "value": "{ds.color.red.500}",
+        "type": "color",
+        "description": "Destructive/error action color"
+      },
+      "destructive-foreground": {
+        "value": "{ds.color.base.white}",
+        "type": "color",
+        "description": "Text on destructive background"
+      },
+      "success": {
+        "value": "{ds.color.green.500}",
+        "type": "color",
+        "description": "Success state color"
+      },
+      "success-foreground": {
+        "value": "{ds.color.base.white}",
+        "type": "color",
+        "description": "Text on success background"
+      },
+      "warning": {
+        "value": "{ds.color.orange.500}",
+        "type": "color",
+        "description": "Warning state color"
+      },
+      "warning-foreground": {
+        "value": "{ds.color.base.white}",
+        "type": "color",
+        "description": "Text on warning background"
+      },
+      "info": {
+        "value": "{ds.color.blue.500}",
+        "type": "color",
+        "description": "Info state color"
+      },
+      "info-foreground": {
+        "value": "{ds.color.base.white}",
+        "type": "color",
+        "description": "Text on info background"
+      }
+    }
+  }
+}

@@ -1,84 +1,68 @@
-import React from 'react'
-import clsx from 'clsx'
-import type { StackProps, StackGap, StackPadding } from './Stack.types'
+import { forwardRef } from 'react'
+import { cn } from '@/utils/cn'
+import type { StackProps } from './Stack.types'
+
+const directionClasses = {
+  vertical: 'flex-col',
+  horizontal: 'flex-row',
+}
+
+const spacingClasses = {
+  xs: 'gap-ds-1',
+  sm: 'gap-ds-2',
+  md: 'gap-ds-4',
+  lg: 'gap-ds-6',
+  xl: 'gap-ds-8',
+}
+
+const alignClasses = {
+  start: 'items-start',
+  center: 'items-center',
+  end: 'items-end',
+  stretch: 'items-stretch',
+}
+
+const justifyClasses = {
+  start: 'justify-start',
+  center: 'justify-center',
+  end: 'justify-end',
+  between: 'justify-between',
+  around: 'justify-around',
+}
 
 /**
- * 🧱 DS Stack — composant de layout flexible basé sur les tokens DS
+ * Stack component - Flexbox-based layout for stacking elements
  */
-export const Stack: React.FC<StackProps> = ({
-  direction = 'vertical',
-  gap = 'md',
-  padding,
-  fullCenter = false,
-  align,
-  justify,
-  wrap = false,
-  className = '',
-  children,
-  ...rest
-}) => {
-  // 📐 Direction
-  const directionClass = direction === 'vertical' ? 'flex-col' : 'flex-row'
-
-  // 📏 Espacement interne & externe
-  const gapMap: Record<StackGap, string> = {
-    none: 'gap-0',
-    xs: 'gap-ds-xs',
-    sm: 'gap-ds-sm',
-    md: 'gap-ds-md',
-    lg: 'gap-ds-lg',
-    xl: 'gap-ds-xl',
-    '2xl': 'gap-ds-2xl',
-    '3xl': 'gap-ds-3xl'
+export const Stack = forwardRef<HTMLDivElement, StackProps>(
+  (
+    {
+      direction = 'vertical',
+      spacing = 'md',
+      align,
+      justify,
+      children,
+      className,
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'flex',
+          directionClasses[direction],
+          spacingClasses[spacing],
+          align && alignClasses[align],
+          justify && justifyClasses[justify],
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+    )
   }
-
-  const paddingMap: Record<StackPadding, string> = {
-    none: 'p-0',
-    xs: 'p-ds-xs',
-    sm: 'p-ds-sm',
-    md: 'p-ds-md',
-    lg: 'p-ds-lg',
-    xl: 'p-ds-xl',
-    '2xl': 'p-ds-2xl',
-    '3xl': 'p-ds-3xl'
-  }
-
-  // 🧭 Alignement
-  const alignMap: Record<string, string> = {
-    start: 'items-start',
-    center: 'items-center',
-    end: 'items-end',
-    stretch: 'items-stretch',
-    baseline: 'items-baseline'
-  }
-
-  const justifyMap: Record<string, string> = {
-    start: 'justify-start',
-    center: 'justify-center',
-    end: 'justify-end',
-    between: 'justify-between',
-    around: 'justify-around',
-    evenly: 'justify-evenly'
-  }
-
-  return (
-    <div
-      {...rest}
-      className={clsx(
-        'duration-ds-normal ease-ds-standard flex transition-all',
-        directionClass,
-        gapMap[gap],
-        padding && paddingMap[padding],
-        align && alignMap[align],
-        justify && justifyMap[justify],
-        wrap && 'flex-wrap',
-        fullCenter && 'items-center justify-center text-center',
-        className
-      )}
-    >
-      {children}
-    </div>
-  )
-}
+)
 
 Stack.displayName = 'Stack'

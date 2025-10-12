@@ -1,5 +1,2 @@
-/**
- * 📦 Shared types exports
- */
-
-export type { ThemeName } from './theme'
+export * from './common.types'
+export * from './component.types'

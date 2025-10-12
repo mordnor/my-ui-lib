@@ -1,41 +1,35 @@
-import React from 'react'
-import clsx from 'clsx'
-import type { ContainerProps, ContainerSize } from './Container.types'
+import { forwardRef } from 'react'
+import { cn } from '@/utils/cn'
+import type { ContainerProps } from './Container.types'
+
+const containerSizes = {
+  sm: 'max-w-screen-sm',
+  md: 'max-w-screen-md',
+  lg: 'max-w-screen-lg',
+  xl: 'max-w-screen-xl',
+  full: 'max-w-full',
+}
 
 /**
- * 📦 DS Container — composant de layout basé sur les tokens DS
+ * Container component - Constrains content width with responsive padding
  */
-export function Container({
-  children,
-  size = 'lg',
-  fluid = false,
-  as,
-  className = '',
-  ...rest
-}: ContainerProps) {
-  const Tag = (as || 'div') as React.ElementType
-
-  const sizeMap: Record<ContainerSize, string> = {
-    sm: 'max-w-screen-sm',
-    md: 'max-w-screen-md',
-    lg: 'max-w-screen-lg',
-    xl: 'max-w-screen-xl',
-    full: 'max-w-full'
+export const Container = forwardRef<HTMLDivElement, ContainerProps>(
+  ({ size = 'lg', centered = true, children, className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'w-full px-ds-container-padding md:px-ds-container-padding-md lg:px-ds-container-padding-lg',
+          containerSizes[size],
+          centered && 'mx-auto',
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+    )
   }
-
-  return (
-    <Tag
-      {...rest}
-      className={clsx(
-        'px-ds-xl mx-auto w-full',
-        !fluid && sizeMap[size],
-        'duration-ds-normal ease-ds-standard transition-all',
-        className
-      )}
-    >
-      {children}
-    </Tag>
-  )
-}
+)
 
 Container.displayName = 'Container'

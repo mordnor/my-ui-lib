@@ -1,368 +1,456 @@
-export const DsBreakpointSm = "640px";
-export const DsBreakpointMd = "768px";
-export const DsBreakpointLg = "1024px";
-export const DsBreakpointXl = "1280px";
-export const DsBreakpoint2xl = "1536px";
-export const DsColorBaseWhite = "#ffffff";
-export const DsColorBaseBlack = "#000000";
-export const DsColorBaseTransparent = "#00000000";
-export const DsColorSlate50 = "#f8fafc";
-export const DsColorSlate100 = "#f1f5f9";
-export const DsColorSlate200 = "#e2e8f0";
-export const DsColorSlate300 = "#cbd5e1";
-export const DsColorSlate400 = "#94a3b8";
-export const DsColorSlate500 = "#64748b";
-export const DsColorSlate600 = "#475569";
-export const DsColorSlate700 = "#334155";
-export const DsColorSlate800 = "#1e293b";
-export const DsColorSlate900 = "#0f172a";
-export const DsColorSlate950 = "#020617";
-export const DsColorBlue50 = "#eff6ff";
-export const DsColorBlue100 = "#dbeafe";
-export const DsColorBlue200 = "#bfdbfe";
-export const DsColorBlue300 = "#93c5fd";
-export const DsColorBlue400 = "#60a5fa";
-export const DsColorBlue500 = "#3b82f6";
-export const DsColorBlue600 = "#2563eb";
-export const DsColorBlue700 = "#1d4ed8";
-export const DsColorBlue800 = "#1e40af";
-export const DsColorBlue900 = "#1e3a8a";
-export const DsColorBlue950 = "#172554";
-export const DsColorCyan50 = "#ecfeff";
-export const DsColorCyan100 = "#cffafe";
-export const DsColorCyan200 = "#a5f3fc";
-export const DsColorCyan300 = "#67e8f9";
-export const DsColorCyan400 = "#22d3ee";
-export const DsColorCyan500 = "#06b6d4";
-export const DsColorCyan600 = "#0891b2";
-export const DsColorCyan700 = "#0e7490";
-export const DsColorCyan800 = "#155e75";
-export const DsColorCyan900 = "#164e63";
-export const DsColorIndigo50 = "#eef2ff";
-export const DsColorIndigo100 = "#e0e7ff";
-export const DsColorIndigo200 = "#c7d2fe";
-export const DsColorIndigo300 = "#a5b4fc";
-export const DsColorIndigo400 = "#818cf8";
-export const DsColorIndigo500 = "#6366f1";
-export const DsColorIndigo600 = "#4f46e5";
-export const DsColorIndigo700 = "#4338ca";
-export const DsColorIndigo800 = "#3730a3";
-export const DsColorIndigo900 = "#312e81";
-export const DsColorEmerald50 = "#ecfdf5";
-export const DsColorEmerald100 = "#d1fae5";
-export const DsColorEmerald200 = "#a7f3d0";
-export const DsColorEmerald300 = "#6ee7b7";
-export const DsColorEmerald400 = "#34d399";
-export const DsColorEmerald500 = "#10b981";
-export const DsColorEmerald600 = "#059669";
-export const DsColorEmerald700 = "#047857";
-export const DsColorEmerald800 = "#065f46";
-export const DsColorEmerald900 = "#064e3b";
-export const DsColorRose50 = "#fff1f2";
-export const DsColorRose100 = "#ffe4e6";
-export const DsColorRose200 = "#fecdd3";
-export const DsColorRose300 = "#fda4af";
-export const DsColorRose400 = "#fb7185";
-export const DsColorRose500 = "#f43f5e";
-export const DsColorRose600 = "#e11d48";
-export const DsColorRose700 = "#be123c";
-export const DsColorRose800 = "#9f1239";
-export const DsColorRose900 = "#881337";
-export const DsColorAmber50 = "#fffbeb";
-export const DsColorAmber100 = "#fef3c7";
-export const DsColorAmber200 = "#fde68a";
-export const DsColorAmber300 = "#fcd34d";
-export const DsColorAmber400 = "#fbbf24";
-export const DsColorAmber500 = "#f59e0b";
-export const DsColorAmber600 = "#d97706";
-export const DsColorAmber700 = "#b45309";
-export const DsColorAmber800 = "#92400e";
-export const DsColorAmber900 = "#78350f";
-export const DsColorTextPrimary = "#0f172a";
-export const DsColorTextSecondary = "#475569";
-export const DsColorTextTertiary = "#64748b";
-export const DsColorTextMuted = "#94a3b8";
-export const DsColorTextInverse = "#ffffff";
-export const DsColorTextLink = "#2563eb";
-export const DsColorTextLinkHover = "#1d4ed8";
-export const DsColorBackgroundApp = "#f8fafc";
-export const DsColorBackgroundSurface = "#ffffff";
-export const DsColorBackgroundSurfaceSecondary = "#f1f5f9";
-export const DsColorBackgroundSurfaceTertiary = "#e2e8f0";
-export const DsColorBackgroundSubtle = "#f8fafc";
-export const DsColorBackgroundInverse = "#0f172a";
-export const DsColorBackgroundOverlay = "#00000080";
-export const DsColorBorderDefault = "#e2e8f0";
-export const DsColorBorderSubtle = "#f1f5f9";
-export const DsColorBorderStrong = "#cbd5e1";
-export const DsColorBorderStronger = "#94a3b8";
-export const DsColorBorderFocus = "#3b82f6";
-export const DsColorBrandPrimary = "#2563eb";
-export const DsColorBrandPrimaryHover = "#1d4ed8";
-export const DsColorBrandPrimaryActive = "#1e40af";
-export const DsColorBrandSecondary = "#06b6d4";
-export const DsColorBrandSecondaryHover = "#0891b2";
-export const DsColorBrandSecondaryActive = "#0e7490";
-export const DsColorBrandGradient = "linear-gradient(135deg, #2563eb, #22d3ee)";
-export const DsColorAccentPrimary = "#4f46e5";
-export const DsColorAccentPrimaryHover = "#4338ca";
-export const DsColorAccentPrimaryActive = "#3730a3";
-export const DsColorStateSuccess = "#059669";
-export const DsColorStateSuccessBg = "#ecfdf5";
-export const DsColorStateSuccessBorder = "#a7f3d0";
-export const DsColorStateError = "#e11d48";
-export const DsColorStateErrorBg = "#fff1f2";
-export const DsColorStateErrorBorder = "#fecdd3";
-export const DsColorStateWarning = "#d97706";
-export const DsColorStateWarningBg = "#fffbeb";
-export const DsColorStateWarningBorder = "#fde68a";
-export const DsColorStateInfo = "#0891b2";
-export const DsColorStateInfoBg = "#ecfeff";
-export const DsColorStateInfoBorder = "#a5f3fc";
-export const DsColorInteractionHover = "#f1f5f9";
-export const DsColorInteractionActive = "#e2e8f0";
-export const DsColorInteractionDisabled = "#cbd5e1";
-export const DsColorInteractionDisabledText = "#94a3b8";
-export const DsMotionDurationInstant = "0ms";
-export const DsMotionDurationFast = "100ms";
-export const DsMotionDurationNormal = "200ms";
-export const DsMotionDurationSlow = "300ms";
-export const DsMotionDurationSlower = "500ms";
-export const DsMotionEasingLinear = "linear";
-export const DsMotionEasingIn = "cubic-bezier(0.4, 0, 1, 1)";
-export const DsMotionEasingOut = "cubic-bezier(0, 0, 0.2, 1)";
-export const DsMotionEasingInOut = "cubic-bezier(0.4, 0, 0.2, 1)";
-export const DsMotionEasingStandard = "cubic-bezier(0.4, 0, 0.2, 1)";
-export const DsMotionEasingBounce = "cubic-bezier(0.68, -0.55, 0.265, 1.55)";
-export const DsOpacity0 = "0";
-export const DsOpacity5 = "0.05";
-export const DsOpacity10 = "0.1";
-export const DsOpacity20 = "0.2";
-export const DsOpacity30 = "0.3";
-export const DsOpacity40 = "0.4";
-export const DsOpacity50 = "0.5";
-export const DsOpacity60 = "0.6";
-export const DsOpacity70 = "0.7";
-export const DsOpacity80 = "0.8";
-export const DsOpacity90 = "0.9";
-export const DsOpacity95 = "0.95";
-export const DsOpacity100 = "1";
-export const DsRadiusNone = "0px";
-export const DsRadiusSm = "0.125rem";
-export const DsRadiusBase = "0.25rem";
-export const DsRadiusMd = "0.375rem";
-export const DsRadiusLg = "0.5rem";
-export const DsRadiusXl = "0.75rem";
-export const DsRadius2xl = "1rem";
-export const DsRadius3xl = "1.5rem";
-export const DsRadiusFull = "9999px";
-export const DsShadowXs = "0 1px 2px 0 rgba(0, 0, 0, 0.05)";
-export const DsShadowSm =
-  "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)";
-export const DsShadowBase =
-  "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)";
-export const DsShadowMd =
-  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)";
-export const DsShadowLg =
-  "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)";
-export const DsShadowXl =
-  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)";
-export const DsShadow2xl = "0 25px 50px -12px rgba(0, 0, 0, 0.25)";
-export const DsShadowInner = "inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)";
-export const DsShadowNone = "none";
-export const DsSpacing0 = "0px";
-export const DsSpacing1 = "0.25rem";
-export const DsSpacing2 = "0.5rem";
-export const DsSpacing3 = "0.75rem";
-export const DsSpacing4 = "1rem";
-export const DsSpacing5 = "1.25rem";
-export const DsSpacing6 = "1.5rem";
-export const DsSpacing7 = "1.75rem";
-export const DsSpacing8 = "2rem";
-export const DsSpacing9 = "2.25rem";
-export const DsSpacing10 = "2.5rem";
-export const DsSpacing11 = "2.75rem";
-export const DsSpacing12 = "3rem";
-export const DsSpacing14 = "3.5rem";
-export const DsSpacing16 = "4rem";
-export const DsSpacing20 = "5rem";
-export const DsSpacing24 = "6rem";
-export const DsSpacing28 = "7rem";
-export const DsSpacing32 = "8rem";
-export const DsSpacing36 = "9rem";
-export const DsSpacing40 = "10rem";
-export const DsSpacing48 = "12rem";
-export const DsSpacing56 = "14rem";
-export const DsSpacing64 = "16rem";
-export const DsSpacingComponentXs = "0.25rem";
-export const DsSpacingComponentSm = "0.5rem";
-export const DsSpacingComponentMd = "0.75rem";
-export const DsSpacingComponentLg = "1rem";
-export const DsSpacingComponentXl = "1.5rem";
-export const DsSpacingLayoutXs = "1rem";
-export const DsSpacingLayoutSm = "1.5rem";
-export const DsSpacingLayoutMd = "2rem";
-export const DsSpacingLayoutLg = "3rem";
-export const DsSpacingLayoutXl = "4rem";
-export const DsSpacingLayout2xl = "6rem";
-export const DsSpacingLayout3xl = "8rem";
-export const DsSpacingSectionXs = "3rem";
-export const DsSpacingSectionSm = "4rem";
-export const DsSpacingSectionMd = "5rem";
-export const DsSpacingSectionLg = "6rem";
-export const DsSpacingSectionXl = "8rem";
-export const DsSpacingSection2xl = "10rem";
-export const DsSpacingContainerPadding = "1rem";
-export const DsSpacingContainerPaddingMd = "1.5rem";
-export const DsSpacingContainerPaddingLg = "2rem";
-export const DsTypographyFontFamilySans =
-  "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
-export const DsTypographyFontFamilyMono =
-  "'Fira Code', 'Courier New', monospace";
-export const DsTypographyFontSizeXs = "0.75rem";
-export const DsTypographyFontSizeSm = "0.875rem";
-export const DsTypographyFontSizeBase = "1rem";
-export const DsTypographyFontSizeLg = "1.125rem";
-export const DsTypographyFontSizeXl = "1.25rem";
-export const DsTypographyFontSize2xl = "1.5rem";
-export const DsTypographyFontSize3xl = "1.875rem";
-export const DsTypographyFontSize4xl = "2.25rem";
-export const DsTypographyFontSize5xl = "3rem";
-export const DsTypographyFontSize6xl = "3.75rem";
-export const DsTypographyFontSize7xl = "4.5rem";
-export const DsTypographyFontWeightThin = "100";
-export const DsTypographyFontWeightLight = "300";
-export const DsTypographyFontWeightRegular = "400";
-export const DsTypographyFontWeightMedium = "500";
-export const DsTypographyFontWeightSemibold = "600";
-export const DsTypographyFontWeightBold = "700";
-export const DsTypographyFontWeightExtrabold = "800";
-export const DsTypographyFontWeightBlack = "900";
-export const DsTypographyLineHeightNone = "1";
-export const DsTypographyLineHeightTight = "1.25";
-export const DsTypographyLineHeightSnug = "1.375";
-export const DsTypographyLineHeightNormal = "1.5";
-export const DsTypographyLineHeightRelaxed = "1.625";
-export const DsTypographyLineHeightLoose = "2";
-export const DsTypographyLetterSpacingTighter = "-0.05em";
-export const DsTypographyLetterSpacingTight = "-0.025em";
-export const DsTypographyLetterSpacingNormal = "0em";
-export const DsTypographyLetterSpacingWide = "0.025em";
-export const DsTypographyLetterSpacingWider = "0.05em";
-export const DsTypographyLetterSpacingWidest = "0.1em";
-export const DsTypographyHeadingH1FontSize = "3rem";
-export const DsTypographyHeadingH1FontWeight = "700";
-export const DsTypographyHeadingH1LineHeight = "1.25";
-export const DsTypographyHeadingH1LetterSpacing = "-0.025em";
-export const DsTypographyHeadingH2FontSize = "2.25rem";
-export const DsTypographyHeadingH2FontWeight = "700";
-export const DsTypographyHeadingH2LineHeight = "1.25";
-export const DsTypographyHeadingH2LetterSpacing = "-0.025em";
-export const DsTypographyHeadingH3FontSize = "1.875rem";
-export const DsTypographyHeadingH3FontWeight = "600";
-export const DsTypographyHeadingH3LineHeight = "1.375";
-export const DsTypographyHeadingH3LetterSpacing = "0em";
-export const DsTypographyHeadingH4FontSize = "1.5rem";
-export const DsTypographyHeadingH4FontWeight = "600";
-export const DsTypographyHeadingH4LineHeight = "1.375";
-export const DsTypographyHeadingH4LetterSpacing = "0em";
-export const DsTypographyHeadingH5FontSize = "1.25rem";
-export const DsTypographyHeadingH5FontWeight = "600";
-export const DsTypographyHeadingH5LineHeight = "1.5";
-export const DsTypographyHeadingH5LetterSpacing = "0em";
-export const DsTypographyHeadingH6FontSize = "1.125rem";
-export const DsTypographyHeadingH6FontWeight = "600";
-export const DsTypographyHeadingH6LineHeight = "1.5";
-export const DsTypographyHeadingH6LetterSpacing = "0em";
-export const DsTypographyBodyXsFontSize = "0.75rem";
-export const DsTypographyBodyXsFontWeight = "400";
-export const DsTypographyBodyXsLineHeight = "1.5";
-export const DsTypographyBodySmFontSize = "0.875rem";
-export const DsTypographyBodySmFontWeight = "400";
-export const DsTypographyBodySmLineHeight = "1.5";
-export const DsTypographyBodyBaseFontSize = "1rem";
-export const DsTypographyBodyBaseFontWeight = "400";
-export const DsTypographyBodyBaseLineHeight = "1.5";
-export const DsTypographyBodyLgFontSize = "1.125rem";
-export const DsTypographyBodyLgFontWeight = "400";
-export const DsTypographyBodyLgLineHeight = "1.625";
-export const DsTypographyLabelSmFontSize = "0.75rem";
-export const DsTypographyLabelSmFontWeight = "500";
-export const DsTypographyLabelSmLineHeight = "1.25";
-export const DsTypographyLabelSmLetterSpacing = "0.025em";
-export const DsTypographyLabelBaseFontSize = "0.875rem";
-export const DsTypographyLabelBaseFontWeight = "500";
-export const DsTypographyLabelBaseLineHeight = "1.25";
-export const DsTypographyLabelBaseLetterSpacing = "0.025em";
-export const DsTypographyCodeFontFamily =
-  "'Fira Code', 'Courier New', monospace";
-export const DsTypographyCodeFontSize = "0.875em";
-export const DsZIndexHide = "-1";
-export const DsZIndexBase = "0";
-export const DsZIndexDropdown = "1000";
-export const DsZIndexSticky = "1100";
-export const DsZIndexFixed = "1200";
-export const DsZIndexOverlay = "1300";
-export const DsZIndexModal = "1400";
-export const DsZIndexPopover = "1500";
-export const DsZIndexTooltip = "1600";
-export const DsComponentButtonPaddingX = "1rem";
-export const DsComponentButtonPaddingY = "0.75rem";
-export const DsComponentButtonRadius = "0.375rem";
-export const DsComponentButtonFontSize = "0.875rem";
-export const DsComponentButtonFontWeight = "500";
-export const DsComponentButtonHeightSm = "2rem";
-export const DsComponentButtonHeightMd = "2.5rem";
-export const DsComponentButtonHeightLg = "3rem";
-export const DsComponentInputPaddingX = "0.75rem";
-export const DsComponentInputPaddingY = "0.5rem";
-export const DsComponentInputRadius = "0.375rem";
-export const DsComponentInputFontSize = "0.875rem";
-export const DsComponentInputHeight = "2.5rem";
-export const DsComponentInputBorderWidth = "1px";
-export const DsComponentCardPadding = "1.5rem";
-export const DsComponentCardRadius = "0.5rem";
-export const DsComponentCardShadow =
-  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)";
-export const DsComponentCardBorderWidth = "1px";
-export const DsComponentAvatarSizeXs = "1.5rem";
-export const DsComponentAvatarSizeSm = "2rem";
-export const DsComponentAvatarSizeMd = "2.5rem";
-export const DsComponentAvatarSizeLg = "3rem";
-export const DsComponentAvatarSizeXl = "4rem";
-export const DsComponentAvatarRadius = "9999px";
-export const DsComponentBadgePaddingX = "0.5rem";
-export const DsComponentBadgePaddingY = "0.25rem";
-export const DsComponentBadgeRadius = "9999px";
-export const DsComponentBadgeFontSize = "0.75rem";
-export const DsComponentBadgeFontWeight = "500";
-export const DsComponentModalPadding = "3rem";
-export const DsComponentModalRadius = "0.75rem";
-export const DsComponentModalShadow = "0 25px 50px -12px rgba(0, 0, 0, 0.25)";
-export const DsComponentModalMaxWidth = "32rem";
-export const DsComponentTooltipPaddingX = "0.75rem";
-export const DsComponentTooltipPaddingY = "0.5rem";
-export const DsComponentTooltipRadius = "0.375rem";
-export const DsComponentTooltipFontSize = "0.75rem";
-export const DsComponentTooltipShadow =
-  "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)";
-export const DsEffectElevation0 = "none";
-export const DsEffectElevation1 = "0 1px 2px 0 rgba(0, 0, 0, 0.05)";
-export const DsEffectElevation2 =
-  "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)";
-export const DsEffectElevation3 =
-  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)";
-export const DsEffectElevation4 =
-  "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)";
-export const DsEffectElevation5 =
-  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)";
-export const DsEffectElevation6 = "0 25px 50px -12px rgba(0, 0, 0, 0.25)";
-export const DsEffectFocusRingColor = "#3b82f6";
-export const DsEffectFocusRingWidth = "2px";
-export const DsEffectFocusRingOffset = "2px";
-export const DsEffectInteractionTransition =
-  "all 200ms cubic-bezier(0.4, 0, 0.2, 1)";
-export const DsEffectInteractionTransitionFast =
-  "all 100ms cubic-bezier(0.4, 0, 0.2, 1)";
-export const DsEffectInteractionTransitionSlow =
-  "all 300ms cubic-bezier(0.4, 0, 0.2, 1)";
+/**
+ * 🎨 Design System Tokens for Tailwind
+ * Auto-generated by Style Dictionary
+ * DO NOT EDIT MANUALLY
+ */
+
+export default {
+  "ds": {
+    "breakpoint": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1536px"
+    },
+    "color": {
+      "base": {
+        "white": "#ffffff",
+        "black": "#000000",
+        "transparent": "#00000000"
+      },
+      "slate": {
+        "50": "#f8fafc",
+        "100": "#f1f5f9",
+        "200": "#e2e8f0",
+        "300": "#cbd5e1",
+        "400": "#94a3b8",
+        "500": "#64748b",
+        "600": "#475569",
+        "700": "#334155",
+        "800": "#1e293b",
+        "900": "#0f172a",
+        "950": "#020617"
+      },
+      "purple": {
+        "50": "#faf5ff",
+        "100": "#f3e8ff",
+        "200": "#e9d5ff",
+        "300": "#d8b4fe",
+        "400": "#c084fc",
+        "500": "#a855f7",
+        "600": "#9333ea",
+        "700": "#7e22ce",
+        "800": "#6b21a8",
+        "900": "#581c87",
+        "950": "#3b0764"
+      },
+      "blue": {
+        "50": "#eff6ff",
+        "100": "#dbeafe",
+        "200": "#bfdbfe",
+        "300": "#93c5fd",
+        "400": "#60a5fa",
+        "500": "#3b82f6",
+        "600": "#2563eb",
+        "700": "#1d4ed8",
+        "800": "#1e40af",
+        "900": "#1e3a8a",
+        "950": "#172554"
+      },
+      "green": {
+        "50": "#f0fdf4",
+        "100": "#dcfce7",
+        "200": "#bbf7d0",
+        "300": "#86efac",
+        "400": "#4ade80",
+        "500": "#22c55e",
+        "600": "#16a34a",
+        "700": "#15803d",
+        "800": "#166534",
+        "900": "#14532d"
+      },
+      "red": {
+        "50": "#fef2f2",
+        "100": "#fee2e2",
+        "200": "#fecaca",
+        "300": "#fca5a5",
+        "400": "#f87171",
+        "500": "#ef4444",
+        "600": "#dc2626",
+        "700": "#b91c1c",
+        "800": "#991b1b",
+        "900": "#7f1d1d"
+      },
+      "orange": {
+        "50": "#fff7ed",
+        "100": "#ffedd5",
+        "200": "#fed7aa",
+        "300": "#fdba74",
+        "400": "#fb923c",
+        "500": "#f97316",
+        "600": "#ea580c",
+        "700": "#c2410c",
+        "800": "#9a3412",
+        "900": "#7c2d12"
+      },
+      "teal": {
+        "50": "#f0fdfa",
+        "100": "#ccfbf1",
+        "200": "#99f6e4",
+        "300": "#5eead4",
+        "400": "#2dd4bf",
+        "500": "#14b8a6",
+        "600": "#0d9488",
+        "700": "#0f766e",
+        "800": "#115e59",
+        "900": "#134e4a"
+      },
+      "foreground": "#0f172a",
+      "muted-foreground": "#64748b",
+      "background": "#ffffff",
+      "card": "#ffffff",
+      "card-foreground": "#0f172a",
+      "popover": "#ffffff",
+      "popover-foreground": "#0f172a",
+      "muted": "#f1f5f9",
+      "accent": "#f1f5f9",
+      "accent-foreground": "#0f172a",
+      "border": "#e2e8f0",
+      "input": "#e2e8f0",
+      "ring": "#020617",
+      "primary": "#a855f7",
+      "primary-foreground": "#ffffff",
+      "secondary": "#2dd4bf",
+      "secondary-foreground": "#ffffff",
+      "destructive": "#ef4444",
+      "destructive-foreground": "#ffffff",
+      "success": "#22c55e",
+      "success-foreground": "#ffffff",
+      "warning": "#f97316",
+      "warning-foreground": "#ffffff",
+      "info": "#3b82f6",
+      "info-foreground": "#ffffff"
+    },
+    "motion": {
+      "duration": {
+        "instant": "0ms",
+        "fast": "100ms",
+        "normal": "200ms",
+        "slow": "300ms",
+        "slower": "500ms"
+      },
+      "easing": {
+        "linear": "linear",
+        "in": "cubic-bezier(0.4, 0, 1, 1)",
+        "out": "cubic-bezier(0, 0, 0.2, 1)",
+        "in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+      }
+    },
+    "opacity": {
+      "0": "0",
+      "5": "0.05",
+      "10": "0.1",
+      "20": "0.2",
+      "30": "0.3",
+      "40": "0.4",
+      "50": "0.5",
+      "60": "0.6",
+      "70": "0.7",
+      "80": "0.8",
+      "90": "0.9",
+      "95": "0.95",
+      "100": "1"
+    },
+    "radius": {
+      "none": "0px",
+      "xs": "0.125rem",
+      "sm": "0.25rem",
+      "base": "0.375rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem",
+      "2xl": "1.25rem",
+      "3xl": "1.5rem",
+      "full": "9999px"
+    },
+    "shadow": {
+      "none": "none",
+      "xs": "0 1px 2px 0 rgba(0, 0, 0, 0.03)",
+      "sm": "0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08)",
+      "base": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
+      "md": "0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04)",
+      "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04)",
+      "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)",
+      "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+      "inner": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.04)",
+      "glow": "0 0 0 3px rgba(168, 85, 247, 0.1)"
+    },
+    "spacing": {
+      "0": "0px",
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "5": "1.25rem",
+      "6": "1.5rem",
+      "7": "1.75rem",
+      "8": "2rem",
+      "9": "2.25rem",
+      "10": "2.5rem",
+      "11": "2.75rem",
+      "12": "3rem",
+      "14": "3.5rem",
+      "16": "4rem",
+      "20": "5rem",
+      "24": "6rem",
+      "28": "7rem",
+      "32": "8rem",
+      "36": "9rem",
+      "40": "10rem",
+      "48": "12rem",
+      "56": "14rem",
+      "64": "16rem",
+      "component": {
+        "xs": "0.25rem",
+        "sm": "0.5rem",
+        "md": "0.75rem",
+        "lg": "1rem",
+        "xl": "1.5rem"
+      },
+      "layout": {
+        "xs": "1rem",
+        "sm": "1.5rem",
+        "md": "2rem",
+        "lg": "3rem",
+        "xl": "4rem",
+        "2xl": "6rem",
+        "3xl": "8rem"
+      },
+      "section": {
+        "xs": "3rem",
+        "sm": "4rem",
+        "md": "5rem",
+        "lg": "6rem",
+        "xl": "8rem",
+        "2xl": "10rem"
+      },
+      "container": {
+        "padding": "1rem",
+        "padding-md": "1.5rem",
+        "padding-lg": "2rem"
+      }
+    },
+    "typography": {
+      "font-family": {
+        "sans": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'Fira Code', 'Courier New', monospace"
+      },
+      "font-size": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.25rem",
+        "xl": "1.5rem",
+        "2xl": "1.875rem",
+        "3xl": "2.25rem",
+        "4xl": "2.75rem",
+        "5xl": "3.5rem",
+        "6xl": "4.5rem",
+        "7xl": "5.5rem"
+      },
+      "font-weight": {
+        "thin": "100",
+        "light": "300",
+        "regular": "400",
+        "medium": "500",
+        "semibold": "600",
+        "bold": "700",
+        "extrabold": "800",
+        "black": "900"
+      },
+      "line-height": {
+        "none": "1",
+        "tight": "1.25",
+        "snug": "1.375",
+        "normal": "1.5",
+        "relaxed": "1.625",
+        "loose": "2"
+      },
+      "letter-spacing": {
+        "tighter": "-0.05em",
+        "tight": "-0.025em",
+        "normal": "0em",
+        "wide": "0.025em",
+        "wider": "0.05em",
+        "widest": "0.1em"
+      },
+      "heading": {
+        "h1": {
+          "font-size": "3.5rem",
+          "font-weight": "700",
+          "line-height": "1.25",
+          "letter-spacing": "-0.025em"
+        },
+        "h2": {
+          "font-size": "2.75rem",
+          "font-weight": "700",
+          "line-height": "1.25",
+          "letter-spacing": "-0.025em"
+        },
+        "h3": {
+          "font-size": "2.25rem",
+          "font-weight": "600",
+          "line-height": "1.375",
+          "letter-spacing": "0em"
+        },
+        "h4": {
+          "font-size": "1.875rem",
+          "font-weight": "600",
+          "line-height": "1.375",
+          "letter-spacing": "0em"
+        },
+        "h5": {
+          "font-size": "1.5rem",
+          "font-weight": "600",
+          "line-height": "1.5",
+          "letter-spacing": "0em"
+        },
+        "h6": {
+          "font-size": "1.25rem",
+          "font-weight": "600",
+          "line-height": "1.5",
+          "letter-spacing": "0em"
+        }
+      },
+      "body": {
+        "xs": {
+          "font-size": "0.75rem",
+          "font-weight": "400",
+          "line-height": "1.5"
+        },
+        "sm": {
+          "font-size": "0.875rem",
+          "font-weight": "400",
+          "line-height": "1.5"
+        },
+        "base": {
+          "font-size": "1rem",
+          "font-weight": "400",
+          "line-height": "1.5"
+        },
+        "lg": {
+          "font-size": "1.25rem",
+          "font-weight": "400",
+          "line-height": "1.625"
+        }
+      },
+      "label": {
+        "sm": {
+          "font-size": "0.75rem",
+          "font-weight": "500",
+          "line-height": "1.25",
+          "letter-spacing": "0.025em"
+        },
+        "base": {
+          "font-size": "0.875rem",
+          "font-weight": "500",
+          "line-height": "1.25",
+          "letter-spacing": "0.025em"
+        }
+      },
+      "code": {
+        "font-family": "'Fira Code', 'Courier New', monospace",
+        "font-size": "0.875em"
+      }
+    },
+    "z-index": {
+      "hide": "-1",
+      "base": "0",
+      "dropdown": "1000",
+      "sticky": "1100",
+      "fixed": "1200",
+      "overlay": "1300",
+      "modal": "1400",
+      "popover": "1500",
+      "tooltip": "1600"
+    },
+    "component": {
+      "button": {
+        "padding-x": "1rem",
+        "padding-y": "0.75rem",
+        "radius": "0.5rem",
+        "font-size": "0.875rem",
+        "font-weight": "500",
+        "height-sm": "2rem",
+        "height-md": "2.5rem",
+        "height-lg": "3rem"
+      },
+      "input": {
+        "padding-x": "0.75rem",
+        "padding-y": "0.5rem",
+        "radius": "0.5rem",
+        "font-size": "0.875rem",
+        "height": "2.5rem",
+        "border-width": "1px"
+      },
+      "card": {
+        "padding": "1.5rem",
+        "radius": "0.75rem",
+        "shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04)",
+        "border-width": "1px"
+      },
+      "avatar": {
+        "size-xs": "1.5rem",
+        "size-sm": "2rem",
+        "size-md": "2.5rem",
+        "size-lg": "3rem",
+        "size-xl": "4rem",
+        "radius": "9999px"
+      },
+      "badge": {
+        "padding-x": "0.5rem",
+        "padding-y": "0.25rem",
+        "radius": "9999px",
+        "font-size": "0.75rem",
+        "font-weight": "500"
+      },
+      "modal": {
+        "padding": "3rem",
+        "radius": "1rem",
+        "shadow": "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+        "max-width": "32rem"
+      },
+      "tooltip": {
+        "padding-x": "0.75rem",
+        "padding-y": "0.5rem",
+        "radius": "0.5rem",
+        "font-size": "0.75rem",
+        "shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04)"
+      }
+    },
+    "effect": {
+      "elevation": {
+        "0": "none",
+        "1": "0 1px 2px 0 rgba(0, 0, 0, 0.03)",
+        "2": "0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08)",
+        "3": "0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04)",
+        "4": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04)",
+        "5": "0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)",
+        "6": "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+      },
+      "focus": {
+        "ring-color": "#020617",
+        "ring-width": "2px",
+        "ring-offset": "2px"
+      },
+      "interaction": {
+        "transition": "all 200ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "transition-fast": "all 100ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "transition-slow": "all 300ms cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+    }
+  }
+}

@@ -103,16 +103,28 @@ export default {
   ],
 
   safelist: [
-    { pattern: /^bg-ds-/ },
-    { pattern: /^text-ds-/ },
-    { pattern: /^border-ds-/ },
-    { pattern: /^shadow-ds-/ },
-    { pattern: /^ring-ds-/ },
+    { pattern: /^bg-ds-/, variants: ['hover', 'focus', 'active', 'dark'] },
+    { pattern: /^text-ds-/, variants: ['hover', 'focus', 'active', 'dark'] },
+    { pattern: /^border-ds-/, variants: ['hover', 'focus', 'active', 'dark'] },
+    { pattern: /^shadow-ds-/, variants: ['hover', 'focus'] },
+    { pattern: /^ring-ds-/, variants: ['focus'] },
     { pattern: /^duration-ds-/ },
     { pattern: /^ease-ds-/ },
     { pattern: /^gap-ds-/ },
     { pattern: /^rounded-ds-/ },
-    { pattern: /^p?-?x?-?y?-?m?-?b?-?t?-?l?-?r?-?ds-/ }
+    { pattern: /^font-ds-/ },
+    { pattern: /^leading-ds-/ },
+    { pattern: /^tracking-ds-/ },
+    { pattern: /^p?-?x?-?y?-?m?-?b?-?t?-?l?-?r?-?ds-/ },
+    // Explicit color utilities for text
+    'text-ds-foreground',
+    'text-ds-muted-foreground',
+    'text-ds-primary',
+    'text-ds-primary-foreground',
+    'text-ds-secondary',
+    'text-ds-secondary-foreground',
+    'text-ds-accent',
+    'text-ds-accent-foreground'
   ],
 
   theme: {
@@ -274,6 +286,63 @@ export default {
 
         for (const [key, value] of Object.entries(opacities)) {
           mapped[`ds-${key}`] = value
+        }
+
+        return mapped
+      })(),
+
+      /* 🧩 Component-specific sizes */
+      height: (() => {
+        const components = extractNested(['ds', 'component'])
+        const mapped = {}
+
+        // Add button heights
+        if (components.button) {
+          mapped['ds-button-sm'] = components.button['height-sm']
+          mapped['ds-button-md'] = components.button['height-md']
+          mapped['ds-button-lg'] = components.button['height-lg']
+        }
+
+        // Add input height
+        if (components.input?.height) {
+          mapped['ds-input'] = components.input.height
+        }
+
+        // Add avatar sizes
+        if (components.avatar) {
+          mapped['ds-avatar-xs'] = components.avatar['size-xs']
+          mapped['ds-avatar-sm'] = components.avatar['size-sm']
+          mapped['ds-avatar-md'] = components.avatar['size-md']
+          mapped['ds-avatar-lg'] = components.avatar['size-lg']
+          mapped['ds-avatar-xl'] = components.avatar['size-xl']
+        }
+
+        return mapped
+      })(),
+
+      width: (() => {
+        const components = extractNested(['ds', 'component'])
+        const mapped = {}
+
+        // Add button widths (for icon-only buttons)
+        if (components.button) {
+          mapped['ds-button-sm'] = components.button['height-sm']
+          mapped['ds-button-md'] = components.button['height-md']
+          mapped['ds-button-lg'] = components.button['height-lg']
+        }
+
+        // Add avatar sizes
+        if (components.avatar) {
+          mapped['ds-avatar-xs'] = components.avatar['size-xs']
+          mapped['ds-avatar-sm'] = components.avatar['size-sm']
+          mapped['ds-avatar-md'] = components.avatar['size-md']
+          mapped['ds-avatar-lg'] = components.avatar['size-lg']
+          mapped['ds-avatar-xl'] = components.avatar['size-xl']
+        }
+
+        // Add modal max-width
+        if (components.modal?.['max-width']) {
+          mapped['ds-modal'] = components.modal['max-width']
         }
 
         return mapped

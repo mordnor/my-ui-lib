@@ -1,0 +1,16 @@
+{
+  "ds": {
+    "radius": {
+      "none": { "value": "0px", "type": "dimension", "description": "Pas de border-radius" },
+      "xs": { "value": "0.125rem", "type": "dimension", "description": "2px - très petit rayon" },
+      "sm": { "value": "0.25rem", "type": "dimension", "description": "4px - petit rayon" },
+      "base": { "value": "0.375rem", "type": "dimension", "description": "6px - rayon par défaut" },
+      "md": { "value": "0.5rem", "type": "dimension", "description": "8px - rayon moyen (moderne)" },
+      "lg": { "value": "0.75rem", "type": "dimension", "description": "12px - grand rayon" },
+      "xl": { "value": "1rem", "type": "dimension", "description": "16px - très grand rayon" },
+      "2xl": { "value": "1.25rem", "type": "dimension", "description": "20px - énorme rayon" },
+      "3xl": { "value": "1.5rem", "type": "dimension", "description": "24px - rayon massif" },
+      "full": { "value": "9999px", "type": "dimension", "description": "Complètement arrondi (cercle/pill)" }
+    }
+  }
+}

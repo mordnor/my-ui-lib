@@ -1,0 +1,49 @@
+{
+  "ds": {
+    "typography": {
+      "font-family": {
+        "sans": { "value": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", "type": "fontFamily" },
+        "mono": { "value": "'Fira Code', 'Courier New', monospace", "type": "fontFamily" }
+      },
+      "font-size": {
+        "xs": { "value": "0.75rem", "type": "dimension", "description": "12px - très petit texte" },
+        "sm": { "value": "0.875rem", "type": "dimension", "description": "14px - petit texte" },
+        "base": { "value": "1rem", "type": "dimension", "description": "16px - texte normal" },
+        "lg": { "value": "1.25rem", "type": "dimension", "description": "20px - texte large (augmenté)" },
+        "xl": { "value": "1.5rem", "type": "dimension", "description": "24px - extra large (augmenté)" },
+        "2xl": { "value": "1.875rem", "type": "dimension", "description": "30px" },
+        "3xl": { "value": "2.25rem", "type": "dimension", "description": "36px" },
+        "4xl": { "value": "2.75rem", "type": "dimension", "description": "44px (augmenté)" },
+        "5xl": { "value": "3.5rem", "type": "dimension", "description": "56px (augmenté)" },
+        "6xl": { "value": "4.5rem", "type": "dimension", "description": "72px (augmenté)" },
+        "7xl": { "value": "5.5rem", "type": "dimension", "description": "88px (augmenté)" }
+      },
+      "font-weight": {
+        "thin": { "value": "100", "type": "number" },
+        "light": { "value": "300", "type": "number" },
+        "regular": { "value": "400", "type": "number" },
+        "medium": { "value": "500", "type": "number" },
+        "semibold": { "value": "600", "type": "number" },
+        "bold": { "value": "700", "type": "number" },
+        "extrabold": { "value": "800", "type": "number" },
+        "black": { "value": "900", "type": "number" }
+      },
+      "line-height": {
+        "none": { "value": "1", "type": "number" },
+        "tight": { "value": "1.25", "type": "number" },
+        "snug": { "value": "1.375", "type": "number" },
+        "normal": { "value": "1.5", "type": "number" },
+        "relaxed": { "value": "1.625", "type": "number" },
+        "loose": { "value": "2", "type": "number" }
+      },
+      "letter-spacing": {
+        "tighter": { "value": "-0.05em", "type": "dimension" },
+        "tight": { "value": "-0.025em", "type": "dimension" },
+        "normal": { "value": "0em", "type": "dimension" },
+        "wide": { "value": "0.025em", "type": "dimension" },
+        "wider": { "value": "0.05em", "type": "dimension" },
+        "widest": { "value": "0.1em", "type": "dimension" }
+      }
+    }
+  }
+}

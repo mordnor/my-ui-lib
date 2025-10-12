@@ -1,2 +1,2 @@
-export * from './Stack'
-export * from './Stack.types'
+export { Stack } from './Stack'
+export type { StackProps, StackDirection, StackSpacing, StackAlign, StackJustify } from './Stack.types'

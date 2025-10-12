@@ -1,26 +1,130 @@
 {
   "ds": {
     "color": {
-      "text": {
-        "primary": { "value": "{ds.color.slate.900}", "type": "color" },
-        "secondary": { "value": "{ds.color.slate.600}", "type": "color" },
-        "tertiary": { "value": "{ds.color.slate.500}", "type": "color" },
-        "muted": { "value": "{ds.color.slate.400}", "type": "color" },
-        "inverse": { "value": "{ds.color.base.white}", "type": "color" }
+      "foreground": {
+        "value": "#0f172a",
+        "type": "color",
+        "description": "Main text - slate-900"
+      },
+      "muted-foreground": {
+        "value": "#64748b",
+        "type": "color",
+        "description": "Muted text - slate-500"
       },
       "background": {
-        "app": { "value": "{ds.color.slate.50}", "type": "color" },
-        "surface": { "value": "{ds.color.base.white}", "type": "color" },
-        "surface-secondary": { "value": "{ds.color.slate.100}", "type": "color" },
-        "surface-tertiary": { "value": "{ds.color.slate.200}", "type": "color" },
-        "subtle": { "value": "{ds.color.slate.50}", "type": "color" },
-        "inverse": { "value": "{ds.color.slate.900}", "type": "color" }
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Main background - white"
+      },
+      "card": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Card background - white"
+      },
+      "card-foreground": {
+        "value": "#0f172a",
+        "type": "color",
+        "description": "Text on cards - slate-900"
+      },
+      "popover": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Popover background - white"
+      },
+      "popover-foreground": {
+        "value": "#0f172a",
+        "type": "color",
+        "description": "Text in popovers - slate-900"
+      },
+      "muted": {
+        "value": "#f1f5f9",
+        "type": "color",
+        "description": "Muted background - slate-100"
+      },
+      "accent": {
+        "value": "#f1f5f9",
+        "type": "color",
+        "description": "Accent background - slate-100"
+      },
+      "accent-foreground": {
+        "value": "#0f172a",
+        "type": "color",
+        "description": "Text on accent - slate-900"
       },
       "border": {
-        "default": { "value": "{ds.color.slate.200}", "type": "color" },
-        "subtle": { "value": "{ds.color.slate.100}", "type": "color" },
-        "strong": { "value": "{ds.color.slate.300}", "type": "color" },
-        "stronger": { "value": "{ds.color.slate.400}", "type": "color" }
+        "value": "#e2e8f0",
+        "type": "color",
+        "description": "Border color - slate-200"
+      },
+      "input": {
+        "value": "#e2e8f0",
+        "type": "color",
+        "description": "Input border - slate-200"
+      },
+      "ring": {
+        "value": "#020617",
+        "type": "color",
+        "description": "Focus ring - slate-950"
+      },
+      "primary": {
+        "value": "#a855f7",
+        "type": "color",
+        "description": "Primary brand - purple-500"
+      },
+      "primary-foreground": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Text on primary - white"
+      },
+      "secondary": {
+        "value": "#2dd4bf",
+        "type": "color",
+        "description": "Secondary brand - teal-400"
+      },
+      "secondary-foreground": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Text on secondary - white"
+      },
+      "destructive": {
+        "value": "#ef4444",
+        "type": "color",
+        "description": "Destructive - red-500"
+      },
+      "destructive-foreground": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Text on destructive - white"
+      },
+      "success": {
+        "value": "#22c55e",
+        "type": "color",
+        "description": "Success - green-500"
+      },
+      "success-foreground": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Text on success - white"
+      },
+      "warning": {
+        "value": "#f97316",
+        "type": "color",
+        "description": "Warning - orange-500"
+      },
+      "warning-foreground": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Text on warning - white"
+      },
+      "info": {
+        "value": "#3b82f6",
+        "type": "color",
+        "description": "Info - blue-500"
+      },
+      "info-foreground": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Text on info - white"
       }
     }
   }
