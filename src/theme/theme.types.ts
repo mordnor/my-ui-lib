@@ -5,7 +5,7 @@
 /**
  * Available theme names
  */
-export type ThemeName = 'light' | 'dark' | 'clienta-light' | 'clienta-dark' | 'material-light' | 'material-dark'
+export type ThemeName = 'light' | 'dark' | 'clienta-light' | 'clienta-dark' | 'material-light' | 'material-dark' | 'linear-light' | 'linear-dark'
 
 /**
  * Theme configuration

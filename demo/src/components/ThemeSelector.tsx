@@ -16,6 +16,10 @@ export const ThemeSelector = ({
   const themes: { value: ThemeName; label: string; icon: string }[] = [
     { value: 'light', label: 'Light', icon: 'pi-sun' },
     { value: 'dark', label: 'Dark', icon: 'pi-moon' },
+    { value: 'material-light', label: 'Material Light', icon: 'pi-palette' },
+    { value: 'material-dark', label: 'Material Dark', icon: 'pi-palette' },
+    { value: 'linear-light', label: 'Linear Light', icon: 'pi-sparkles' },
+    { value: 'linear-dark', label: 'Linear Dark', icon: 'pi-sparkles' },
   ]
 
   const currentThemeData = themes.find((t) => t.value === currentTheme)

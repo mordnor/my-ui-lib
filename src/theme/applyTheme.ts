@@ -21,7 +21,9 @@ export function getCurrentTheme(): ThemeName {
     storedTheme === 'clienta-light' ||
     storedTheme === 'clienta-dark' ||
     storedTheme === 'material-light' ||
-    storedTheme === 'material-dark'
+    storedTheme === 'material-dark' ||
+    storedTheme === 'linear-light' ||
+    storedTheme === 'linear-dark'
   ) {
     return storedTheme
   }

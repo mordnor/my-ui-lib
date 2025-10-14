@@ -154,7 +154,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(flattened)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-spacing-${key})`
         }
 
         return mapped
@@ -170,7 +170,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(sizes)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-typography-font-size-${key})`
         }
 
         return mapped
@@ -180,7 +180,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(weights)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-typography-font-weight-${key})`
         }
 
         return mapped
@@ -190,7 +190,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(lineHeights)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-typography-line-height-${key})`
         }
 
         return mapped
@@ -204,7 +204,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(letterSpacing)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-typography-letter-spacing-${key})`
         }
 
         return mapped
@@ -216,7 +216,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(radii)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-radius-${key})`
         }
 
         return mapped
@@ -228,7 +228,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(shadows)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-shadow-${key})`
         }
 
         return mapped
@@ -240,7 +240,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(durations)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-motion-duration-${key})`
         }
 
         return mapped
@@ -250,7 +250,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(easings)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-motion-easing-${key})`
         }
 
         return mapped
@@ -262,7 +262,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(zIndices)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-z-index-${key})`
         }
 
         return mapped
@@ -285,7 +285,7 @@ export default {
         const mapped = {}
 
         for (const [key, value] of Object.entries(opacities)) {
-          mapped[`ds-${key}`] = value
+          mapped[`ds-${key}`] = `var(--ds-opacity-${key})`
         }
 
         return mapped
@@ -298,23 +298,23 @@ export default {
 
         // Add button heights
         if (components.button) {
-          mapped['ds-button-sm'] = components.button['height-sm']
-          mapped['ds-button-md'] = components.button['height-md']
-          mapped['ds-button-lg'] = components.button['height-lg']
+          mapped['ds-button-sm'] = 'var(--ds-component-button-height-sm)'
+          mapped['ds-button-md'] = 'var(--ds-component-button-height-md)'
+          mapped['ds-button-lg'] = 'var(--ds-component-button-height-lg)'
         }
 
         // Add input height
         if (components.input?.height) {
-          mapped['ds-input'] = components.input.height
+          mapped['ds-input'] = 'var(--ds-component-input-height)'
         }
 
         // Add avatar sizes
         if (components.avatar) {
-          mapped['ds-avatar-xs'] = components.avatar['size-xs']
-          mapped['ds-avatar-sm'] = components.avatar['size-sm']
-          mapped['ds-avatar-md'] = components.avatar['size-md']
-          mapped['ds-avatar-lg'] = components.avatar['size-lg']
-          mapped['ds-avatar-xl'] = components.avatar['size-xl']
+          mapped['ds-avatar-xs'] = 'var(--ds-component-avatar-size-xs)'
+          mapped['ds-avatar-sm'] = 'var(--ds-component-avatar-size-sm)'
+          mapped['ds-avatar-md'] = 'var(--ds-component-avatar-size-md)'
+          mapped['ds-avatar-lg'] = 'var(--ds-component-avatar-size-lg)'
+          mapped['ds-avatar-xl'] = 'var(--ds-component-avatar-size-xl)'
         }
 
         return mapped
@@ -326,23 +326,23 @@ export default {
 
         // Add button widths (for icon-only buttons)
         if (components.button) {
-          mapped['ds-button-sm'] = components.button['height-sm']
-          mapped['ds-button-md'] = components.button['height-md']
-          mapped['ds-button-lg'] = components.button['height-lg']
+          mapped['ds-button-sm'] = 'var(--ds-component-button-height-sm)'
+          mapped['ds-button-md'] = 'var(--ds-component-button-height-md)'
+          mapped['ds-button-lg'] = 'var(--ds-component-button-height-lg)'
         }
 
         // Add avatar sizes
         if (components.avatar) {
-          mapped['ds-avatar-xs'] = components.avatar['size-xs']
-          mapped['ds-avatar-sm'] = components.avatar['size-sm']
-          mapped['ds-avatar-md'] = components.avatar['size-md']
-          mapped['ds-avatar-lg'] = components.avatar['size-lg']
-          mapped['ds-avatar-xl'] = components.avatar['size-xl']
+          mapped['ds-avatar-xs'] = 'var(--ds-component-avatar-size-xs)'
+          mapped['ds-avatar-sm'] = 'var(--ds-component-avatar-size-sm)'
+          mapped['ds-avatar-md'] = 'var(--ds-component-avatar-size-md)'
+          mapped['ds-avatar-lg'] = 'var(--ds-component-avatar-size-lg)'
+          mapped['ds-avatar-xl'] = 'var(--ds-component-avatar-size-xl)'
         }
 
         // Add modal max-width
         if (components.modal?.['max-width']) {
-          mapped['ds-modal'] = components.modal['max-width']
+          mapped['ds-modal'] = 'var(--ds-component-modal-max-width)'
         }
 
         return mapped

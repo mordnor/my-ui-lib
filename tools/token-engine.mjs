@@ -250,7 +250,11 @@ export async function buildTokens({ tokensDir, outputDir, themes = [] }) {
 
   // 📘 Crée un fichier TypeScript d'index
   const tsIndexContent = themes
-    .map(theme => `export { tokens as ${theme}Tokens } from './${theme}'`)
+    .map(theme => {
+      // Convert theme name to camelCase for valid JS identifier
+      const camelCaseName = theme.replace(/-([a-z])/g, (g) => g[1].toUpperCase())
+      return `export { tokens as ${camelCaseName}Tokens } from './${theme}'`
+    })
     .join('\n') + '\n'
 
   fs.writeFileSync(path.join(tsOut, 'index.ts'), tsIndexContent)
