@@ -1,0 +1,214 @@
+{
+  "ds": {
+    "spacing": {
+      "0": { "value": "0px", "type": "dimension" },
+      "1": { "value": "4px", "type": "dimension", "description": "MD3 4dp" },
+      "2": { "value": "8px", "type": "dimension", "description": "MD3 8dp" },
+      "3": { "value": "12px", "type": "dimension", "description": "MD3 12dp" },
+      "4": { "value": "16px", "type": "dimension", "description": "MD3 16dp" },
+      "5": { "value": "20px", "type": "dimension", "description": "MD3 20dp" },
+      "6": { "value": "24px", "type": "dimension", "description": "MD3 24dp" },
+      "7": { "value": "28px", "type": "dimension", "description": "MD3 28dp" },
+      "8": { "value": "32px", "type": "dimension", "description": "MD3 32dp" },
+      "9": { "value": "36px", "type": "dimension", "description": "MD3 36dp" },
+      "10": { "value": "40px", "type": "dimension", "description": "MD3 40dp" },
+      "11": { "value": "44px", "type": "dimension", "description": "MD3 44dp" },
+      "12": { "value": "48px", "type": "dimension", "description": "MD3 48dp" },
+      "14": { "value": "56px", "type": "dimension", "description": "MD3 56dp" },
+      "16": { "value": "64px", "type": "dimension", "description": "MD3 64dp" },
+      "20": { "value": "80px", "type": "dimension", "description": "MD3 80dp" },
+      "24": { "value": "96px", "type": "dimension", "description": "MD3 96dp" },
+      "28": { "value": "112px", "type": "dimension", "description": "MD3 112dp" },
+      "32": { "value": "128px", "type": "dimension", "description": "MD3 128dp" },
+      "36": { "value": "144px", "type": "dimension", "description": "MD3 144dp" },
+      "40": { "value": "160px", "type": "dimension", "description": "MD3 160dp" },
+      "48": { "value": "192px", "type": "dimension", "description": "MD3 192dp" },
+      "56": { "value": "224px", "type": "dimension", "description": "MD3 224dp" },
+      "64": { "value": "256px", "type": "dimension", "description": "MD3 256dp" }
+    },
+    "radius": {
+      "none": { "value": "0px", "type": "dimension", "description": "MD3 None" },
+      "xs": { "value": "4px", "type": "dimension", "description": "MD3 Extra small" },
+      "sm": { "value": "8px", "type": "dimension", "description": "MD3 Small" },
+      "base": { "value": "12px", "type": "dimension", "description": "MD3 Medium" },
+      "md": { "value": "16px", "type": "dimension", "description": "MD3 Large" },
+      "lg": { "value": "20px", "type": "dimension", "description": "MD3 Extra large" },
+      "xl": { "value": "28px", "type": "dimension", "description": "MD3 Extra extra large" },
+      "2xl": { "value": "28px", "type": "dimension", "description": "MD3 Extra extra large" },
+      "3xl": { "value": "28px", "type": "dimension", "description": "MD3 Extra extra large" },
+      "full": { "value": "9999px", "type": "dimension", "description": "MD3 Full" }
+    },
+    "typography": {
+      "font-family": {
+        "sans": { "value": "'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", "type": "fontFamily", "description": "MD3 Roboto" },
+        "mono": { "value": "'Roboto Mono', 'Courier New', monospace", "type": "fontFamily", "description": "MD3 Roboto Mono" }
+      },
+      "font-size": {
+        "xs": { "value": "11px", "type": "dimension", "description": "MD3 Label small" },
+        "sm": { "value": "12px", "type": "dimension", "description": "MD3 Label medium" },
+        "base": { "value": "14px", "type": "dimension", "description": "MD3 Body medium" },
+        "lg": { "value": "16px", "type": "dimension", "description": "MD3 Body large" },
+        "xl": { "value": "22px", "type": "dimension", "description": "MD3 Title large" },
+        "2xl": { "value": "24px", "type": "dimension", "description": "MD3 Headline small" },
+        "3xl": { "value": "28px", "type": "dimension", "description": "MD3 Headline medium" },
+        "4xl": { "value": "32px", "type": "dimension", "description": "MD3 Headline large" },
+        "5xl": { "value": "45px", "type": "dimension", "description": "MD3 Display small" },
+        "6xl": { "value": "57px", "type": "dimension", "description": "MD3 Display medium" },
+        "7xl": { "value": "64px", "type": "dimension", "description": "MD3 Display large" }
+      },
+      "font-weight": {
+        "thin": { "value": "100", "type": "number" },
+        "light": { "value": "300", "type": "number" },
+        "regular": { "value": "400", "type": "number" },
+        "medium": { "value": "500", "type": "number" },
+        "semibold": { "value": "600", "type": "number" },
+        "bold": { "value": "700", "type": "number" },
+        "extrabold": { "value": "800", "type": "number" },
+        "black": { "value": "900", "type": "number" }
+      },
+      "line-height": {
+        "none": { "value": "1", "type": "number" },
+        "tight": { "value": "1.25", "type": "number", "description": "MD3 tight" },
+        "snug": { "value": "1.33", "type": "number", "description": "MD3 snug" },
+        "normal": { "value": "1.43", "type": "number", "description": "MD3 normal (body)" },
+        "relaxed": { "value": "1.5", "type": "number", "description": "MD3 relaxed" },
+        "loose": { "value": "1.6", "type": "number", "description": "MD3 loose (display)" }
+      },
+      "letter-spacing": {
+        "tighter": { "value": "-0.02em", "type": "dimension", "description": "MD3 tighter" },
+        "tight": { "value": "0em", "type": "dimension", "description": "MD3 tight (body)" },
+        "normal": { "value": "0.01em", "type": "dimension", "description": "MD3 normal (label)" },
+        "wide": { "value": "0.02em", "type": "dimension", "description": "MD3 wide" },
+        "wider": { "value": "0.03em", "type": "dimension", "description": "MD3 wider" },
+        "widest": { "value": "0.05em", "type": "dimension", "description": "MD3 widest (headline)" }
+      }
+    },
+    "color": {
+      "foreground": {
+        "value": "#E6E1E5",
+        "type": "color",
+        "description": "MD3 on-surface (dark)"
+      },
+      "muted-foreground": {
+        "value": "#CAC4D0",
+        "type": "color",
+        "description": "MD3 on-surface-variant (dark)"
+      },
+      "background": {
+        "value": "#141218",
+        "type": "color",
+        "description": "MD3 surface (dark)"
+      },
+      "card": {
+        "value": "#1D1B20",
+        "type": "color",
+        "description": "MD3 surface-container (dark)"
+      },
+      "card-foreground": {
+        "value": "#E6E1E5",
+        "type": "color",
+        "description": "MD3 on-surface (dark)"
+      },
+      "popover": {
+        "value": "#141218",
+        "type": "color",
+        "description": "MD3 surface (dark)"
+      },
+      "popover-foreground": {
+        "value": "#E6E1E5",
+        "type": "color",
+        "description": "MD3 on-surface (dark)"
+      },
+      "muted": {
+        "value": "#49454F",
+        "type": "color",
+        "description": "MD3 surface-variant (dark)"
+      },
+      "accent": {
+        "value": "#4A4458",
+        "type": "color",
+        "description": "MD3 secondary-container (dark)"
+      },
+      "accent-foreground": {
+        "value": "#E8DEF8",
+        "type": "color",
+        "description": "MD3 on-secondary-container (dark)"
+      },
+      "border": {
+        "value": "#3C3C3C",
+        "type": "color",
+        "description": "MD3 outline (dark subtle)"
+      },
+      "input": {
+        "value": "#404040",
+        "type": "color",
+        "description": "MD3 outline (dark subtle)"
+      },
+      "ring": {
+        "value": "#42A5F5",
+        "type": "color",
+        "description": "MD3 primary (blue vibrant dark)"
+      },
+      "primary": {
+        "value": "#42A5F5",
+        "type": "color",
+        "description": "MD3 primary (blue vibrant dark)"
+      },
+      "primary-foreground": {
+        "value": "#001D35",
+        "type": "color",
+        "description": "MD3 on-primary (dark)"
+      },
+      "secondary": {
+        "value": "#4DB6AC",
+        "type": "color",
+        "description": "MD3 secondary (teal dark)"
+      },
+      "secondary-foreground": {
+        "value": "#00332C",
+        "type": "color",
+        "description": "MD3 on-secondary (dark)"
+      },
+      "destructive": {
+        "value": "#EF5350",
+        "type": "color",
+        "description": "MD3 error (red dark)"
+      },
+      "destructive-foreground": {
+        "value": "#410002",
+        "type": "color",
+        "description": "MD3 on-error (dark)"
+      },
+      "success": {
+        "value": "#66BB6A",
+        "type": "color",
+        "description": "MD3 success (green vibrant dark)"
+      },
+      "success-foreground": {
+        "value": "#003909",
+        "type": "color",
+        "description": "MD3 on-success (dark)"
+      },
+      "warning": {
+        "value": "#FF9800",
+        "type": "color",
+        "description": "MD3 warning (orange vibrant dark)"
+      },
+      "warning-foreground": {
+        "value": "#2E1500",
+        "type": "color",
+        "description": "MD3 on-warning (dark)"
+      },
+      "info": {
+        "value": "#29B6F6",
+        "type": "color",
+        "description": "MD3 info (light blue dark)"
+      },
+      "info-foreground": {
+        "value": "#001D33",
+        "type": "color",
+        "description": "MD3 on-info (dark)"
+      }
+    }
+  }
+}
