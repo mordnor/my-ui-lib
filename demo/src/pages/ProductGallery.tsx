@@ -179,7 +179,7 @@ export const ProductGallery = ({ onNavigate, theme, onThemeChange }: ProductGall
               <Heading as="h1" className="text-ds-5xl font-ds-black">
                 Notre Collection
               </Heading>
-              <Text size="lg" color="secondary" className="max-w-2xl">
+              <Text size="lg" color="muted" className="max-w-2xl">
                 Découvrez tous nos sacs en cuir artisanaux, créés avec passion
                 dans nos ateliers français. Chaque pièce est unique.
               </Text>
@@ -196,7 +196,7 @@ export const ProductGallery = ({ onNavigate, theme, onThemeChange }: ProductGall
               <Text size="lg" weight="semibold">
                 Filtrer par catégorie
               </Text>
-              <Text size="sm" color="secondary">
+              <Text size="sm" color="muted">
                 {filteredProducts.length} produit{filteredProducts.length > 1 ? 's' : ''}
               </Text>
             </Flex>
@@ -253,7 +253,7 @@ export const ProductGallery = ({ onNavigate, theme, onThemeChange }: ProductGall
             <Heading as="h2" className="text-ds-4xl">
               Creation Sur Mesure
             </Heading>
-            <Text size="lg" color="secondary" className="max-w-2xl">
+            <Text size="lg" color="muted" className="max-w-2xl">
               Vous avez un projet specifique ? Nos artisans peuvent creer le
               sac de vos reves sur mesure. Contactez-nous pour discuter de
               votre projet.

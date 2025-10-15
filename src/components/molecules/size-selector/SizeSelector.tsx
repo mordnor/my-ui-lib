@@ -93,7 +93,7 @@ export const SizeSelector = forwardRef<HTMLDivElement, SizeSelectorProps>(
           })}
         </Flex>
         {showLabel && selectedSize && (
-          <Text size="xs" color="secondary">
+          <Text size="xs" color="muted">
             Taille sélectionnée : {sizes.find((s) => s.value === selectedSize)?.label}
           </Text>
         )}

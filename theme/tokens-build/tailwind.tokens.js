@@ -106,30 +106,30 @@ export default {
         "800": "#115e59",
         "900": "#134e4a"
       },
-      "foreground": "#1d1b20",
-      "muted-foreground": "#49454f",
-      "background": "#fef7ff",
-      "card": "#f3edf7",
-      "card-foreground": "#1d1b20",
-      "popover": "#fef7ff",
-      "popover-foreground": "#1d1b20",
-      "muted": "#e7e0ec",
-      "accent": "#e8def8",
-      "accent-foreground": "#1d192b",
-      "border": "#e0e0e0",
-      "input": "#dadce0",
-      "ring": "#1976d2",
-      "primary": "#1976d2",
+      "foreground": "#f8fafc",
+      "muted-foreground": "#94a3b8",
+      "background": "#020617",
+      "card": "#0f172a",
+      "card-foreground": "#f8fafc",
+      "popover": "#0f172a",
+      "popover-foreground": "#f8fafc",
+      "muted": "#1e293b",
+      "accent": "#1e293b",
+      "accent-foreground": "#f8fafc",
+      "border": "#1e293b",
+      "input": "#1e293b",
+      "ring": "#cbd5e1",
+      "primary": "#a855f7",
       "primary-foreground": "#ffffff",
-      "secondary": "#00897b",
+      "secondary": "#2dd4bf",
       "secondary-foreground": "#ffffff",
-      "destructive": "#d32f2f",
+      "destructive": "#ef4444",
       "destructive-foreground": "#ffffff",
-      "success": "#388e3c",
+      "success": "#22c55e",
       "success-foreground": "#ffffff",
-      "warning": "#f57c00",
+      "warning": "#f97316",
       "warning-foreground": "#ffffff",
-      "info": "#0288d1",
+      "info": "#3b82f6",
       "info-foreground": "#ffffff"
     },
     "motion": {
@@ -166,14 +166,14 @@ export default {
     },
     "radius": {
       "none": "0px",
-      "xs": "4px",
-      "sm": "8px",
-      "base": "12px",
-      "md": "16px",
-      "lg": "20px",
-      "xl": "28px",
-      "2xl": "28px",
-      "3xl": "28px",
+      "xs": "0.125rem",
+      "sm": "0.25rem",
+      "base": "0.375rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem",
+      "2xl": "1.25rem",
+      "3xl": "1.5rem",
       "full": "9999px"
     },
     "shadow": {
@@ -190,76 +190,76 @@ export default {
     },
     "spacing": {
       "0": "0px",
-      "1": "4px",
-      "2": "8px",
-      "3": "12px",
-      "4": "16px",
-      "5": "20px",
-      "6": "24px",
-      "7": "28px",
-      "8": "32px",
-      "9": "36px",
-      "10": "40px",
-      "11": "44px",
-      "12": "48px",
-      "14": "56px",
-      "16": "64px",
-      "20": "80px",
-      "24": "96px",
-      "28": "112px",
-      "32": "128px",
-      "36": "144px",
-      "40": "160px",
-      "48": "192px",
-      "56": "224px",
-      "64": "256px",
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "5": "1.25rem",
+      "6": "1.5rem",
+      "7": "1.75rem",
+      "8": "2rem",
+      "9": "2.25rem",
+      "10": "2.5rem",
+      "11": "2.75rem",
+      "12": "3rem",
+      "14": "3.5rem",
+      "16": "4rem",
+      "20": "5rem",
+      "24": "6rem",
+      "28": "7rem",
+      "32": "8rem",
+      "36": "9rem",
+      "40": "10rem",
+      "48": "12rem",
+      "56": "14rem",
+      "64": "16rem",
       "component": {
-        "xs": "4px",
-        "sm": "8px",
-        "md": "12px",
-        "lg": "16px",
-        "xl": "24px"
+        "xs": "0.25rem",
+        "sm": "0.5rem",
+        "md": "0.75rem",
+        "lg": "1rem",
+        "xl": "1.5rem"
       },
       "layout": {
-        "xs": "16px",
-        "sm": "24px",
-        "md": "32px",
-        "lg": "48px",
-        "xl": "64px",
-        "2xl": "96px",
-        "3xl": "128px"
+        "xs": "1rem",
+        "sm": "1.5rem",
+        "md": "2rem",
+        "lg": "3rem",
+        "xl": "4rem",
+        "2xl": "6rem",
+        "3xl": "8rem"
       },
       "section": {
-        "xs": "48px",
-        "sm": "64px",
-        "md": "80px",
-        "lg": "96px",
-        "xl": "128px",
-        "2xl": "160px"
+        "xs": "3rem",
+        "sm": "4rem",
+        "md": "5rem",
+        "lg": "6rem",
+        "xl": "8rem",
+        "2xl": "10rem"
       },
       "container": {
-        "padding": "16px",
-        "padding-md": "24px",
-        "padding-lg": "32px"
+        "padding": "1rem",
+        "padding-md": "1.5rem",
+        "padding-lg": "2rem"
       }
     },
     "typography": {
       "font-family": {
-        "sans": "'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-        "mono": "'Roboto Mono', 'Courier New', monospace"
+        "sans": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'Fira Code', 'Courier New', monospace"
       },
       "font-size": {
-        "xs": "11px",
-        "sm": "12px",
-        "base": "14px",
-        "lg": "16px",
-        "xl": "22px",
-        "2xl": "24px",
-        "3xl": "28px",
-        "4xl": "32px",
-        "5xl": "45px",
-        "6xl": "57px",
-        "7xl": "64px"
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.25rem",
+        "xl": "1.5rem",
+        "2xl": "1.875rem",
+        "3xl": "2.25rem",
+        "4xl": "2.75rem",
+        "5xl": "3.5rem",
+        "6xl": "4.5rem",
+        "7xl": "5.5rem"
       },
       "font-weight": {
         "thin": "100",
@@ -274,95 +274,95 @@ export default {
       "line-height": {
         "none": "1",
         "tight": "1.25",
-        "snug": "1.33",
-        "normal": "1.43",
-        "relaxed": "1.5",
-        "loose": "1.6"
+        "snug": "1.375",
+        "normal": "1.5",
+        "relaxed": "1.625",
+        "loose": "2"
       },
       "letter-spacing": {
-        "tighter": "-0.02em",
-        "tight": "0em",
-        "normal": "0.01em",
-        "wide": "0.02em",
-        "wider": "0.03em",
-        "widest": "0.05em"
+        "tighter": "-0.05em",
+        "tight": "-0.025em",
+        "normal": "0em",
+        "wide": "0.025em",
+        "wider": "0.05em",
+        "widest": "0.1em"
       },
       "heading": {
         "h1": {
-          "font-size": "45px",
+          "font-size": "3.5rem",
           "font-weight": "700",
           "line-height": "1.25",
-          "letter-spacing": "0em"
+          "letter-spacing": "-0.025em"
         },
         "h2": {
-          "font-size": "32px",
+          "font-size": "2.75rem",
           "font-weight": "700",
           "line-height": "1.25",
-          "letter-spacing": "0em"
+          "letter-spacing": "-0.025em"
         },
         "h3": {
-          "font-size": "28px",
+          "font-size": "2.25rem",
           "font-weight": "600",
-          "line-height": "1.33",
-          "letter-spacing": "0.01em"
+          "line-height": "1.375",
+          "letter-spacing": "0em"
         },
         "h4": {
-          "font-size": "24px",
+          "font-size": "1.875rem",
           "font-weight": "600",
-          "line-height": "1.33",
-          "letter-spacing": "0.01em"
+          "line-height": "1.375",
+          "letter-spacing": "0em"
         },
         "h5": {
-          "font-size": "22px",
+          "font-size": "1.5rem",
           "font-weight": "600",
-          "line-height": "1.43",
-          "letter-spacing": "0.01em"
+          "line-height": "1.5",
+          "letter-spacing": "0em"
         },
         "h6": {
-          "font-size": "16px",
+          "font-size": "1.25rem",
           "font-weight": "600",
-          "line-height": "1.43",
-          "letter-spacing": "0.01em"
+          "line-height": "1.5",
+          "letter-spacing": "0em"
         }
       },
       "body": {
         "xs": {
-          "font-size": "11px",
-          "font-weight": "400",
-          "line-height": "1.43"
-        },
-        "sm": {
-          "font-size": "12px",
-          "font-weight": "400",
-          "line-height": "1.43"
-        },
-        "base": {
-          "font-size": "14px",
-          "font-weight": "400",
-          "line-height": "1.43"
-        },
-        "lg": {
-          "font-size": "16px",
+          "font-size": "0.75rem",
           "font-weight": "400",
           "line-height": "1.5"
+        },
+        "sm": {
+          "font-size": "0.875rem",
+          "font-weight": "400",
+          "line-height": "1.5"
+        },
+        "base": {
+          "font-size": "1rem",
+          "font-weight": "400",
+          "line-height": "1.5"
+        },
+        "lg": {
+          "font-size": "1.25rem",
+          "font-weight": "400",
+          "line-height": "1.625"
         }
       },
       "label": {
         "sm": {
-          "font-size": "11px",
+          "font-size": "0.75rem",
           "font-weight": "500",
           "line-height": "1.25",
-          "letter-spacing": "0.02em"
+          "letter-spacing": "0.025em"
         },
         "base": {
-          "font-size": "12px",
+          "font-size": "0.875rem",
           "font-weight": "500",
           "line-height": "1.25",
-          "letter-spacing": "0.02em"
+          "letter-spacing": "0.025em"
         }
       },
       "code": {
-        "font-family": "'Roboto Mono', 'Courier New', monospace",
+        "font-family": "'Fira Code', 'Courier New', monospace",
         "font-size": "0.875em"
       }
     },
@@ -379,26 +379,26 @@ export default {
     },
     "component": {
       "button": {
-        "padding-x": "16px",
-        "padding-y": "12px",
-        "radius": "16px",
-        "font-size": "12px",
+        "padding-x": "1rem",
+        "padding-y": "0.75rem",
+        "radius": "0.5rem",
+        "font-size": "0.875rem",
         "font-weight": "500",
         "height-sm": "2rem",
         "height-md": "2.5rem",
         "height-lg": "3rem"
       },
       "input": {
-        "padding-x": "12px",
-        "padding-y": "8px",
-        "radius": "16px",
-        "font-size": "12px",
+        "padding-x": "0.75rem",
+        "padding-y": "0.5rem",
+        "radius": "0.5rem",
+        "font-size": "0.875rem",
         "height": "2.5rem",
         "border-width": "1px"
       },
       "card": {
-        "padding": "24px",
-        "radius": "20px",
+        "padding": "1.5rem",
+        "radius": "0.75rem",
         "shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04)",
         "border-width": "1px"
       },
@@ -411,23 +411,23 @@ export default {
         "radius": "9999px"
       },
       "badge": {
-        "padding-x": "8px",
-        "padding-y": "4px",
+        "padding-x": "0.5rem",
+        "padding-y": "0.25rem",
         "radius": "9999px",
-        "font-size": "11px",
+        "font-size": "0.75rem",
         "font-weight": "500"
       },
       "modal": {
-        "padding": "48px",
-        "radius": "28px",
+        "padding": "3rem",
+        "radius": "1rem",
         "shadow": "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
         "max-width": "32rem"
       },
       "tooltip": {
-        "padding-x": "12px",
-        "padding-y": "8px",
-        "radius": "16px",
-        "font-size": "11px",
+        "padding-x": "0.75rem",
+        "padding-y": "0.5rem",
+        "radius": "0.5rem",
+        "font-size": "0.75rem",
         "shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04)"
       }
     },
@@ -442,7 +442,7 @@ export default {
         "6": "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
       },
       "focus": {
-        "ring-color": "#1976d2",
+        "ring-color": "#cbd5e1",
         "ring-width": "2px",
         "ring-offset": "2px"
       },

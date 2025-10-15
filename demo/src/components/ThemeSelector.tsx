@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Button, Flex, Text, Stack } from '@dorian-ui/my-ui-lib'
+import { Button, Flex } from '@dorian-ui/my-ui-lib'
 import type { ThemeName } from '@dorian-ui/my-ui-lib'
 
 interface ThemeSelectorProps {
@@ -7,85 +6,27 @@ interface ThemeSelectorProps {
   onThemeChange: (theme: ThemeName) => void
 }
 
-export const ThemeSelector = ({
-  currentTheme,
-  onThemeChange
-}: ThemeSelectorProps) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const themes: { value: ThemeName; label: string; icon: string }[] = [
-    { value: 'light', label: 'Light', icon: 'pi-sun' },
-    { value: 'dark', label: 'Dark', icon: 'pi-moon' },
-    { value: 'material-light', label: 'Material Light', icon: 'pi-palette' },
-    { value: 'material-dark', label: 'Material Dark', icon: 'pi-palette' },
-    { value: 'linear-light', label: 'Linear Light', icon: 'pi-sparkles' },
-    { value: 'linear-dark', label: 'Linear Dark', icon: 'pi-sparkles' },
-  ]
-
-  const currentThemeData = themes.find((t) => t.value === currentTheme)
-
+export const ThemeSelector = ({ currentTheme, onThemeChange }: ThemeSelectorProps) => {
   return (
-    <div className="relative">
-      {/* Toggle Button */}
+    <Flex gap="2">
       <Button
-        variant="ghost"
+        variant={currentTheme === 'light' ? 'solid' : 'ghost'}
         size="sm"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Select theme"
-        className="min-w-[140px]"
+        onClick={() => onThemeChange('light')}
+        className="min-w-[80px]"
       >
-        <Flex align="center" gap="2">
-          <i className={`pi ${currentThemeData?.icon} text-ds-base`}></i>
-          <Text size="sm">{currentThemeData?.label}</Text>
-          <i className="pi pi-chevron-down text-ds-xs"></i>
-        </Flex>
+        <i className="pi pi-sun text-ds-base mr-ds-2"></i>
+        Light
       </Button>
-
-      {/* Dropdown */}
-      {isOpen && (
-        <>
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 z-40"
-            onClick={() => setIsOpen(false)}
-          />
-
-          {/* Menu */}
-          <div className="absolute right-0 top-full mt-2 z-50 w-48 bg-ds-card border border-ds-border rounded-ds-lg shadow-ds-lg overflow-hidden">
-            <Stack spacing="xs" className="p-ds-2">
-              {themes.map((theme) => (
-                <button
-                  key={theme.value}
-                  onClick={() => {
-                    onThemeChange(theme.value)
-                    setIsOpen(false)
-                  }}
-                  className={`
-                    w-full text-left px-ds-3 py-ds-2 rounded-ds-md transition-colors
-                    ${
-                      currentTheme === theme.value
-                        ? 'bg-ds-primary text-white'
-                        : 'hover:bg-ds-muted text-ds-text-primary'
-                    }
-                  `}
-                >
-                  <Flex align="center" gap="2">
-                    <i className={`pi ${theme.icon} text-ds-base`}></i>
-                    <Text
-                      size="sm"
-                      weight={
-                        currentTheme === theme.value ? 'semibold' : 'regular'
-                      }
-                    >
-                      {theme.label}
-                    </Text>
-                  </Flex>
-                </button>
-              ))}
-            </Stack>
-          </div>
-        </>
-      )}
-    </div>
+      <Button
+        variant={currentTheme === 'dark' ? 'solid' : 'ghost'}
+        size="sm"
+        onClick={() => onThemeChange('dark')}
+        className="min-w-[80px]"
+      >
+        <i className="pi pi-moon text-ds-base mr-ds-2"></i>
+        Dark
+      </Button>
+    </Flex>
   )
 }

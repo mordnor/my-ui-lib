@@ -127,16 +127,13 @@ export async function buildTokens({ tokensDir, outputDir, themes = [] }) {
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true })
 
   const cssOut = path.join(outputDir, 'css')
-  const tsOut = path.join(outputDir, 'ts')
 
   if (!fs.existsSync(cssOut)) fs.mkdirSync(cssOut, { recursive: true })
-  if (!fs.existsSync(tsOut)) fs.mkdirSync(tsOut, { recursive: true })
 
   console.log(`\n🧩 Building tokens from → ${tokensDir}`)
   console.log(`📦 3-layer architecture: primitives → semantic → theme\n`)
 
   // Register custom formats
-  StyleDictionary.registerFormat(typescriptFormat)
   StyleDictionary.registerFormat(tailwindFormat)
 
   // 🧱 Chemin vers les tokens primitifs et sémantiques
@@ -200,35 +197,6 @@ export async function buildTokens({ tokensDir, outputDir, themes = [] }) {
               }
             }
           ]
-        },
-
-        /**
-         * 📘 TypeScript — typed constants for React
-         */
-        ts: {
-          transformGroup: 'js',
-          buildPath: tsOut + '/',
-          files: [
-            {
-              destination: `${theme}.ts`,
-              format: 'typescript/tokens'
-            }
-          ]
-        },
-
-        /**
-         * 🧰 JSON brut (debug ou import direct)
-         */
-        json: {
-          transformGroup: 'js',
-          buildPath: outputDir + '/',
-          files: [
-            {
-              destination: `${theme}.json`,
-              format: 'json/nested',
-              options: { showFileHeader: false }
-            }
-          ]
         }
       }
     }
@@ -247,18 +215,6 @@ export async function buildTokens({ tokensDir, outputDir, themes = [] }) {
 
   fs.writeFileSync(path.join(cssOut, 'themes.css'), combinedCss)
   console.log(`🎨 Combined CSS → ${path.join(cssOut, 'themes.css')}`)
-
-  // 📘 Crée un fichier TypeScript d'index
-  const tsIndexContent = themes
-    .map(theme => {
-      // Convert theme name to camelCase for valid JS identifier
-      const camelCaseName = theme.replace(/-([a-z])/g, (g) => g[1].toUpperCase())
-      return `export { tokens as ${camelCaseName}Tokens } from './${theme}'`
-    })
-    .join('\n') + '\n'
-
-  fs.writeFileSync(path.join(tsOut, 'index.ts'), tsIndexContent)
-  console.log(`📘 TypeScript index → ${path.join(tsOut, 'index.ts')}`)
 
   console.log(`\n✅ Token generation complete!\n`)
 }

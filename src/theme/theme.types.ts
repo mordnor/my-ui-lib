@@ -1,11 +1,12 @@
 /**
  * Theme types for the design system
+ * Simplified boilerplate: only light and dark themes
  */
 
 /**
  * Available theme names
  */
-export type ThemeName = 'light' | 'dark' | 'clienta-light' | 'clienta-dark' | 'material-light' | 'material-dark' | 'linear-light' | 'linear-dark'
+export type ThemeName = 'light' | 'dark'
 
 /**
  * Theme configuration

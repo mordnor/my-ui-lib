@@ -31,7 +31,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       'font-ds-medium',
       'rounded-ds-md',
       'transition-all duration-ds-normal ease-ds-standard',
-      'focus:outline-none focus:ring-2 focus:ring-ds-focus focus:ring-offset-2',
+      'focus:outline-none focus-visible:ring-2 focus-visible:ring-ds-focus focus-visible:ring-offset-2',
       'disabled:cursor-not-allowed disabled:opacity-ds-50'
     )
 

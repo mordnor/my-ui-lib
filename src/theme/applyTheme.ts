@@ -7,6 +7,7 @@ const THEME_STORAGE_KEY = 'ds-theme'
 
 /**
  * Get the current theme from localStorage or default to light
+ * Supports system preference detection
  */
 export function getCurrentTheme(): ThemeName {
   if (typeof window === 'undefined') return 'light'
@@ -15,16 +16,8 @@ export function getCurrentTheme(): ThemeName {
     THEME_STORAGE_KEY
   ) as ThemeName | null
 
-  if (
-    storedTheme === 'light' ||
-    storedTheme === 'dark' ||
-    storedTheme === 'clienta-light' ||
-    storedTheme === 'clienta-dark' ||
-    storedTheme === 'material-light' ||
-    storedTheme === 'material-dark' ||
-    storedTheme === 'linear-light' ||
-    storedTheme === 'linear-dark'
-  ) {
+  // Validate stored theme
+  if (storedTheme === 'light' || storedTheme === 'dark') {
     return storedTheme
   }
 

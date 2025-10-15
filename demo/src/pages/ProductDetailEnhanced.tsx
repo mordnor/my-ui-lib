@@ -17,7 +17,7 @@ import {
   ImageGallery,
   QuantitySelector,
   ColorPicker,
-  SizeSelector,
+  SizeSelector
 } from '@dorian-ui/my-ui-lib'
 import type {
   ImageGalleryImage,
@@ -29,12 +29,20 @@ import { ThemeSelector } from '../components/ThemeSelector'
 
 interface ProductDetailEnhancedProps {
   productId?: number | null
-  onNavigate?: (page: 'home' | 'gallery' | 'product', productId?: number) => void
+  onNavigate?: (
+    page: 'home' | 'gallery' | 'product',
+    productId?: number
+  ) => void
   theme: ThemeName
   onThemeChange: (theme: ThemeName) => void
 }
 
-export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeChange }: ProductDetailEnhancedProps) => {
+export const ProductDetailEnhanced = ({
+  productId,
+  onNavigate,
+  theme,
+  onThemeChange
+}: ProductDetailEnhancedProps) => {
   const [quantity, setQuantity] = useState(1)
   const [selectedColor, setSelectedColor] = useState('cognac')
   const [selectedSize, setSelectedSize] = useState('M')
@@ -48,20 +56,20 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
         <Badge variant="solid" colorScheme="success">
           Bestseller
         </Badge>
-      ),
+      )
     },
     {
       src: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=800',
-      alt: 'Le Voyageur - Vue de côté',
+      alt: 'Le Voyageur - Vue de côté'
     },
     {
       src: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800',
-      alt: 'Le Voyageur - Détails',
+      alt: 'Le Voyageur - Détails'
     },
     {
       src: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800',
-      alt: 'Le Voyageur - Intérieur',
-    },
+      alt: 'Le Voyageur - Intérieur'
+    }
   ]
 
   // Color options
@@ -69,7 +77,7 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
     { value: 'cognac', label: 'Cognac', hex: '#8B4513' },
     { value: 'noir', label: 'Noir', hex: '#1a1a1a' },
     { value: 'marron', label: 'Marron Foncé', hex: '#3e2723' },
-    { value: 'camel', label: 'Camel', hex: '#C19A6B', disabled: true },
+    { value: 'camel', label: 'Camel', hex: '#C19A6B', disabled: true }
   ]
 
   // Size options
@@ -77,7 +85,7 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
     { value: 'S', label: 'S' },
     { value: 'M', label: 'M' },
     { value: 'L', label: 'L' },
-    { value: 'XL', label: 'XL', disabled: true },
+    { value: 'XL', label: 'XL', disabled: true }
   ]
 
   return (
@@ -100,13 +108,10 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
           { label: 'Accueil', onClick: () => onNavigate?.('home') },
           { label: 'Produits', onClick: () => onNavigate?.('gallery') },
           { label: 'A propos' },
-          { label: 'Contact' },
+          { label: 'Contact' }
         ]}
         actions={
-          <ThemeSelector
-            currentTheme={theme}
-            onThemeChange={onThemeChange}
-          />
+          <ThemeSelector currentTheme={theme} onThemeChange={onThemeChange} />
         }
       />
 
@@ -145,7 +150,7 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                       ></i>
                     ))}
                   </Flex>
-                  <Text size="sm" color="secondary">
+                  <Text size="sm" color="muted">
                     (47 avis)
                   </Text>
                 </Flex>
@@ -154,13 +159,13 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
               {/* Description */}
               <Stack spacing="sm">
                 <Text size="lg" className="leading-ds-relaxed">
-                  Sac à dos en cuir pleine fleur, idéal pour vos escapades urbaines.
-                  Design moderne alliant style et fonctionnalité.
+                  Sac à dos en cuir pleine fleur, idéal pour vos escapades
+                  urbaines. Design moderne alliant style et fonctionnalité.
                 </Text>
-                <Text color="secondary" className="leading-ds-relaxed">
-                  Fabriqué à la main dans nos ateliers parisiens, Le Voyageur est conçu
-                  pour durer. Son cuir de qualité premium développera une belle patine au
-                  fil du temps, rendant chaque pièce unique.
+                <Text color="muted" className="leading-ds-relaxed">
+                  Fabriqué à la main dans nos ateliers parisiens, Le Voyageur
+                  est conçu pour durer. Son cuir de qualité premium développera
+                  une belle patine au fil du temps, rendant chaque pièce unique.
                 </Text>
               </Stack>
 
@@ -237,7 +242,7 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                       <Text size="sm" weight="medium">
                         Livraison gratuite
                       </Text>
-                      <Text size="xs" color="secondary">
+                      <Text size="xs" color="muted">
                         Livraison en 3-5 jours ouvrés
                       </Text>
                     </Stack>
@@ -248,7 +253,7 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                       <Text size="sm" weight="medium">
                         Retours gratuits
                       </Text>
-                      <Text size="xs" color="secondary">
+                      <Text size="xs" color="muted">
                         30 jours pour changer d'avis
                       </Text>
                     </Stack>
@@ -259,7 +264,7 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                       <Text size="sm" weight="medium">
                         Garantie à vie
                       </Text>
-                      <Text size="xs" color="secondary">
+                      <Text size="xs" color="muted">
                         Réparations gratuites à vie
                       </Text>
                     </Stack>
@@ -284,44 +289,44 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                   <Card padding="lg">
                     <Grid cols={2} gap="lg">
                       <Stack spacing="sm">
-                        <Text size="sm" color="secondary">
+                        <Text size="sm" color="muted">
                           Dimensions
                         </Text>
                         <Text weight="medium">45 x 30 x 15 cm</Text>
                       </Stack>
                       <Stack spacing="sm">
-                        <Text size="sm" color="secondary">
+                        <Text size="sm" color="muted">
                           Poids
                         </Text>
                         <Text weight="medium">1.2 kg</Text>
                       </Stack>
                       <Stack spacing="sm">
-                        <Text size="sm" color="secondary">
+                        <Text size="sm" color="muted">
                           Matériau
                         </Text>
                         <Text weight="medium">Cuir pleine fleur</Text>
                       </Stack>
                       <Stack spacing="sm">
-                        <Text size="sm" color="secondary">
+                        <Text size="sm" color="muted">
                           Couleur
                         </Text>
                         <Text weight="medium">Marron cognac</Text>
                       </Stack>
                       <Stack spacing="sm">
-                        <Text size="sm" color="secondary">
+                        <Text size="sm" color="muted">
                           Fermeture
                         </Text>
                         <Text weight="medium">Rabat magnétique + boucles</Text>
                       </Stack>
                       <Stack spacing="sm">
-                        <Text size="sm" color="secondary">
+                        <Text size="sm" color="muted">
                           Compartiments
                         </Text>
                         <Text weight="medium">3 principaux + 5 poches</Text>
                       </Stack>
                     </Grid>
                   </Card>
-                ),
+                )
               },
               {
                 id: 'care',
@@ -338,17 +343,19 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                           content: (
                             <Stack spacing="sm">
                               <Text size="sm">
-                                • Nettoyez régulièrement avec un chiffon doux et sec
+                                • Nettoyez régulièrement avec un chiffon doux et
+                                sec
                               </Text>
                               <Text size="sm">
-                                • En cas de tache, utilisez un savon doux spécial cuir
+                                • En cas de tache, utilisez un savon doux
+                                spécial cuir
                               </Text>
                               <Text size="sm">
-                                • Ne jamais utiliser de produits abrasifs ou à base
-                                d'alcool
+                                • Ne jamais utiliser de produits abrasifs ou à
+                                base d'alcool
                               </Text>
                             </Stack>
-                          ),
+                          )
                         },
                         {
                           id: 'maintenance',
@@ -360,13 +367,15 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                                 • Appliquez un lait nourrissant 2-3 fois par an
                               </Text>
                               <Text size="sm">
-                                • Évitez l'exposition prolongée au soleil et à l'humidité
+                                • Évitez l'exposition prolongée au soleil et à
+                                l'humidité
                               </Text>
                               <Text size="sm">
-                                • Rangez dans un endroit sec avec du papier de soie
+                                • Rangez dans un endroit sec avec du papier de
+                                soie
                               </Text>
                             </Stack>
-                          ),
+                          )
                         },
                         {
                           id: 'patina',
@@ -374,16 +383,17 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                           title: 'Patine naturelle',
                           content: (
                             <Text size="sm">
-                              Le cuir développera une belle patine naturelle avec le
-                              temps, rendant votre sac unique. Ce processus est normal
-                              et souhaitable, c'est une des qualités du cuir premium.
+                              Le cuir développera une belle patine naturelle
+                              avec le temps, rendant votre sac unique. Ce
+                              processus est normal et souhaitable, c'est une des
+                              qualités du cuir premium.
                             </Text>
-                          ),
-                        },
+                          )
+                        }
                       ]}
                     />
                   </Card>
-                ),
+                )
               },
               {
                 id: 'reviews',
@@ -403,7 +413,7 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                       <Text size="lg" weight="semibold">
                         4.9/5
                       </Text>
-                      <Text color="secondary">(47 avis)</Text>
+                      <Text color="muted">(47 avis)</Text>
                     </Flex>
 
                     <Grid cols={2} gap="lg">
@@ -414,7 +424,7 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                           rating: 5,
                           date: 'Il y a 2 semaines',
                           title: 'Qualité exceptionnelle',
-                          text: "J'ai acheté ce sac il y a 6 mois et je l'utilise tous les jours. La qualité du cuir est vraiment exceptionnelle.",
+                          text: "J'ai acheté ce sac il y a 6 mois et je l'utilise tous les jours. La qualité du cuir est vraiment exceptionnelle."
                         },
                         {
                           name: 'Sophie Durand',
@@ -422,8 +432,8 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                           rating: 5,
                           date: 'Il y a 1 mois',
                           title: 'Parfait pour le quotidien',
-                          text: 'Idéal pour transporter mon ordinateur. Le sac est très confortable et les finitions impeccables.',
-                        },
+                          text: 'Idéal pour transporter mon ordinateur. Le sac est très confortable et les finitions impeccables.'
+                        }
                       ].map((review, i) => (
                         <Card key={i} padding="lg">
                           <Stack spacing="md">
@@ -432,7 +442,7 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                                 <Avatar name={review.name} size="md" />
                                 <Stack spacing="xs">
                                   <Text weight="semibold">{review.name}</Text>
-                                  <Text size="xs" color="secondary">
+                                  <Text size="xs" color="muted">
                                     {review.date}
                                   </Text>
                                 </Stack>
@@ -448,7 +458,7 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                             </Flex>
                             <Stack spacing="sm">
                               <Text weight="medium">{review.title}</Text>
-                              <Text size="sm" color="secondary">
+                              <Text size="sm" color="muted">
                                 {review.text}
                               </Text>
                             </Stack>
@@ -457,8 +467,8 @@ export const ProductDetailEnhanced = ({ productId, onNavigate, theme, onThemeCha
                       ))}
                     </Grid>
                   </Stack>
-                ),
-              },
+                )
+              }
             ]}
             variant="line"
           />

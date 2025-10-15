@@ -1,252 +1,245 @@
-# 🎨 @dorian-ui/my-ui-lib
+# React + Tailwind + Design System Boilerplate
 
-> **Design System React + Tailwind + Vite + TypeScript** — créé par **Dorian**
+> **A production-ready boilerplate for building scalable React applications with a token-based Design System, Tailwind CSS, and TypeScript.**
 
-Un **Design System modulaire et extensible**, conçu pour être utilisé tel quel ou personnalisé via des **Design Tokens
-JSON**.
-Basé sur **TailwindCSS**, **React 18**, et un pipeline **Style Dictionary** pour gérer les thèmes *light/dark*.
+## Features
 
----
+- **React 18** with TypeScript
+- **Tailwind CSS 3** with custom Design System tokens
+- **Token-based theming** (light/dark) via Style Dictionary
+- **Vite** for lightning-fast development
+- **Component library** with pre-built UI components
+- **Testing** with Vitest and Testing Library
+- **ESLint + Prettier** preconfigured
+- **Zero-config theme switching** via `data-theme` attribute
 
-## 🚀 Installation
+## Quick Start
+
+### 1. Clone and Install
 
 ```bash
-pnpm add @dorian-ui/my-ui-lib
-# ou
-npm install @dorian-ui/my-ui-lib
+# Clone this repository
+git clone <your-repo-url> my-new-project
+cd my-new-project
+
+# Install dependencies
+pnpm install
+# or npm install / yarn install
 ```
 
----
+### 2. Start Development
 
-## 🧱 Utilisation de base
-
-### Importer les styles globaux :
-
-```tsx
-import '@dorian-ui/my-ui-lib/style.css'
+```bash
+pnpm dev
 ```
 
-### Importer et utiliser les composants :
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### 3. Build for Production
+
+```bash
+pnpm build
+```
+
+Your production-ready app will be in the `dist/` directory.
+
+## Using Components
+
+Import and use pre-built components:
 
 ```tsx
-import { Button, Card, Typography } from '@dorian-ui/my-ui-lib'
+import { Button, Card, Typography } from '@/components'
 
 export default function App() {
   return (
     <Card>
-      <Typography.Heading level={2}>Hello My UI Lib!</Typography.Heading>
+      <Typography.Heading level={2}>Hello World!</Typography.Heading>
       <Button intent="primary">Click me</Button>
     </Card>
   )
 }
 ```
 
----
+## Theme Switching
 
-## 🌗 Gestion du thème (light/dark)
-
-Tu peux basculer dynamiquement entre les thèmes générés grâce à la fonction `applyTheme()` :
+The boilerplate includes a simple theme system:
 
 ```tsx
-import { applyTheme } from '@dorian-ui/my-ui-lib/theme/applyTheme'
+import { applyTheme, getCurrentTheme, toggleTheme } from '@theme/applyTheme'
 
-applyTheme('dark') // ou 'light'
+// Get current theme
+const theme = getCurrentTheme() // 'light' or 'dark'
+
+// Apply a theme
+applyTheme('dark')
+
+// Toggle between light and dark
+toggleTheme()
 ```
 
-Ceci applique automatiquement les variables CSS de ton thème (`themes.css`, `dark.css`, `light.css`).
+Themes are automatically persisted in `localStorage` and respect system preferences.
 
----
+## Project Structure
 
-## 🧩 Structure du Design System
-
-| Dossier                     | Description                                            |
-|-----------------------------|--------------------------------------------------------|
-| `src/components/ui/`        | Composants UI (Button, Card, Badge, etc.)              |
-| `src/components/layout/`    | Composants de layout (Grid, Container, Section, Stack) |
-| `src/components/utilities/` | Avatars, Dividers, Icons, etc.                         |
-| `theme/`                    | Gestion des thèmes, tokens compilés et config Tailwind |
-| `tokens/`                   | Design Tokens sources (JSON)                           |
-| `tools/`                    | CLI + Template de génération                           |
-| `scripts/`                  | Script `build-tokens.mjs` pour régénérer le thème      |
-
----
-
-## 🧪 Commandes principales
-
-### 🧩 Développement local
-
-```bash
-pnpm run dev
+```
+.
+├── src/
+│   ├── components/        # React components
+│   │   ├── ui/           # Core UI components (Button, Card, Input, etc.)
+│   │   ├── layout/       # Layout components (Container, Grid, Stack, etc.)
+│   │   └── utilities/    # Utility components (Avatar, Icon, Divider, etc.)
+│   ├── hooks/            # Custom React hooks
+│   ├── theme/            # Theme management (applyTheme, toggleTheme)
+│   ├── utils/            # Utility functions
+│   ├── types/            # TypeScript type definitions
+│   ├── App.tsx           # Main App component
+│   └── main.tsx          # Entry point
+│
+├── tokens/               # Design tokens (JSON)
+│   ├── primitives/       # Base tokens (colors, spacing, typography)
+│   ├── semantic/         # Semantic tokens (component styles)
+│   └── themes/           # Theme-specific tokens (light.json, dark.json)
+│
+├── theme/                # Generated theme files
+│   ├── tokens-build/     # Auto-generated CSS and JS
+│   │   ├── css/          # light.css, dark.css, themes.css
+│   │   └── tailwind.tokens.js
+│   └── tailwind.config.mjs
+│
+└── scripts/              # Build scripts
+    └── build-tokens.mjs  # Token generation script
 ```
 
-Lance Vite avec un environnement de démo local.
+## Design System
 
----
+### How It Works
 
-### 🗷️ Build complet (lib + tokens + types)
+This boilerplate uses a **3-layer token architecture**:
 
-```bash
-pnpm run build
-```
+1. **Primitives** (`tokens/primitives/`) - Base design values (colors, spacing, typography)
+2. **Semantic** (`tokens/semantic/`) - Purpose-driven tokens (primary, secondary, success, etc.)
+3. **Themes** (`tokens/themes/`) - Theme-specific values (light.json, dark.json)
 
-* Génère les tokens (`theme/tokens-build/*`)
-* Compile la lib en ESM + CJS (`dist/`)
-* Génère les types TypeScript (`dist/types`)
+### Token Workflow
 
----
+1. Edit JSON files in `tokens/`
+2. Run `pnpm build:tokens` to generate CSS variables and Tailwind config
+3. Use `ds-*` prefixed classes in your components
 
-### 🎨 Générer les tokens uniquement
-
-```bash
-pnpm run build:tokens
-```
-
-* Compile tous les JSON dans `tokens/`
-* Produit :
-
-  * `theme/tokens-build/tailwind.tokens.js`
-  * `theme/tokens-build/css/` (light/dark)
-  * `theme/tailwind.config.mjs`
-
----
-
-### 🧪 Tester la lib dans un autre projet localement
-
-```bash
-pnpm run pack:local
-```
-
-Cette commande :
-
-1. Build la lib
-2. Crée un `.tgz`
-3. Copie le package dans ton projet `../my-landing/`
-4. Installe automatiquement le paquet
-
-Tu peux alors tester :
-
+Example:
 ```tsx
-import { Button } from '@dorian-ui/my-ui-lib'
+<button className="bg-ds-accent-primary text-ds-text-inverse">
+  Click me
+</button>
 ```
 
----
-
-## 🎨 Personnalisation du Design System
-
-Le Design System est **basé sur des tokens JSON**.
-Tu peux modifier les fichiers du dossier :
-
-```
-tokens/
-├─ global/
-│  ├─ color.json
-│  ├─ spacing.json
-│  ├─ typography.json
-│  └─ ...
-├─ semantic/
-│  └─ color.json
-└─ themes/
-   ├─ light.json
-   └─ dark.json
+This maps to CSS variables:
+```css
+.bg-ds-accent-primary {
+  background-color: var(--ds-accent-primary);
+}
 ```
 
-Puis relancer :
+### Modifying Design Tokens
 
+1. Edit token files in `tokens/primitives/`, `tokens/semantic/`, or `tokens/themes/`
+2. Run `pnpm build:tokens`
+3. Changes automatically propagate to all components using `ds-*` classes
+
+Example - Change primary color:
+```json
+// tokens/themes/light.json
+{
+  "ds": {
+    "accent": {
+      "primary": { "value": "#3b82f6" }
+    }
+  }
+}
+```
+
+## Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start development server |
+| `pnpm build` | Build for production |
+| `pnpm build:tokens` | Generate design tokens |
+| `pnpm preview` | Preview production build |
+| `pnpm test` | Run tests |
+| `pnpm test:ui` | Run tests with UI |
+| `pnpm test:coverage` | Run tests with coverage |
+| `pnpm lint` | Lint code |
+| `pnpm lint:fix` | Lint and fix code |
+| `pnpm typecheck` | Type-check TypeScript |
+| `pnpm format` | Format code with Prettier |
+
+## Tech Stack
+
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Style Dictionary** - Token transformation
+- **Vitest** - Unit testing
+- **Testing Library** - Component testing
+- **ESLint** - Code linting
+- **Prettier** - Code formatting
+- **PostCSS** - CSS processing
+
+## Customization Guide
+
+### 1. Rename the Project
+
+Update `package.json`:
+```json
+{
+  "name": "your-project-name",
+  "author": "Your Name <your.email@domain.com>"
+}
+```
+
+### 2. Customize Tokens
+
+Edit files in `tokens/` to match your brand:
+- `tokens/primitives/colors.json` - Base color palette
+- `tokens/semantic/colors.json` - Semantic color mapping
+- `tokens/themes/light.json` - Light theme values
+- `tokens/themes/dark.json` - Dark theme values
+
+Then run:
 ```bash
-pnpm run build:tokens
+pnpm build:tokens
 ```
 
-💥 Les CSS, variables et config Tailwind seront régénérées automatiquement.
+### 3. Remove Unwanted Components
+
+This boilerplate includes many pre-built components. Feel free to remove any you don't need.
+
+## Best Practices
+
+### Use Design Tokens
+
+Always use `ds-*` prefixed classes instead of hardcoded values:
+
+✅ **Good:**
+```tsx
+<div className="bg-ds-surface text-ds-text-primary" />
+```
+
+❌ **Bad:**
+```tsx
+<div className="bg-white text-gray-900" />
+```
+
+## License
+
+MIT
 
 ---
 
-## 🧱 Fichiers importants
+**Ready to build something amazing?** 🚀
 
-| Fichier                                        | Rôle                                                         |
-|------------------------------------------------|--------------------------------------------------------------|
-| `theme/tailwind.config.mjs`                    | Config Tailwind générée automatiquement à partir des tokens  |
-| `theme/applyTheme.ts`                          | Fonction d’application de thème runtime                      |
-| `tools/cli.mjs`                                | CLI pour re-générer les tokens                               |
-| `tools/templates/tailwind.config.template.mjs` | Template utilisé pour générer la config Tailwind             |
-| `scripts/build-tokens.mjs`                     | Script de build appelé par la CLI et `pnpm run build:tokens` |
+This boilerplate gives you everything you need to start a new React project with a professional Design System, theming, and component library out of the box.
 
----
-
-## 🧬 Exemple d’architecture générée après build
-
-```
-theme/
-├── applyTheme.ts
-├── tailwind.config.mjs
-└── tokens-build/
-    ├── tailwind.tokens.js
-    └── css/
-        ├── light.css
-        ├── dark.css
-        └── themes.css
-```
-
----
-
-## ⚙️ API CLI
-
-### 📦 Générer les tokens
-
-```bash
-npx my-ui-lib --tokens=./tokens --themes=light,dark
-```
-
-### 🧰 Arguments
-
-| Flag       | Description                   | Par défaut             |
-|------------|-------------------------------|------------------------|
-| `--tokens` | Dossier des tokens à compiler | `./tokens`             |
-| `--output` | Dossier de sortie             | `./theme/tokens-build` |
-| `--themes` | Liste des thèmes à générer    | `light,dark`           |
-
----
-
-## 🧑‍💻 Pour les contributeurs
-
-### 1️⃣ Cloner et installer :
-
-```bash
-git clone https://github.com/dorian-ui/my-ui-lib.git
-cd my-ui-lib
-pnpm install
-```
-
-### 2️⃣ Lancer la démo :
-
-```bash
-pnpm run dev
-```
-
-### 3️⃣ Modifier les composants ou tokens :
-
-* Les composants se trouvent dans `src/components/`
-* Les tokens dans `tokens/`
-
-### 4️⃣ Rebuild :
-
-```bash
-pnpm run build
-```
-
----
-
-## 🧪 Stack technique
-
-* ⚡ **Vite 5**
-* 💅 **TailwindCSS 3**
-* 🧠 **React 18 + TypeScript**
-* 🎨 **Style Dictionary** pour la génération des tokens
-* 🧰 **Storybook 8** (en option)
-* 🧱 **pnpm** pour la gestion mono-repo rapide
-
----
-
-## 📄 Licence
-
-MIT © Dorian
-Libre d’utilisation, de modification et de distribution.
+Just clone, install, and start coding!

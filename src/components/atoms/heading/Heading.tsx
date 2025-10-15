@@ -6,7 +6,7 @@ import type { HeadingProps } from './Heading.types'
  * Heading component - Semantic headings with design system typography
  */
 export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
-  ({ as = 'h2', size, className, children, ...props }, ref) => {
+  ({ as = 'h2', size, color = 'default', className, children, ...props }, ref) => {
     const effectiveSize = size || as
 
     // Size styles using ds-* tokens
@@ -19,9 +19,18 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
       h6: 'text-ds-lg font-ds-semibold leading-ds-normal'
     }
 
+    // Color styles using ds-* tokens - consistent with Text
+    const colorStyles = {
+      default: 'text-ds-foreground',
+      muted: 'text-ds-muted-foreground',
+      subtle: 'text-ds-muted-foreground/70',
+      inverse: 'text-ds-primary-foreground'
+    }
+
     const classes = cn(
-      'font-ds-sans text-ds-foreground',
+      'font-ds-sans',
       sizeStyles[effectiveSize],
+      colorStyles[color],
       className
     )
 

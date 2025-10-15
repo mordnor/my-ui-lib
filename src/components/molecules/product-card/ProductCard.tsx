@@ -1,6 +1,6 @@
-import { forwardRef, ReactNode } from 'react'
+import { forwardRef } from 'react'
 import { Card } from '../card/Card'
-import { Stack, Heading, Text, Button, Flex, Badge } from '@/components'
+import { Badge, Button, Flex, Heading, Stack, Text } from '@/components'
 import { cn } from '@/utils/cn'
 
 export interface ProductCardProps {
@@ -74,7 +74,7 @@ export const ProductCard = forwardRef<HTMLDivElement, ProductCardProps>(
           <Heading as="h3" className="text-ds-xl">
             {title}
           </Heading>
-          <Text size="sm" color="secondary" className="line-clamp-2">
+          <Text size="sm" color="muted" className="line-clamp-2">
             {description}
           </Text>
         </Stack>

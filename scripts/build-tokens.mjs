@@ -11,30 +11,21 @@ const rootDir = path.resolve(__dirname, '..')
 // Permet de forcer la régénération du fichier Tailwind
 const force = process.argv.includes('--force')
 
-// 🧠 Détection automatique des thèmes présents dans /tokens/themes/
-function detectThemes(tokensDir) {
-  const themesPath = path.join(tokensDir, 'themes')
-  return fs
-    .readdirSync(themesPath)
-    .filter((entry) => {
-      const full = path.join(themesPath, entry)
-      return (
-        fs.statSync(full).isDirectory() || entry.endsWith('.json')
-      )
-    })
-    .map((entry) => entry.replace('.json', ''))
-}
+/**
+ * 🎨 Boilerplate simplified: only light and dark themes
+ * No need for complex theme detection
+ */
+const THEMES = ['light', 'dark']
 
 async function run() {
   try {
     const tokensDir = path.join(rootDir, 'tokens')
     const outputDir = path.join(rootDir, 'theme/tokens-build')
-    const themes = detectThemes(tokensDir)
 
-    console.log(`🎨 Detected themes: ${themes.join(', ')}`)
+    console.log(`🎨 Building themes: ${THEMES.join(', ')}`)
 
     // 1️⃣ Génère les tokens (via token-engine)
-    await buildTokens({ tokensDir, outputDir, themes })
+    await buildTokens({ tokensDir, outputDir, themes: THEMES })
 
     // 2️⃣ Copie le template vers /theme/
     const templatePath = path.join(

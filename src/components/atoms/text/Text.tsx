@@ -12,7 +12,7 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
       size = 'base',
       weight = 'regular',
       align,
-      color = 'primary',
+      color = 'default',
       isTruncated = false,
       className,
       children,
@@ -44,14 +44,12 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
       justify: 'text-justify'
     }
 
-    // Color styles using ds-* tokens
+    // Color styles using ds-* tokens - simplified and consistent
     const colorStyles = {
-      primary: 'text-ds-foreground',
-      secondary: 'text-ds-muted-foreground',
-      tertiary: 'text-ds-muted-foreground',
+      default: 'text-ds-foreground',
       muted: 'text-ds-muted-foreground',
-      inverse: 'text-ds-primary-foreground',
-      link: 'text-ds-primary'
+      subtle: 'text-ds-muted-foreground/70',
+      inverse: 'text-ds-primary-foreground'
     }
 
     const classes = cn(

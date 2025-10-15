@@ -17,13 +17,19 @@ import type { ThemeName } from '@dorian-ui/my-ui-lib'
 import { ThemeSelector } from '../components/ThemeSelector'
 
 interface NomadeCreationProps {
-  onNavigate?: (page: 'home' | 'gallery' | 'product', productId?: number) => void
+  onNavigate?: (
+    page: 'home' | 'gallery' | 'product',
+    productId?: number
+  ) => void
   theme: ThemeName
   onThemeChange: (theme: ThemeName) => void
 }
 
-export const NomadeCreation = ({ onNavigate, theme, onThemeChange }: NomadeCreationProps) => {
-
+export const NomadeCreation = ({
+  onNavigate,
+  theme,
+  onThemeChange
+}: NomadeCreationProps) => {
   return (
     <div className="min-h-screen bg-ds-background">
       {/* Navbar */}
@@ -47,10 +53,7 @@ export const NomadeCreation = ({ onNavigate, theme, onThemeChange }: NomadeCreat
           { label: 'Contact' }
         ]}
         actions={
-          <ThemeSelector
-            currentTheme={theme}
-            onThemeChange={onThemeChange}
-          />
+          <ThemeSelector currentTheme={theme} onThemeChange={onThemeChange} />
         }
       />
 
@@ -126,7 +129,11 @@ export const NomadeCreation = ({ onNavigate, theme, onThemeChange }: NomadeCreat
                 { icon: 'pi-star', value: '15+', label: "Annees d'experience" },
                 { icon: 'pi-palette', value: '100%', label: 'Fait main' },
                 { icon: 'pi-leaf', value: 'Cuir', label: 'Ethique & Durable' },
-                { icon: 'pi-heart', value: '2000+', label: 'Clients satisfaits' }
+                {
+                  icon: 'pi-heart',
+                  value: '2000+',
+                  label: 'Clients satisfaits'
+                }
               ].map((stat, i) => (
                 <Card
                   key={i}
@@ -165,7 +172,7 @@ export const NomadeCreation = ({ onNavigate, theme, onThemeChange }: NomadeCreat
               <Heading as="h2" className="text-ds-4xl">
                 L'Excellence au Service du Savoir-Faire
               </Heading>
-              <Text size="lg" color="secondary">
+              <Text size="lg" color="muted">
                 Nous croyons en un artisanat responsable et durable, où chaque
                 détail compte.
               </Text>
@@ -227,7 +234,7 @@ export const NomadeCreation = ({ onNavigate, theme, onThemeChange }: NomadeCreat
                     </Heading>
                     <Text
                       size="sm"
-                      color="secondary"
+                      color="muted"
                       className="leading-ds-relaxed"
                     >
                       {value.description}
@@ -256,7 +263,7 @@ export const NomadeCreation = ({ onNavigate, theme, onThemeChange }: NomadeCreat
               <Heading as="h2" className="text-ds-4xl">
                 Collection Signature
               </Heading>
-              <Text size="lg" color="secondary">
+              <Text size="lg" color="muted">
                 Découvrez notre sélection de sacs en cuir, pensés pour vous
                 accompagner au quotidien.
               </Text>
@@ -348,7 +355,7 @@ export const NomadeCreation = ({ onNavigate, theme, onThemeChange }: NomadeCreat
               <Heading as="h2" className="text-ds-4xl">
                 Ce Que Disent Nos Clients
               </Heading>
-              <Text size="lg" color="secondary">
+              <Text size="lg" color="muted">
                 Plus de 2000 clients nous font confiance pour leur quotidien.
               </Text>
             </Stack>
@@ -405,7 +412,7 @@ export const NomadeCreation = ({ onNavigate, theme, onThemeChange }: NomadeCreat
                         <Text size="base" weight="semibold">
                           {testimonial.name}
                         </Text>
-                        <Text size="sm" color="secondary">
+                        <Text size="sm" color="muted">
                           {testimonial.role}
                         </Text>
                       </Stack>

@@ -91,7 +91,7 @@ export const ColorPicker = forwardRef<HTMLDivElement, ColorPickerProps>(
           })}
         </Flex>
         {showLabel && selectedColor && (
-          <Text size="xs" color="secondary">
+          <Text size="xs" color="muted">
             {colors.find((c) => c.value === selectedColor)?.label}
           </Text>
         )}

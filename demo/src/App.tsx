@@ -9,13 +9,16 @@ type Page = 'home' | 'gallery' | 'product' | 'showcase'
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home')
-  const [selectedProductId, setSelectedProductId] = useState<number | null>(null)
+  const [selectedProductId, setSelectedProductId] = useState<number | null>(
+    null
+  )
   const [theme, setTheme] = useState<ThemeName>('light')
 
   // Initialize theme
   useEffect(() => {
     const savedTheme = localStorage.getItem('ds-theme') as ThemeName | null
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+      .matches
       ? 'dark'
       : 'light'
     const initialTheme = savedTheme || systemTheme
@@ -29,7 +32,10 @@ export default function App() {
     localStorage.setItem('ds-theme', newTheme)
   }
 
-  const handleNavigate = (page: 'home' | 'gallery' | 'product', productId?: number) => {
+  const handleNavigate = (
+    page: 'home' | 'gallery' | 'product',
+    productId?: number
+  ) => {
     setCurrentPage(page)
     if (productId !== undefined) {
       setSelectedProductId(productId)
