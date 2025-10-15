@@ -4,11 +4,12 @@ import type { ThemeName } from '@dorian-ui/my-ui-lib'
 import { NomadeCreation } from './pages/NomadeCreation'
 import { ProductGallery } from './pages/ProductGallery'
 import { ProductDetailEnhanced } from './pages/ProductDetailEnhanced'
+import { HotelLanding } from './pages/HotelLanding'
 
-type Page = 'home' | 'gallery' | 'product' | 'showcase'
+type Page = 'home' | 'gallery' | 'product' | 'showcase' | 'hotel'
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('home')
+  const [currentPage, setCurrentPage] = useState<Page>('hotel')
   const [selectedProductId, setSelectedProductId] = useState<number | null>(
     null
   )
@@ -61,6 +62,10 @@ export default function App() {
         onThemeChange={handleThemeChange}
       />
     )
+  }
+
+  if (currentPage === 'hotel') {
+    return <HotelLanding theme={theme} onThemeChange={handleThemeChange} />
   }
 
   // if (currentPage === 'showcase') {
