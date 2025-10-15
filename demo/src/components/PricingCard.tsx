@@ -1,4 +1,12 @@
-import { Button, Card, Stack, Heading, Text, Badge, Flex } from '@dorian-ui/my-ui-lib'
+import {
+  Button,
+  Card,
+  Stack,
+  Heading,
+  Text,
+  Badge,
+  Flex
+} from '@dorian-ui/my-ui-lib'
 
 interface PricingFeature {
   label: string
@@ -32,7 +40,7 @@ export function PricingCard({
   ctaLabel,
   onCtaClick,
   variant = 'default',
-  ctaVariant = 'outline',
+  ctaVariant = 'outline'
 }: PricingCardProps) {
   const isFeatured = variant === 'featured'
 
@@ -86,7 +94,13 @@ export function PricingCard({
         <Stack spacing="xs">
           {features.map((feature, index) => (
             <Flex key={index} gap="2" align="center">
-              <span className={feature.included ? 'text-ds-success text-ds-sm' : 'text-ds-muted text-ds-sm'}>
+              <span
+                className={
+                  feature.included
+                    ? 'text-ds-success text-ds-sm'
+                    : 'text-ds-muted text-ds-sm'
+                }
+              >
                 {feature.included ? '✓' : '✗'}
               </span>
               <Text size="sm" color={feature.included ? 'default' : 'muted'}>

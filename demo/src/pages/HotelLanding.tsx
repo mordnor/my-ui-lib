@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { ThemeName } from '@dorian-ui/my-ui-lib'
+import { ThemeName } from '@dorian-ui/my-ui-lib'
 import {
   Navbar,
   Container,
@@ -10,7 +10,8 @@ import {
   Stack,
   Grid,
   Flex,
-  Badge
+  Badge,
+  Section
 } from '@dorian-ui/my-ui-lib'
 import { ContactForm, type ContactFormData } from '../components/ContactForm'
 import { ThemeSelector } from '../components/ThemeSelector'
@@ -81,7 +82,7 @@ export function HotelLanding({ theme, onThemeChange }: HotelLandingProps) {
       />
 
       {/* Hero Section - Plus impactant */}
-      <section
+      <Section
         id="accueil"
         className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
       >
@@ -90,7 +91,7 @@ export function HotelLanding({ theme, onThemeChange }: HotelLandingProps) {
           <div
             className="absolute inset-0 bg-gradient-to-br from-ds-primary via-ds-secondary to-ds-accent opacity-90"
             style={{
-              backgroundImage: 'url(/hotel-hero.jpg)',
+              backgroundImage: 'url(https://picsum.photos/1920/1080/?blur)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundBlendMode: 'overlay'
@@ -100,7 +101,7 @@ export function HotelLanding({ theme, onThemeChange }: HotelLandingProps) {
         </div>
 
         {/* Hero Content */}
-        <Container size="lg" className="relative z-10 py-20">
+        <Container size="full" className="relative z-10">
           <Stack spacing="xl" align="center" className="text-center">
             <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 !px-6 !py-2">
               🏔️ Bagnols-les-Bains · UNESCO
@@ -187,10 +188,10 @@ export function HotelLanding({ theme, onThemeChange }: HotelLandingProps) {
             <div className="w-1 h-2 bg-white/70 rounded-full" />
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Section Expérience - Plus visuelle */}
-      <section id="presentation" className="py-24 relative">
+      <Section id="presentation" className="relative">
         {/* Decorative background */}
         <div className="absolute inset-0 bg-gradient-to-b from-ds-muted/30 to-transparent" />
 
@@ -314,11 +315,11 @@ export function HotelLanding({ theme, onThemeChange }: HotelLandingProps) {
             </Container>
           </Stack>
         </Container>
-      </section>
+      </Section>
 
       {/* Section Tarifs - Plus digestible */}
-      <section id="services" className="py-24 bg-ds-muted/20">
-        <Container size="lg">
+      <Section id="services" className="bg-ds-accent">
+        <Container size="xl">
           <Stack spacing="xl">
             {/* Header */}
             <div className="text-center max-w-2xl mx-auto">
@@ -338,7 +339,7 @@ export function HotelLanding({ theme, onThemeChange }: HotelLandingProps) {
             </div>
 
             {/* Pricing Cards - Focus sur les formules principales */}
-            <Container size="xl" className="max-w-6xl">
+            <Container size="xl" className="mt-ds-4">
               <Grid cols={1} gap="lg" className="md:grid-cols-3">
                 <PricingCard
                   badge="Séjour libre"
@@ -398,13 +399,9 @@ export function HotelLanding({ theme, onThemeChange }: HotelLandingProps) {
             </Container>
 
             {/* Info supplémentaires - Plus compact */}
-            <Container size="xl" className="max-w-6xl">
-              <Card variant="soft" padding="md">
-                <Flex
-                  justify="between"
-                  align="center"
-                  className="flex-wrap gap-4"
-                >
+            <Container size="full">
+              <Card variant="filled" className="bg-ds-card" padding="md">
+                <Flex justify="around" align="center">
                   <Text size="sm" color="muted">
                     <span className="font-ds-semibold text-ds-foreground">
                       Haute saison
@@ -434,10 +431,10 @@ export function HotelLanding({ theme, onThemeChange }: HotelLandingProps) {
             </Container>
           </Stack>
         </Container>
-      </section>
+      </Section>
 
       {/* Section Contact - Plus aéré */}
-      <section id="contact" className="py-24 relative">
+      <Section id="contact" className="relative">
         {/* Background décoratif */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ds-primary/5 to-transparent" />
 
@@ -582,7 +579,7 @@ export function HotelLanding({ theme, onThemeChange }: HotelLandingProps) {
             </Card>
           </Stack>
         </Container>
-      </section>
+      </Section>
 
       {/* Footer - Simplifié */}
       <footer className="bg-ds-card border-t border-ds-border py-12">
